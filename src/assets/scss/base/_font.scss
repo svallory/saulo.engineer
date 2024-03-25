@@ -55,7 +55,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 
-  a:not(.button) {
+  a:not(.button):not(.nav-link) {
     color: var(--action-color);
     text-decoration: underline;
 
@@ -81,6 +81,21 @@ body {
     &:hover,
     &:focus {
       color: var(--links-linkedin-hover);
+      text-decoration: none;
+    }
+  }
+
+  a.icon-link {
+    color: var(--neutral-100);
+    text-decoration: none;
+
+    &:visited {
+      color: var(--neutral-100);
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--neutral-500);
       text-decoration: none;
     }
   }

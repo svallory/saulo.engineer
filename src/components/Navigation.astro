@@ -3,6 +3,8 @@ import ResponsiveToggle from './ResponsiveToggle.astro'
 import { DarkMode } from 'accessible-astro-components'
 import { Image } from 'astro:assets'
 import logo from '../assets/img/logo.svg'
+
+const homeLink = 'Resume'
 ---
 
 <div id="main-navigation" class="is-desktop py-8">
@@ -11,7 +13,8 @@ import logo from '../assets/img/logo.svg'
       <Image src={logo} alt="Your Logo" width="47" height="37" />
       <span class="font-bold">Accessible Astro</span>
     </a>
-    <div class="wrapper">
+    <div
+      class="menu-pill wrapper rounded-full bg-white/90 px-6 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur">
       <nav class="desktop-menu" aria-label="Main navigation desktop">
         <ul class="menu">
           <slot />
@@ -29,6 +32,8 @@ import logo from '../assets/img/logo.svg'
 </div>
 
 <script>
+  const homeLinkLabel = 'Resume'
+
   document.addEventListener('astro:page-load', () => {
     // variables
     const mainNav = document.querySelector('#main-navigation')
@@ -44,10 +49,13 @@ import logo from '../assets/img/logo.svg'
         const menuItems = [...menu.querySelectorAll('a:not([rel*="external"])')] as HTMLAnchorElement[]
 
         menuItems.forEach((menuItem) => {
-          if (currenPathname.includes(menuItem.pathname.replaceAll('/', '')) && menuItem.textContent !== 'Home') {
+          if (
+            currenPathname.includes(menuItem.pathname.replaceAll('/', '')) &&
+            menuItem.textContent !== homeLinkLabel
+          ) {
             menuItem.classList.add('is-active')
             menuItem.setAttribute('aria-current', 'page')
-          } else if (menuItem.textContent === 'Home' && currenPathname === '/') {
+          } else if (menuItem.textContent === homeLinkLabel && currenPathname === '/') {
             menuItem.classList.add('is-active')
             menuItem.setAttribute('aria-current', 'page')
           }
@@ -271,6 +279,10 @@ import logo from '../assets/img/logo.svg'
       gap: 1rem;
     }
 
+    .menu-pill {
+      background-image: url('/images/patterns/noise-light.png');
+    }
+
     nav {
       > ul {
         display: flex;
@@ -279,6 +291,7 @@ import logo from '../assets/img/logo.svg'
 
         a,
         button {
+          color: var(--neutral-700);
           text-decoration: none;
           font-size: 1.125rem;
           line-height: 1.6875rem;
@@ -289,7 +302,8 @@ import logo from '../assets/img/logo.svg'
         .is-active,
         .has-dropdown > button:hover,
         .has-dropdown > button:focus {
-          text-decoration: underline;
+          color: var(--neutral-800);
+          text-decoration: none;
           text-decoration-thickness: 1px;
           text-decoration-style: wavy;
           text-underline-offset: 7px;

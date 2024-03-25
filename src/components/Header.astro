@@ -1,11 +1,13 @@
 ---
 import Navigation from '../components/Navigation.astro'
+import FlyingMenu from '../components/FlyingMenu.astro'
 import { SkipLinks } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
 ---
 
 <header>
   <SkipLinks />
+  <!-- <div class="flex "> -->
   <Navigation>
     <li class="menu-item">
       <a href="/">Resume</a>
@@ -13,7 +15,7 @@ import { Icon } from 'astro-icon/components'
     <li class="menu-item">
       <a href="/about/">About</a>
     </li>
-    <li class="menu-item has-dropdown">
+    <!-- <li class="menu-item has-dropdown">
       <button aria-haspopup="true" aria-expanded="false">Example Pages</button>
       <ul class="dropdown-menu">
         <li class="submenu-item">
@@ -26,19 +28,20 @@ import { Icon } from 'astro-icon/components'
           <a href="/accessible-components">Accessible Components</a>
         </li>
       </ul>
-    </li>
+    </li> -->
     <li class="menu-item">
       <a href="/projects/" title="Projects" rel="external noopener noreferrer">Projects</a>
     </li>
     <li class="menu-item">
       <a href="/estrutura/" title="Estrutura" rel="external noopener noreferrer">Estrutura</a>
     </li>
-    <li class="menu-item type-icon">
+    <!-- <li class="menu-item type-icon">
       <a href="https://github.com/markteekman/accessible-astro-starter" title="Go to the GitHub page">
         <Icon name="ion:logo-github" />
       </a>
-    </li>
+    </li> -->
   </Navigation>
+  <!-- </div> -->
 </header>
 
 <style lang="scss" is:global>

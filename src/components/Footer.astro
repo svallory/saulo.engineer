@@ -4,23 +4,23 @@ import IconLink from './IconLink.astro'
 const currentYear = new Date().getFullYear()
 ---
 
-<footer>
-  <IconLink icon="line-md:github-loop" url="https://github.com/svallory/svallory.github.io" />
-  <IconLink icon="line-md:twitter-x" url="https://twitter.com/svallory_en" />
-  <IconLink icon="line-md:linkedin" url="https://www.linkedin.com/in/saulo-vallory" />
-  <IconLink icon="line-md:discord" url="https://discordapp.com/users/svallory#8453" />
+<style>
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+</style>
 
-  <!-- discord -->
-  <!--
-    <CallToAction />
-  <section class="py-8">
+<footer>
+  <section class="py-24">
     <div class="container">
-      <p>
-        &copy; {currentYear} - Starter Theme for <a href="https://astro.build/">Astro</a>. Made with ❤️ by <a
-          href="https://github.com/markteekman">Mark Teekman</a
-        >.
-      </p>
+        <IconLink icon="line-md:github-loop" url="https://github.com/svallory/svallory.github.io" />
+        <IconLink icon="line-md:twitter-x" url="https://twitter.com/svallory_en" />
+        <IconLink icon="line-md:linkedin" url="https://www.linkedin.com/in/saulo-vallory" />
+        <IconLink icon="line-md:discord" url="https://discordapp.com/users/svallory#8453" />
     </div>
   </section>
-   -->
 </footer>
