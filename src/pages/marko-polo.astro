@@ -1,0 +1,92 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Hero from '../components/Hero.astro'
+import Feature from '../components/Feature.astro'
+import Counter from '../components/Counter.astro'
+import ContentMedia from '../components/ContentMedia.astro'
+---
+
+<DefaultLayout title="Home">
+  <Hero />
+  <section class="my-64">
+    <div class="container">
+    <!-- Blue -->
+      <h2 class="mb-16 text-6xl">Foundation</h2>
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <Feature addClass="colorBlue" icon="/images/zagjs.svg" title="Marko Zag" addLink="#">
+          Use the power of Tailwind to greatly improve your productivity and enhance your developer workflow.
+        </Feature>
+        <Feature addClass="colorBlue" icon="/images/tagit.svg" title="Tagit" addLink="#">
+          Less worry about formatting your code, let the Astro Prettier integration do the heavy lifting.
+        </Feature>
+        <Feature addClass="colorBlue" icon="/images/tagRouterBlue.svg" title="Tag Router" addLink="#">
+          Lint your code with strict a11y settings to ensure you stay on track with the WCAG standards.
+        </Feature>
+      </div>
+    <!-- Green -->
+      <h2 class="my-16 mb-16 text-6xl">Documentation</h2>
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <Feature addClass="colorGreen" icon="/images/book.svg" title="Stories" addLink="#">
+          This theme comes with a fully integrated blog, dynamic pages and SEO optimization.
+        </Feature>
+        <Feature addClass="colorGreen" icon="/images/jsonSchema.svg" title="JSON Schemas" addLink="#">
+          Easily use .md and .mdx pages to build your websites or use it with Netlify CMS.
+        </Feature>
+        <Feature addClass="colorPurple link" icon="/images/plusPurple.svg" title="Your Awesome Project" addLink="https://github.com/marko-js-polo/discussions">
+        &nbsp;
+        </Feature>
+      </div>
+    <!-- Yellow -->
+      <h2 class="my-16 mb-16 text-6xl">Design</h2>
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <Feature addClass="colorYellow" icon="/images/markojsYellow.svg" title="Marko Headless UI" addLink="#">
+          17 components and counting, all tried and tested for the most optimal accessible experience for your visitors.
+        </Feature>
+        <Feature addClass="colorYellow" icon="/images/figmaYellow.svg" title="Figma Plugin DS Marko" addLink="#">
+          Fully integrated Dark mode gives your users the choice for their favorite viewing mode.
+        </Feature>
+        <Feature addClass="colorPurple link" icon="/images/plusPurple.svg" title="Your Awesome Project" addLink="https://github.com/marko-js-polo/discussions">
+          &nbsp;
+        </Feature>
+      </div>
+    <!-- Red -->
+      <h2 class="my-16 mb-16 text-6xl">Run</h2>
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <Feature addClass="colorRed disable" icon="/images/figmaRed.svg" title="Run Adapter for Figma Plugins (Planned)" addLink="#">
+          &nbsp;
+        </Feature>
+        <Feature addClass="colorPurple link" icon="/images/plusPurple.svg" title="Your Awesome Project" addLink="https://github.com/marko-js-polo/discussions">
+          &nbsp;
+        </Feature>
+      </div>
+    </div>
+  </section>
+  <ContentMedia imgSrc="/accessible-components.webp">
+    <h2>Accessible Components</h2>
+    <p class="text-2xl">
+      This theme provides plenty of tried and tested Accessible Astro Components. Some are native to this theme and a
+      lot of others are integrated using a <a href="https://github.com/markteekman/accessible-astro-components"
+        >separate package</a
+      >. They'll get you up and running in building an accessible solution for your visitors.
+    </p>
+  </ContentMedia>
+  <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
+    <h2>WCAG 2.1 AA Compliant</h2>
+    <p class="text-2xl">
+      Using semantic HTML, landmarks, skip links, screen reader friendly content, aria-labels, keyboard accessible
+      navigation and components, clear outlines and tab indicators and the right color contrast, you're more certain of
+      reaching WCAG AA compliance.
+    </p>
+  </ContentMedia>
+  <section class="mb-32 mt-64">
+    <div class="container">
+      <h2 class="mb-16 text-6xl">Counters</h2>
+      <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
+        <Counter count="520" title="Stars" sub="On GitHub" />
+        <Counter count="17" title="Accessible" sub="Components" />
+        <Counter count="500" title="Commits" sub="Merged" />
+        <Counter count="18+" title="Months" sub="Since launch" />
+      </div>
+    </div>
+  </section>
+</DefaultLayout>

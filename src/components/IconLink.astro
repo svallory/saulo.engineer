@@ -1,0 +1,10 @@
+---
+import { Icon } from 'astro-icon/components'
+import type { Icon as IconName } from "virtual:astro-icon";
+
+const { icon, url } = Astro.props as { icon: IconName; url: string }
+---
+
+<a href={url}>
+  <Icon name={icon} />
+</a>

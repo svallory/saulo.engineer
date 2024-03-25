@@ -1,11 +1,18 @@
 ---
-import CallToAction from './CallToAction.astro'
+import IconLink from './IconLink.astro'
 
 const currentYear = new Date().getFullYear()
 ---
 
 <footer>
-  <CallToAction />
+  <IconLink icon="line-md:github-loop" url="https://github.com/svallory/svallory.github.io" />
+  <IconLink icon="line-md:twitter-x" url="https://twitter.com/svallory_en" />
+  <IconLink icon="line-md:linkedin" url="https://www.linkedin.com/in/saulo-vallory" />
+  <IconLink icon="line-md:discord" url="https://discordapp.com/users/svallory#8453" />
+
+  <!-- discord -->
+  <!--
+    <CallToAction />
   <section class="py-8">
     <div class="container">
       <p>
@@ -15,4 +22,5 @@ const currentYear = new Date().getFullYear()
       </p>
     </div>
   </section>
+   -->
 </footer>

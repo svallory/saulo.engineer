@@ -1,92 +1,353 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
-import Hero from '../components/Hero.astro'
-import Feature from '../components/Feature.astro'
-import Counter from '../components/Counter.astro'
-import ContentMedia from '../components/ContentMedia.astro'
+import { Icon } from 'astro-icon/components'
+import Experience from '../components/Experience.astro'
+import CardRecommendations from '../components/CardRecommendations.astro'
+import '../assets/scss/resume.scss'
+import {
+  Accordion,
+  AccordionItem,
+  Breadcrumbs,
+  BreadcrumbsItem,
+  Card,
+  Media,
+  Modal,
+  Notification,
+  Pagination,
+} from 'accessible-astro-components'
 ---
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hoverEffectItems = document.querySelectorAll('.hover-effect');
 
-<DefaultLayout title="Home">
-  <Hero />
-  <section class="my-64">
-    <div class="container">
-    <!-- Blue -->
-      <h2 class="mb-16 text-6xl">Foundation</h2>
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <Feature addClass="colorBlue" icon="/images/zagjs.svg" title="Marko Zag" addLink="#">
-          Use the power of Tailwind to greatly improve your productivity and enhance your developer workflow.
-        </Feature>
-        <Feature addClass="colorBlue" icon="/images/tagit.svg" title="Tagit" addLink="#">
-          Less worry about formatting your code, let the Astro Prettier integration do the heavy lifting.
-        </Feature>
-        <Feature addClass="colorBlue" icon="/images/tagRouterBlue.svg" title="Tag Router" addLink="#">
-          Lint your code with strict a11y settings to ensure you stay on track with the WCAG standards.
-        </Feature>
+    hoverEffectItems.forEach((item: HTMLElement) => {
+      item.addEventListener('mousemove', (e: MouseEvent) => {
+        const rect = (e.currentTarget as Element).getBoundingClientRect();
+        const x = e.clientX - rect.left; // x position within the element.
+        const y = e.clientY - rect.top;  // y position within the element.
+
+        item.style.setProperty('--cursor-x', `${x}px`);
+        item.style.setProperty('--cursor-y', `${y}px`);
+      });
+
+      // Reset style on mouse leave for smooth transition out
+      // item.addEventListener('mouseleave', () => {
+      //   item.style.setProperty('--cursor-x', '50%');
+      //   item.style.setProperty('--cursor-y', '50%');
+      // });
+    });
+  });
+</script>
+<DefaultLayout title="Accessible Components">
+  <section class="my-12">
+      <div class="container">
+        <div class="pt-16 sm:pb-12 md:pb-4 lg:pb-16">
+          <div class="mx-auto mt-8 max-w-7xl lg:px-8 lg:bg-transparent bg-contentbackground">
+            <div class="lg:grid lg:grid-cols-12">
+              <div class="z-10 lg:col-span-4 lg:col-start-1 lg:row-start-1 lg:py-16 lg:bg-transparent">
+                <div class="px-4 mx-auto max-w-xs sm:px-6 md:max-w-md lg:p-0">
+                  <img decoding="async" loading="lazy" class="object-cover object-center w-full max-w-md rounded-3xl shadow-2xl -rotate-3 aspect-[1/1]" src="/images/about.webp" alt="Image of myself">
+                </div>
+              </div>
+
+              <div class="relative rounded-3xl lg:grid lg:grid-cols-10 lg:col-span-10 lg:col-start-3 lg:row-start-1 lg:items-center lg:bg-contentbackground">
+                <div class="hidden overflow-hidden absolute inset-0 rounded-3xl pointer-events-none lg:block" aria-hidden="true">
+                  <svg class="absolute bottom-full left-full opacity-20 transform -translate-x-2/3 translate-y-1/3 xl:top-0 xl:bottom-auto xl:translate-y-0" width="404" height="384" fill="none" viewBox="0 0 404 384" aria-hidden="true">
+                    <defs>
+                      <pattern id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <rect x="0" y="0" width="4" height="4" class="text-accent-500" fill="currentColor"></rect>
+                      </pattern>
+                    </defs>
+                    <rect width="404" height="384" fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)"></rect>
+                  </svg>
+                  <svg class="absolute top-full opacity-40 transform -translate-x-1/3 -translate-y-1/3 xl:-translate-y-1/2" width="404" height="384" fill="none" viewBox="0 0 404 384" aria-hidden="true">
+                    <defs>
+                      <pattern id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <rect x="0" y="0" width="4" height="4" class="text-accent-500" fill="currentColor"></rect>
+                      </pattern>
+                    </defs>
+                    <rect width="404" height="384" fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)"></rect>
+                  </svg>
+                </div>
+
+                <div class="py-12 mx-auto space-y-6 sm:py-16 sm:max-w-3xl lg:col-span-7 lg:col-start-4 lg:max-w-none">
+                  <h2 class="text-4xl font-bold tracking-tighter sm:text-5xl" id="about-heading">
+                    Hey, there! I'm Saulo.
+                    Hope you are having a wonderful day :)
+                  </h2>
+                  <p class="text-lg text-primary-300 md:text-primary-100">
+                    I love programming since I was a little kid. One of my earliest
+                    memories is of the excitement I felt when I received my first
+                    computer. I spent hours playing with it.
+                    <br>
+                    <br>
+                    I was fascinated by the endless possibilities of creating and building
+                    with code, and I spent hours every day learning and experimenting. I
+                    started by teaching myself basic coding languages, and before long, I
+                    was building my own simple programs and games.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    <!-- Green -->
-      <h2 class="my-16 mb-16 text-6xl">Documentation</h2>
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <Feature addClass="colorGreen" icon="/images/book.svg" title="Stories" addLink="#">
-          This theme comes with a fully integrated blog, dynamic pages and SEO optimization.
-        </Feature>
-        <Feature addClass="colorGreen" icon="/images/jsonSchema.svg" title="JSON Schemas" addLink="#">
-          Easily use .md and .mdx pages to build your websites or use it with Netlify CMS.
-        </Feature>
-        <Feature addClass="colorPurple link" icon="/images/plusPurple.svg" title="Your Awesome Project" addLink="https://github.com/marko-js-polo/discussions">
-        &nbsp;
-        </Feature>
-      </div>
-    <!-- Yellow -->
-      <h2 class="my-16 mb-16 text-6xl">Design</h2>
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <Feature addClass="colorYellow" icon="/images/markojsYellow.svg" title="Marko Headless UI" addLink="#">
-          17 components and counting, all tried and tested for the most optimal accessible experience for your visitors.
-        </Feature>
-        <Feature addClass="colorYellow" icon="/images/figmaYellow.svg" title="Figma Plugin DS Marko" addLink="#">
-          Fully integrated Dark mode gives your users the choice for their favorite viewing mode.
-        </Feature>
-        <Feature addClass="colorPurple link" icon="/images/plusPurple.svg" title="Your Awesome Project" addLink="https://github.com/marko-js-polo/discussions">
-          &nbsp;
-        </Feature>
-      </div>
-    <!-- Red -->
-      <h2 class="my-16 mb-16 text-6xl">Run</h2>
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <Feature addClass="colorRed disable" icon="/images/figmaRed.svg" title="Run Adapter for Figma Plugins (Planned)" addLink="#">
-          &nbsp;
-        </Feature>
-        <Feature addClass="colorPurple link" icon="/images/plusPurple.svg" title="Your Awesome Project" addLink="https://github.com/marko-js-polo/discussions">
-          &nbsp;
-        </Feature>
-      </div>
-    </div>
+    </section>
+  <section class="custom-screen">
+    <div class="mx-auto max-w-xl space-y-4 text-center">
+      <h2 class="heading text-4xl">Turn your ideas into reality</h2>
+      <p class="text-zinc-400">Float UI offers all the vital building blocks you need to transform your idea into a great-looking startup.</p>
+    </div><ul class="mx-auto mt-8 max-w-7xl grid-cols-2 gap-6 space-y-6 sm:grid sm:space-y-0 lg:grid-cols-3">
+      <li
+        class="experience-highlight hover-effect group relative z-0 h-full overflow-hidden rounded-xl border border-zinc-800 bg-[radial-gradient(500px_circle_at_var(--cursor-x)_var(--cursor-y),#22d3ee_0,transparent,transparent_70%)]"
+        style="--cursor-x: 322px; --cursor-y: 144px;"
+      >
+        <div
+          class="relative z-10 space-y-3 bg-[linear-gradient(180deg,_rgba(24,_24,_27,_0.60)_0%,_rgba(24,_24,_27,_0.00)_100%)] p-5"
+        >
+          <div class="grid grid-cols-3 gap-4">
+          <img src="/images/crossover_logo.svg" alt="Crossover" class="h-16 center" width="53px">
+          <img src="/images/aurea_logo.jpeg" alt="Aurea" class="h-16 center" width="64px">
+          <img src="/images/ignitetech_logo.png" alt="Ignitetech" class="h-16 center" width="89px">
+          </div>
+          <div class="title pt-4 pb-2">
+            <h5 class="font-semibold text-zinc-100">Crossover</h5>
+            <h4 class="subtitleCard">Aurea | Ignite Tech</h4>
+            <h4 class="text-zinc-500 text-center">Product Chief Architect</h4>
+          </div>
+          <h3 class="year text-zinc-500">2018</h3>
+          <div>
+            <img
+              alt="Float UI"
+              loading="lazy"
+              width="363"
+              height="172"
+              decoding="async"
+              data-nimg="1"
+              class="absolute inset-0 -z-10"
+              style="color:transparent"
+              src="/images/feature-cover.svg"
+            />
+          </div>
+        </div><div
+          class="absolute left-0 top-0 h-4/5 w-4/5 bg-[linear-gradient(180deg,_#1E293B_0%,_rgba(59,_130,_246,_0.00)_137.53%,_rgba(32,_69,_129,_0.00)_195%)] opacity-0 blur-[70px] duration-150 group-hover:opacity-90"
+          style="top: 144px; left: 322px; transform: translate(-50%, -50%);"
+        >
+        </div><div class="absolute inset-[1px] -z-10 rounded-xl bg-zinc-950"></div>
+      </li>
+      <li
+        class="experience-highlight hover-effect group relative z-0 h-full overflow-hidden rounded-xl border border-zinc-800 bg-[radial-gradient(500px_circle_at_var(--cursor-x)_var(--cursor-y),#22d3ee_0,transparent,transparent_70%)]"
+        style="--cursor-x: 247px; --cursor-y: 196px;"
+      >
+        <div
+          class="relative z-10 space-y-3 bg-[linear-gradient(180deg,_rgba(24,_24,_27,_0.60)_0%,_rgba(24,_24,_27,_0.00)_100%)] p-5"
+        >
+        <img src="/images/rocket_money_logo.webp" alt="Rocket Money" class="h-16 center" width="74px">
+        <div class="title pt-11 pb-2">
+          <h4 class="subtitleCard">Rocket Money</h4>
+          <h4 class="text-zinc-500 text-center">Senior Software Architect</h4>
+        </div>
+        <h3 class="year text-zinc-500">2019</h3>
+          <div>
+            <img
+              alt="Float UI"
+              loading="lazy"
+              width="363"
+              height="172"
+              decoding="async"
+              data-nimg="1"
+              class="absolute inset-0 -z-10"
+              style="color:transparent"
+              src="/images/feature-cover.svg"
+            />
+          </div>
+        </div><div
+          class="absolute left-0 top-0 h-4/5 w-4/5 bg-[linear-gradient(180deg,_#1E293B_0%,_rgba(59,_130,_246,_0.00)_137.53%,_rgba(32,_69,_129,_0.00)_195%)] opacity-0 blur-[70px] duration-150 group-hover:opacity-90"
+          style="top: 196px; left: 247px; transform: translate(-50%, -50%);"
+        >
+        </div><div class="absolute inset-[1px] -z-10 rounded-xl bg-zinc-950"></div>
+      </li><li
+        class="experience-highlight hover-effect group relative z-0 h-full overflow-hidden rounded-xl border border-zinc-800 bg-[radial-gradient(500px_circle_at_var(--cursor-x)_var(--cursor-y),#22d3ee_0,transparent,transparent_70%)]"
+      >
+        <div
+          class="relative z-10 space-y-3 bg-[linear-gradient(180deg,_rgba(24,_24,_27,_0.60)_0%,_rgba(24,_24,_27,_0.00)_100%)] p-5"
+        >
+          <div class="grid grid-cols-2 gap-4">
+            <img src="/images/toki_labs_logo.jpeg" alt="Toki Labs" class="h-16 center" width="64px">
+            <img src="/images/CVA_logo.svg" alt="CVA" class="h-16 center" width="89px">
+          </div>
+          <div class="title pt-11 pb-2">
+            <h4 class="subtitleCard">Toki Labs | CVA</h4>
+            <h4 class="text-zinc-500 text-center">Founder and CTO</h4>
+          </div>
+          <h3 class="year text-zinc-500">2022</h3>
+          <div>
+            <img
+              alt="Float UI"
+              loading="lazy"
+              width="363"
+              height="172"
+              decoding="async"
+              data-nimg="1"
+              class="absolute inset-0 -z-10"
+              style="color:transparent"
+              src="/images/feature-cover.svg"
+            />
+          </div>
+        </div><div
+          class="absolute left-0 top-0 h-4/5 w-4/5 bg-[linear-gradient(180deg,_#1E293B_0%,_rgba(59,_130,_246,_0.00)_137.53%,_rgba(32,_69,_129,_0.00)_195%)] opacity-0 blur-[70px] duration-150 group-hover:opacity-90"
+        >
+        </div><div class="absolute inset-[1px] -z-10 rounded-xl bg-zinc-950"></div>
+      </li>
+    </ul>
   </section>
-  <ContentMedia imgSrc="/accessible-components.webp">
-    <h2>Accessible Components</h2>
-    <p class="text-2xl">
-      This theme provides plenty of tried and tested Accessible Astro Components. Some are native to this theme and a
-      lot of others are integrated using a <a href="https://github.com/markteekman/accessible-astro-components"
-        >separate package</a
-      >. They'll get you up and running in building an accessible solution for your visitors.
-    </p>
-  </ContentMedia>
-  <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
-    <h2>WCAG 2.1 AA Compliant</h2>
-    <p class="text-2xl">
-      Using semantic HTML, landmarks, skip links, screen reader friendly content, aria-labels, keyboard accessible
-      navigation and components, clear outlines and tab indicators and the right color contrast, you're more certain of
-      reaching WCAG AA compliance.
-    </p>
-  </ContentMedia>
-  <section class="mb-32 mt-64">
-    <div class="container">
-      <h2 class="mb-16 text-6xl">Counters</h2>
-      <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
-        <Counter count="520" title="Stars" sub="On GitHub" />
-        <Counter count="17" title="Accessible" sub="Components" />
-        <Counter count="500" title="Commits" sub="Merged" />
-        <Counter count="18+" title="Months" sub="Since launch" />
+  <section>
+    <div id="section_recommendations">
+    <div class="relative isolate pt-24 sm:pt-32">
+      <div class="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 transform-gpu overflow-hidden opacity-30 blur-3xl"
+        aria-hidden="true">
+        <div class="ml-[max(50%,38rem)] aspect-[1313/771] w-[82.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc]"
+          style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+        </div>
+      </div>
+      <div
+        class="absolute inset-x-0 top-0 -z-10 flex transform-gpu overflow-hidden pt-32 opacity-25 blur-3xl sm:pt-40 xl:justify-end"
+        aria-hidden="true">
+        <div
+          class="ml-[-22rem] aspect-[1313/771] w-[82.0625rem] flex-none origin-top-right rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] xl:ml-0 xl:mr-[calc(50%-12rem)]"
+          style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+        </div>
+      </div>
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-xl text-center">
+          <h2 class="heading text-4xl">Recommendations</h2>
+          <p class="text-zinc-400">I have worked with amazing people!</p>
+        </div>
+        <div
+          class="mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
+        <!-- Card Center -->
+          <figure
+            class="rounded-2xl bg-white shadow-2xl ring-1 ring-gray-900/5 sm:col-span-2 xl:col-start-2 xl:row-end-1">
+            <blockquote class="p-6 text-sm font-semibold tracking-tight text-gray-900 sm:p-12 sm:text-xl sm:leading-8">
+              <p class="text-base pb-4">“Saulo and I worked on the same project, with him being the Product Chief
+                Architect responsible for the overall product quality.
+              </p>
+              <p class="text-base pb-4">
+                He brought deep understanding of the whole product architecture (and Chute was a fairly complex
+                product), and improved stability and predictability in some rough times after the product was acquired
+                and imported into the new operating model.</p>
+
+              <p class="text-base">Saulo proved to be versatile and very reliable person to work with.”</p>
+            </blockquote>
+            <figcaption
+              class="flex flex-wrap items-center gap-x-4 gap-y-4 border-t border-gray-900/10 px-6 py-4 sm:flex-nowrap">
+              <img class="h-10 w-10 flex-none rounded-full bg-gray-50"
+                src="/images/Predrag_Maric.jpeg" alt="Predrag Marić">
+              <div class="flex-auto">
+                <div class="font-semibold"><a class="linkedin" href="https://www.linkedin.com/in/predrag-maric"><svg class="inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="linkedin-bug-medium" aria-hidden="true" role="none" data-supported-dps="24x24" fill="currentColor" width="24" height="24">
+                  <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+                </svg> Predrag Marić</a></div>
+                <div class="text-gray-600 text-xs">Software Engineer | Engineering Manager | Co-Founder at Digi Klinci</div>
+              </div>
+            </figcaption>
+          </figure>
+          <div class="space-y-8 xl:contents xl:space-y-0">
+            <div class="pt-16 space-y-8 xl:row-span-2">
+<!-- Card 1 -->
+            <CardRecommendations img="Andrey_Asoskov.jpeg" name="Andrey Asoskov" linkedin="andrey-asoskov" role="Cloud Infrastructure Architect">
+              “Saulo did a great job as an experienced product architect in a project that we worked together in. He managed to accomplish very difficult code migration tasks in a short period of time for a big and high-loaded system. And he did that without service disruption. I would definitely recommend him as a professional you can count on.”
+            </CardRecommendations>
+<!-- Card 2 -->
+            <CardRecommendations img="Andrey_Asoskov.jpeg" name="Information" linkedin="Information" role="Information">
+              <p>“Saulo”</p>
+            </CardRecommendations>
+            </div>
+            <div class="space-y-8 xl:row-start-1">
+<!-- Card 3 -->
+            <CardRecommendations img="Vicente_Campello.jpeg" name="Vicente Campello" linkedin="vcampello" role="Information Systems Team Leader at Pembrokeshire College">
+              <p>“Saulo é o que chamo de geniozinho. Ele é o tipo de pessoa que não existe barreias e que além de ótimas ideias elas são sempre acima do tempo e inovadoras. Recomendo o Saulo a qualquer empresa que precise se renovar e de alguém que irá fazer o que muitos não conseguem ou irão demorar para isso.”</p>
+            </CardRecommendations>
+            </div>
+          </div>
+          <div class="space-y-8 xl:contents xl:space-y-0">
+            <div class="space-y-8 xl:row-start-1">
+<!-- Card 4 -->
+              <CardRecommendations img="Allan_Denot.jpeg" name="Allan Denot" linkedin="denot" role="Co-founder at NX1.io and DNX Solutions">
+                <p>“Saulo is a brillant developer, he always came to me with new ideas and techniques about web programming and software quality. Our exciting discussions about web projects and future of the web helped me to have a better understanding of this field. I can highlight his great javascript and object-oriented programming skills.”</p>
+              </CardRecommendations>
+            </div>
+            <div class="pt-16 space-y-8 xl:row-span-2">
+  <!-- Card 5 -->
+              <CardRecommendations img="Sabrina_Zanker.jpeg" name="Sabrina Zanker" linkedin="sabrina-zanker-5b20094" role="General Manager | Managing Director | Country Leader">
+                <p>“Saulo is the kind of employee that you can count on for anything. He knows a little bit about marketing, business, strategie, (a lot) about IT, and will learn really fast any new matter that surfs over his face. He is true enterpreneur, a team worker and a risen leader.”</p>
+              </CardRecommendations>
+  <!-- Card 6 -->
+              <CardRecommendations img="Sergio_Yates.jpeg" name="Sergio Yates" linkedin="sergioyates" role="Early stage investor | Venture capitalist | Board member | Occasional lecturer">
+                <p>“I have worked with Saulo, during almost four years, by the time his company was at technology incubator of Instituto Gênesis - PUC Rio. Saulo is a very experience programmer that know how to create quality code that embraces clientes demands. He has all the attributes to became a great CTO. Besides that, he is a tech professional with business perspective.”</p>
+              </CardRecommendations>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+
+  <!-- <div class="bg-indigo-700"> -->
+    <div class="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Did we work together and<br>you are happy about it?</h2>
+        <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-indigo-200">I'll be forever grateful  🙇🏻</p>
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+          <a href="https://www.linkedin.com/in/saulo-vallory/recommendation-add-edit/WRITE_RECOMMENDATION?profileFormEntryPoint=PROFILE_SECTION&trackingId=oEktExmGQge2hlRr3mC8CQ%3D%3D&desktopBackground=PROFILE_DETAIL_SCREEN&recipientProfileId=ACoAAAB9KD4B1Mg9AeDXkQr-uTugwjC5Hy3zYOY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_recommendations_details%3BcDt18q%2F9ToSmPApFsqMPCQ%3D%3D" class="linkedin rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"><svg class="inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="linkedin-bug-medium" aria-hidden="true" role="none" data-supported-dps="24x24" fill="currentColor" width="24" height="24">
+            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+          </svg> Write a Recommendation <span aria-hidden="true">→</span></a><br>
+          <a href="https://www.linkedin.com/in/saulo-vallory/recommendation-add-edit/WRITE_RECOMMENDATION?profileFormEntryPoint=PROFILE_SECTION&trackingId=oEktExmGQge2hlRr3mC8CQ%3D%3D&desktopBackground=PROFILE_DETAIL_SCREEN&recipientProfileId=ACoAAAB9KD4B1Mg9AeDXkQr-uTugwjC5Hy3zYOY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_recommendations_details%3BcDt18q%2F9ToSmPApFsqMPCQ%3D%3D" class="linkedin text-sm font-semibold leading-6 text-white"><svg class="inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="linkedin-bug-medium" aria-hidden="true" role="none" data-supported-dps="24x24" fill="currentColor" width="24" height="24">
+            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+          </svg> Write a Recommendation <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+
+  </section>
+<!-- Experience -->
+  <section>
+    <div class="mx-auto max-w-2xl text-center mb-16">
+      <h2 class="heading text-4xl">Experience</h2>
+      <p class="text-zinc-400">I have worked with amazing people!</p>
+    </div>
+    <div class="mx-auto max-w-2xl px-6">
+      <div class="flow-root">
+        <ul role="list" class="-mb-8">
+          <Experience logo="Toki_Labs_logo.jpeg" role="Founder and CTO" company="Toki Labs" fromDate="nov de 2022" toDate="current role">
+            <p>We are a Software House that works differently. Instead of developing for clients, we seek and support partners. We are currently in private and are only taking new partnership projects via referral at the moment.</p>
+          </Experience>
+          <Experience logo="Toki_Network_logo.jpeg" role="VP de Estratégia" company="Toki Network" fromDate="ago de 2021" toDate="nov de 2022">
+            <p>Toki is a network of people helping each other realize their dreams. We are a horizontal organization with projects that range from art studios to mobile app development. My role in Toki is to devise the best strategies so people can reach their goals. I do that by finding out where dreams overlap so people walk toward their goal together and, in that process, their journey accelerates one another.</p>
+          </Experience>
+          <Experience logo="Truebill_logo.jpeg" role="Senior Software Architect" company="Truebill - We're Hiring!" fromDate="jul de 2019" toDate="mar de 2021">
+            <p>At Truebill we were all senior developers, so when developing new features we took charge of the whole process from designing the architecture to monitoring it after it was deployed to the app. Among other features, I was responsible for the Pay Advance, which integrated our app with Synapse and Stripe to give customers instant pay advances and automatically charge it back when they got their paychecks.</p>
+          </Experience>
+          <Experience logo="Aurea_Software_logo.jpeg" role="Product Chief Archictet" company="Aurea Software" fromDate="mar de 2018" toDate="abr de 2019">
+            <p>As a PCA I was responsible for coordinating the development and SaaS operations for several products. For most of the time I worked there, that product was http://getchute.com/</p>
+            <p>The most challenging thing I did while there was coordinating a team of about 40 people to deliver deep changes to the product in one month, due to Facebook removing the Instagram API.</p>
+          </Experience>
+          <Experience logo="Doare_logo.jpeg" role="CTO" company="Doare" fromDate="ago de 2017" toDate="fev de 2018">
+            <p>I helped bring the Doare architecture to a whole new level. We migrated from a Cake PHP application to a microservices based architecture on Node. Given the complexity of the business requirements, most of the services were built using Domain Driven Design, Event Sourcing and CQRS.</p>
+            <p>Among other technologies, we used: node, typescript, angular, hapi</p>
+          </Experience>
+          <Experience logo="Cleanify_logo.jpeg" role="Chief Software Architect" company="Cleanify" fromDate="abr de 2016" toDate="ago de 2017">
+            <p>I was hired to help Cleanify migrate the legacy monolithic PHP system to a microservices architecture on Node, using Hapi and written in Typescript. We also re-implemented UIs in React and Vue.js. A couple services required Domain Driven Design, Event Sourcing and CQRS, others were simple REST APIs and one was implemented using GraphQL. It was a lot of work but also really fun!</p>
+          </Experience>
+          <Experience logo="Softo_logo.jpeg" role="Chief Software Architect and Engineering Manager" company="Softo" fromDate="mar de 2013" toDate="jan de 2014">
+            <p>My first assignment at Sof.to was to define the entire development stack and strategy we would use. The result was a solid foundation which is used to solve very complex problems. It was based on Domain Driven Design, CQRS and Event Sourcing principles. We used C#.Net MVC and Web API on the backend; NHibernate and Entity Framework for persistence with a SQL Server database; Sass, TypeScript and Angular for the user interface.</p>
+          </Experience>
+          <Experience logo="Camiseteria_logo.jpeg" role="Software Architect" company="Camiseteria.com" fromDate="ago de 2010" toDate="fev de 2013">
+            <p>I was hired to beat the challenge of single-handedly do in three weeks what the government had give a year for the companies to do: integrate the sales to a national database of electronic receipts. All went all and not even one sale was lost because we weren’t compliant with the new Brazilian law. The next big challenge was to change the entire development stack from a .Net 2.0 webpages setup to the current .Net 4.5 MVC 4 following the Domain Driven Design. And do that without stopping the current demand for maintenance and new features. The benefit this change brought to company is hard to measure, but is certainly enormous in terms of productivity and developer happiness.</p>
+          </Experience>
+        </ul>
+      </div>
+
+        </div>
   </section>
 </DefaultLayout>
