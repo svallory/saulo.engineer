@@ -3,7 +3,7 @@ import DefaultLayout from '../layouts/DefaultLayout.astro'
 import { Icon } from 'astro-icon/components'
 import Experience from '../components/Experience.astro'
 import CardRecommendations from '../components/CardRecommendations.astro'
-import '../assets/scss/resume.scss' 
+import '../assets/scss/resume.scss'
 import {
   Accordion,
   AccordionItem,
@@ -20,9 +20,9 @@ import {
   document.addEventListener('DOMContentLoaded', () => {
     const hoverEffectItems = document.querySelectorAll('.hover-effect');
 
-    hoverEffectItems.forEach(item => {
-      item.addEventListener('mousemove', (e) => {
-        const rect = e.currentTarget.getBoundingClientRect();
+    hoverEffectItems.forEach((item: HTMLElement) => {
+      item.addEventListener('mousemove', (e: MouseEvent) => {
+        const rect = (e.currentTarget as Element).getBoundingClientRect();
         const x = e.clientX - rect.left; // x position within the element.
         const y = e.clientY - rect.top;  // y position within the element.
 
@@ -44,7 +44,7 @@ import {
       <h1 class="heading text-4xl">Saulo Website Content</h1>
       <h2 class="heading text-4xl">Custom GPT Creations</h2>
     </div>
-    
+
       <div class="container">
         <div class="pt-16 sm:pb-12 md:pb-4 lg:pb-16">
           <div class="mx-auto mt-8 max-w-7xl lg:px-8 lg:bg-transparent bg-contentbackground">
@@ -54,7 +54,7 @@ import {
                   <img decoding="async" loading="lazy" class="object-cover object-center w-full max-w-md rounded-3xl shadow-2xl -rotate-3 aspect-[1/1]" src="/images/about.webp" alt="Image of myself">
                 </div>
               </div>
-        
+
               <div class="relative rounded-3xl lg:grid lg:grid-cols-10 lg:col-span-10 lg:col-start-3 lg:row-start-1 lg:items-center lg:bg-contentbackground">
                 <div class="hidden overflow-hidden absolute inset-0 rounded-3xl pointer-events-none lg:block" aria-hidden="true">
                   <svg class="absolute bottom-full left-full opacity-20 transform -translate-x-2/3 translate-y-1/3 xl:top-0 xl:bottom-auto xl:translate-y-0" width="404" height="384" fill="none" viewBox="0 0 404 384" aria-hidden="true">
@@ -74,7 +74,7 @@ import {
                     <rect width="404" height="384" fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)"></rect>
                   </svg>
                 </div>
-        
+
                 <div class="py-12 mx-auto space-y-6 sm:py-16 sm:max-w-3xl lg:col-span-7 lg:col-start-4 lg:max-w-none">
                   <h2 class="text-4xl font-bold tracking-tighter sm:text-5xl" id="about-heading">
                     I am Daniel King. I live in San Francisco, where I work on my
@@ -147,7 +147,7 @@ import {
         <div
           class="relative z-10 space-y-3 bg-[linear-gradient(180deg,_rgba(24,_24,_27,_0.60)_0%,_rgba(24,_24,_27,_0.00)_100%)] p-5"
         >
-        <img src="/images/rocket_money_logo.webp" alt="Rocket Money" class="h-16 center" width="74px">  
+        <img src="/images/rocket_money_logo.webp" alt="Rocket Money" class="h-16 center" width="74px">
         <div class="title pt-11 pb-2">
           <h4 class="subtitleCard">Rocket Money</h4>
           <h4 class="text-zinc-500 text-center">Senior Software Architect</h4>
@@ -285,7 +285,7 @@ import {
   <!-- Card 5 -->
               <CardRecommendations img="Sabrina_Zanker.jpeg" name="Sabrina Zanker" linkedin="sabrina-zanker-5b20094" role="General Manager | Managing Director | Country Leader">
                 <p>“Saulo is the kind of employee that you can count on for anything. He knows a little bit about marketing, business, strategie, (a lot) about IT, and will learn really fast any new matter that surfs over his face. He is true enterpreneur, a team worker and a risen leader.”</p>
-              </CardRecommendations>              
+              </CardRecommendations>
   <!-- Card 6 -->
               <CardRecommendations img="Sergio_Yates.jpeg" name="Sergio Yates" linkedin="sergioyates" role="Early stage investor | Venture capitalist | Board member | Occasional lecturer">
                 <p>“I have worked with Saulo, during almost four years, by the time his company was at technology incubator of Instituto Gênesis - PUC Rio. Saulo is a very experience programmer that know how to create quality code that embraces clientes demands. He has all the attributes to became a great CTO. Besides that, he is a tech professional with business perspective.”</p>
@@ -296,7 +296,7 @@ import {
       </div>
     </div>
   </div>
-  
+
   <!-- <div class="bg-indigo-700"> -->
     <div class="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
       <div class="mx-auto max-w-2xl text-center">
@@ -313,7 +313,7 @@ import {
       </div>
     </div>
   <!-- </div> -->
-  
+
   </section>
 <!-- Experience -->
   <section>
@@ -352,7 +352,7 @@ import {
           </Experience>
         </ul>
       </div>
-    
-        </div>    
+
+        </div>
   </section>
 </DefaultLayout>
