@@ -1,0 +1,21 @@
+.heading {
+  background-image: linear-gradient(180deg, #fff, hsla(0, 0%, 100%, 0) 202.08%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 800;
+  color: transparent;
+}
+
+.experience-highlight {
+  text-align: center;
+  .year {
+    
+  }
+
+  .title {
+    // height: 75px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+  }
+}

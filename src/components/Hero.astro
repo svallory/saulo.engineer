@@ -1,0 +1,62 @@
+---
+import { Icon } from 'astro-icon/components'
+
+const { src = '/astronaut-hero-img.webp' } = Astro.props
+---
+
+<section class="hero my-24">
+  <div class="container">
+    <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
+      <div class="flex flex-col items-center gap-8 md:items-start">
+        <h1 class="text-center text-6xl md:text-left lg:text-8xl">
+          <slot><span class="text-gradient">Accessible</span> Starter for Astro</slot>
+        </h1>
+        <div class="flex flex-col gap-3 min-[500px]:flex-row">
+          <a class="button has-icon" href="https://github.com/markteekman/accessible-astro-starter">
+            <Icon name="ion:star-outline" />
+            Star on GitHub
+          </a>
+          <a
+            class="button has-icon color-secondary"
+            href="https://github.com/markteekman/accessible-astro-starter/blob/main/README.md"
+          >
+            <Icon name="ion:bookmark-outline" />
+            Read the Docs
+          </a>
+        </div>
+      </div>
+      <!-- 536x560 -->
+      <div class="flex flex-col gap-4">
+        <div>
+          <div style="float: left; margin-right: 20px;">
+            <img src="/images/markojs.svg" alt="Logo Marko" width="252px" />
+          </div>
+          <div>
+            <img src="/images/marko.svg" alt="Logo Marko" width="200px" />
+            <p id="titlePolo"><span class="colorBlue">p</span><span class="colorGreen">o</span><span class="colorYellow">l</span><span class="colorRed">o</span></p>
+          </div>
+        </div>
+        
+        <p class="subTitlePolo">po<span class="point">&#183;</span>lo<span class="sf">sf.</span></p>
+        <p class="textPolo"><span class="colorBlue">1.</span> Each of the extremities of the imaginary axis around which the celestial sphere appears to make a complete revolution in 24 hours. <span class="colorGreen">2.</span> Each of the two extremities of the Earth's axis. <span class="colorYellow">3.</span> Region surrounding the poles. <span class="colorRed">4.</span> [Electricity] Each of the two ends of an electric battery. <span class="colorBlue">5.</span> [Figurative] North, guide. <span class="colorGreen">6.</span> Extreme position. <span class="colorYellow">7.</span> Place opposite another. <span class="colorRed">8.</span> Place that acts as the center of an activity or the driving force behind something (e.g. technological hub; university hub).</p>
+      </div>
+      <!-- <img class="hidden lg:block" src={src} alt="" decoding="async" /> -->
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .text-gradient {
+    background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-500));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  :global(.darkmode .text-gradient) {
+    background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-400));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>

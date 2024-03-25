@@ -1,0 +1,130 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Hero from '../components/Hero.astro'
+import Feature from '../components/Feature.astro'
+import Counter from '../components/Counter.astro'
+import ContentMedia from '../components/ContentMedia.astro'
+---
+
+<DefaultLayout title="About">
+  <section>
+    <div class="container">
+      <div class="pt-16 sm:pb-12 md:pb-4 lg:pb-16">
+        <div class="mx-auto mt-8 max-w-7xl lg:px-8 lg:bg-transparent bg-contentbackground">
+          <div class="lg:grid lg:grid-cols-12">
+            <div class="z-10 lg:col-span-4 lg:col-start-1 lg:row-start-1 lg:py-16 lg:bg-transparent">
+              <div class="px-4 mx-auto max-w-xs sm:px-6 md:max-w-md lg:p-0">
+                <img decoding="async" loading="lazy" class="object-cover object-center w-full max-w-md rounded-3xl shadow-2xl -rotate-3 aspect-[1/1]" src="/images/about.webp" alt="Image of myself">
+              </div>
+            </div>
+      
+            <div class="relative rounded-3xl lg:grid lg:grid-cols-10 lg:col-span-10 lg:col-start-3 lg:row-start-1 lg:items-center lg:bg-contentbackground">
+              <div class="hidden overflow-hidden absolute inset-0 rounded-3xl pointer-events-none lg:block" aria-hidden="true">
+                <svg class="absolute bottom-full left-full opacity-20 transform -translate-x-2/3 translate-y-1/3 xl:top-0 xl:bottom-auto xl:translate-y-0" width="404" height="384" fill="none" viewBox="0 0 404 384" aria-hidden="true">
+                  <defs>
+                    <pattern id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                      <rect x="0" y="0" width="4" height="4" class="text-accent-500" fill="currentColor"></rect>
+                    </pattern>
+                  </defs>
+                  <rect width="404" height="384" fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)"></rect>
+                </svg>
+                <svg class="absolute top-full opacity-40 transform -translate-x-1/3 -translate-y-1/3 xl:-translate-y-1/2" width="404" height="384" fill="none" viewBox="0 0 404 384" aria-hidden="true">
+                  <defs>
+                    <pattern id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                      <rect x="0" y="0" width="4" height="4" class="text-accent-500" fill="currentColor"></rect>
+                    </pattern>
+                  </defs>
+                  <rect width="404" height="384" fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)"></rect>
+                </svg>
+              </div>
+      
+              <div class="py-12 mx-auto space-y-6 sm:py-16 sm:max-w-3xl lg:col-span-7 lg:col-start-4 lg:max-w-none">
+                <h2 class="text-4xl font-bold tracking-tighter sm:text-5xl" id="about-heading">
+                  I am Daniel King. I live in San Francisco, where I work on my
+                  startups.
+                </h2>
+                <p class="text-lg text-primary-300 md:text-primary-100">
+                  I love programming since I was a little kid. One of my earliest
+                  memories is of the excitement I felt when I received my first
+                  computer. I spent hours playing with it.
+                  <br>
+                  <br>
+                  I was fascinated by the endless possibilities of creating and building
+                  with code, and I spent hours every day learning and experimenting. I
+                  started by teaching myself basic coding languages, and before long, I
+                  was building my own simple programs and games.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section aria-labelledby=":rr:" class="mx-auto max-w-5xl sm:px-6 sm:border-l sm:border-primary-700/40">
+    <div class="grid grid-cols-1 gap-y-8 items-baseline md:grid-cols-4">
+      <h2 id=":rr:" class="text-lg font-semibold tracking-tight sm:text-xl text-primary-100">
+        Experience
+      </h2>
+      <div class="md:col-span-3">
+        <ul role="list" class="space-y-16">
+          <li class="flex flex-col items-start">
+                <div class="flex flex-row justify-between items-baseline pl-2 w-full border-l border-primary-700">
+                    <div class="flex flex-col">
+                      <div class="flex flex-row gap-2 items-center">
+                        <img decoding="async" loading="lazy" src="/images/amazon.svg" class="w-5 h-5 rounded-full ring-1 shadow-md shadow-primary-800/5 ring-primary-900">
+                        <h3 class="text-base font-semibold tracking-tight sm:max-w-none sm:text-lg max-w-[20ch] text-primary-100">
+                          Amazon
+                        </h3>
+                      </div>
+  
+                      <h2 class="text-sm tracking-tight sm:max-w-none sm:text-base max-w-[20ch] text-primary-300">
+                        Product Manager
+                      </h2>
+                    </div>
+                    <time class="text-sm text-primary-600">2017-Present</time>
+                  </div><p class="z-10 mt-4 text-sm text-primary-300 max-w-[75ch]">
+                    As a product manager at Amazon, I was responsible for the development and execution of the company's product roadmap. This included setting goals and objectives, defining features, and working with cross-functional teams to bring new products and updates to market.
+                  </p>
+              </li><li class="flex flex-col items-start">
+                <div class="flex flex-row justify-between items-baseline pl-2 w-full border-l border-primary-700">
+                    <div class="flex flex-col">
+                      <div class="flex flex-row gap-2 items-center">
+                        <img decoding="async" loading="lazy" src="/images/airbnb.svg" class="w-5 h-5 rounded-full ring-1 shadow-md shadow-primary-800/5 ring-primary-900">
+                        <h3 class="text-base font-semibold tracking-tight sm:max-w-none sm:text-lg max-w-[20ch] text-primary-100">
+                          Airbnb
+                        </h3>
+                      </div>
+  
+                      <h2 class="text-sm tracking-tight sm:max-w-none sm:text-base max-w-[20ch] text-primary-300">
+                        Product Designer
+                      </h2>
+                    </div>
+                    <time class="text-sm text-primary-600">2014-2017</time>
+                  </div><p class="z-10 mt-4 text-sm text-primary-300 max-w-[75ch]">
+                    As a product designer at Airbnb, I was responsible for designing and developing new products and features for the company. This included conducting user research, creating wireframes and prototypes, and working with cross-functional teams to bring my designs to life.
+                  </p>
+              </li><li class="flex flex-col items-start">
+                <div class="flex flex-row justify-between items-baseline pl-2 w-full border-l border-primary-700">
+                    <div class="flex flex-col">
+                      <div class="flex flex-row gap-2 items-center">
+                        <img decoding="async" loading="lazy" src="/images/facebook.svg" class="w-5 h-5 rounded-full ring-1 shadow-md shadow-primary-800/5 ring-primary-900">
+                        <h3 class="text-base font-semibold tracking-tight sm:max-w-none sm:text-lg max-w-[20ch] text-primary-100">
+                          Facebook
+                        </h3>
+                      </div>
+  
+                      <h2 class="text-sm tracking-tight sm:max-w-none sm:text-base max-w-[20ch] text-primary-300">
+                        iOS Software Engineer
+                      </h2>
+                    </div>
+                    <time class="text-sm text-primary-600">2012-2014</time>
+                  </div><p class="z-10 mt-4 text-sm text-primary-300 max-w-[75ch]">
+                    As an iOS software engineer at Facebook, I was responsible for developing and maintaining the company's iOS app. This included designing and implementing new features, fixing bugs, and optimizing the app for performance and scalability.
+                  </p>
+              </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</DefaultLayout>

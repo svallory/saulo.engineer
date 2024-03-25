@@ -1,0 +1,125 @@
+---
+import { Icon } from 'astro-icon/components'
+
+const { addClass='addClass', addLink='addLink', icon = 'mdi:rocket', title = 'Title' } = Astro.props
+---
+
+<div class={`feature ${addClass} flex flex-col gap-4`} onclick={`window.location='${addLink}';`}>
+  <!-- <Icon name={icon} /> -->
+  <div class="h-16"><img class="h-16" src={icon}></div>
+  <div class="content">
+    <h3>{title}</h3>
+    <p>
+      <slot>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis.</slot>
+    </p>
+  </div>
+</div>
+
+<style lang="scss">
+  @use '../assets/scss/base/breakpoint' as *;
+
+  .feature {
+    position: relative;
+    width: calc(100% - 0.5rem);
+    padding: 2rem;
+    color: var(--font-color);
+
+    > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    @include breakpoint(large) {
+      width: 100%;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+    }
+
+    &::before {
+      inset: 0;
+      background-color: var(--neutral-100);
+      border: 3px solid var(--neutral-700);
+      border-radius: 1rem;
+      box-shadow: 0 0 0 6px var(--neutral-100);
+      z-index: 1;
+    }
+
+    &::after {
+      background-color: var(--action-color);
+      inset: 1rem -0.85rem -0.85rem 1rem;
+      border-radius: 1rem;
+      z-index: 0;
+    }
+  }
+  .feature.colorBlue {
+    &::after {
+      background: var(--gradient-colorBlue);
+    }
+  }
+  .feature.colorGreen {
+    &::after {
+      background: var(--gradient-colorGreen);
+    }
+  }
+  .feature.colorYellow {
+    &::after {
+      background: var(--gradient-colorYellow);
+    }
+  }
+  .feature.colorRed {
+    &::after {
+      background: var(--gradient-colorRed);
+    }
+  }
+  .feature.colorPurple {
+    &::after {
+      background: var(--gradient-colorPurple);
+    }
+  }
+
+  :global(.feature [data-icon]) {
+    height: auto;
+    width: 4rem;
+    color: var(--action-color);
+  }
+  :global(.feature.colorBlue [data-icon]) {
+    color: var(--marko-colorBlue);
+  }
+  :global(.feature.colorGreen [data-icon]) {
+    color: var(--marko-colorGreen);
+  }
+  :global(.feature.colorYellow [data-icon]) {
+    color: var(--marko-colorYellow);
+  }
+  :global(.feature.colorRed [data-icon]) {
+    color: var(--marko-colorRed);
+  }
+  :global(.feature.colorPurple [data-icon]) {
+    color: var(--marko-colorPurple);
+  }
+
+  .disable{
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .link{
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible,
+    &:visited {
+      text-decoration: none;
+    }
+  }
+
+  :global(.darkmode .feature::before) {
+    background-color: var(--dark-100);
+    box-shadow: 0 0 0 6px var(--dark-100);
+  }
+</style>
