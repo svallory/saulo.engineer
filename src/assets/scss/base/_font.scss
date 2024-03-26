@@ -71,21 +71,21 @@ body {
   }
 
   a.linkedin {
-    color: var(--links-linkedin);
-    text-decoration: none;
+    color: var(--links-linkedin) !important;
+    text-decoration: none!important;
 
     &:visited {
-      color: var(--links-linkedin);
+      color: var(--links-linkedin) !important;
     }
 
     &:hover,
     &:focus {
-      color: var(--links-linkedin-hover);
-      text-decoration: none;
+      color: var(--links-linkedin-hover) !important;
+      text-decoration: none!important;
     }
   }
 
-  a.icon-link {
+  .container a.social-icon {
     color: var(--neutral-100);
     text-decoration: none;
 

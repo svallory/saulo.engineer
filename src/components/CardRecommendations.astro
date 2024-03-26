@@ -2,11 +2,11 @@
 const { img, name, linkedin, role } = Astro.props
 ---
 
-<figure class="rounded-2xl bg-white shadow-lg ring-1 ring-gray-900/5">
+<figure class="rounded-2xl overflow-hidden background-noise-light shadow-lg ring-1 ring-gray-900/5">
   <blockquote class="text-gray-900 p-6">
     <slot />
   </blockquote>
-  <figcaption class="border-t p-4 flex items-center gap-x-4">
+  <figcaption class="background-lines border-t border-gray-900/10 p-4 flex items-center gap-x-4">
     <img class="h-10 w-10 rounded-full bg-gray-50" src={`/images/${img}`} alt={name}>
     <div>
       <div class="font-semibold"><a class="linkedin" href={`https://www.linkedin.com/in/${linkedin}`}><svg class="inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="linkedin-bug-medium" aria-hidden="true" role="none" data-supported-dps="24x24" fill="currentColor" width="24" height="24">

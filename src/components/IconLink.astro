@@ -11,6 +11,6 @@ interface Props {
 const { icon, url, size=60 } = Astro.props
 ---
 
-<a class="icon-link" href={url}>
-  <Icon name={icon} class="inline-block social-icon" style={`width: ${size}; height: ${size};`} />
+<a class="social-icon" href={url}>
+  <Icon name={icon} class="inline-block" style={`width: ${size}; height: ${size};`} />
 </a>
