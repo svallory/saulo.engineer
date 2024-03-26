@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1399.33 928.55">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 308.91px;
+      }
+
+      .cls-2 {
+        font-size: 489.46px;
+      }
+
+      .cls-3 {
+        font-family: P22MackinacProExtraBold, 'P22 Mackinac Pro';
+        font-size: 496.29px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #000;
+      }
+
+      .cls-4 {
+        font-family: BalooBhaijaan2-Regular, 'Baloo Bhaijaan 2';
+        font-variation-settings: 'wght' 400;
+      }
+
+      .cls-5 {
+        isolation: isolate;
+      }
+    </style>
+  </defs>
+  <g id="FINAL" class="cls-5">
+    <g id="FINAL-2" data-name="FINAL">
+      <g id="Saulo">
+        <text class="cls-3" transform="translate(0 425.32)"><tspan x="0" y="0">Saulo</tspan></text>
+      </g>
+      <g id="_.engineer" data-name=".engineer">
+        <text class="cls-4" transform="translate(61.77 667.66)"><tspan class="cls-2" x="0" y="0">.</tspan><tspan class="cls-1" x="69.01" y="0">engineer</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
