@@ -1,16 +1,16 @@
 ---
-import DefaultLayout from '../../marko-polo-site/src/layouts/DefaultLayout.astro'
-import Hero from '../../marko-polo-site/src/components/Hero.astro'
-import Feature from '../../marko-polo-site/src/components/Feature.astro'
-import Counter from '../../marko-polo-site/src/components/Counter.astro'
-import ContentMedia from '../../marko-polo-site/src/components/ContentMedia.astro'
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Hero from '../components/Hero.astro'
+import Feature from '../components/Feature.astro'
+import Counter from '../components/Counter.astro'
+import ContentMedia from '../components/ContentMedia.astro'
 ---
 
 <DefaultLayout title="Home">
   <Hero />
   <section class="my-64">
     <div class="container">
-    <!-- Blue -->
+      <!-- Blue -->
       <h2 class="mb-16 text-6xl">Foundation</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
         <Feature addClass="colorBlue" icon="/images/zagjs.svg" title="Marko Zag" addLink="#">
@@ -23,7 +23,7 @@ import ContentMedia from '../../marko-polo-site/src/components/ContentMedia.astr
           Lint your code with strict a11y settings to ensure you stay on track with the WCAG standards.
         </Feature>
       </div>
-    <!-- Green -->
+      <!-- Green -->
       <h2 class="my-16 mb-16 text-6xl">Documentation</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
         <Feature addClass="colorGreen" icon="/images/book.svg" title="Stories" addLink="#">
@@ -32,11 +32,15 @@ import ContentMedia from '../../marko-polo-site/src/components/ContentMedia.astr
         <Feature addClass="colorGreen" icon="/images/jsonSchema.svg" title="JSON Schemas" addLink="#">
           Easily use .md and .mdx pages to build your websites or use it with Netlify CMS.
         </Feature>
-        <Feature addClass="colorPurple link" icon="/images/plusPurple.svg" title="Your Awesome Project" addLink="https://github.com/marko-js-polo/discussions">
-        &nbsp;
+        <Feature
+          addClass="colorPurple link"
+          icon="/images/plusPurple.svg"
+          title="Your Awesome Project"
+          addLink="https://github.com/marko-js-polo/discussions">
+          &nbsp;
         </Feature>
       </div>
-    <!-- Yellow -->
+      <!-- Yellow -->
       <h2 class="my-16 mb-16 text-6xl">Design</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
         <Feature addClass="colorYellow" icon="/images/markojsYellow.svg" title="Marko Headless UI" addLink="#">
@@ -45,17 +49,29 @@ import ContentMedia from '../../marko-polo-site/src/components/ContentMedia.astr
         <Feature addClass="colorYellow" icon="/images/figmaYellow.svg" title="Figma Plugin DS Marko" addLink="#">
           Fully integrated Dark mode gives your users the choice for their favorite viewing mode.
         </Feature>
-        <Feature addClass="colorPurple link" icon="/images/plusPurple.svg" title="Your Awesome Project" addLink="https://github.com/marko-js-polo/discussions">
+        <Feature
+          addClass="colorPurple link"
+          icon="/images/plusPurple.svg"
+          title="Your Awesome Project"
+          addLink="https://github.com/marko-js-polo/discussions">
           &nbsp;
         </Feature>
       </div>
-    <!-- Red -->
+      <!-- Red -->
       <h2 class="my-16 mb-16 text-6xl">Run</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <Feature addClass="colorRed disable" icon="/images/figmaRed.svg" title="Run Adapter for Figma Plugins (Planned)" addLink="#">
+        <Feature
+          addClass="colorRed disable"
+          icon="/images/figmaRed.svg"
+          title="Run Adapter for Figma Plugins (Planned)"
+          addLink="#">
           &nbsp;
         </Feature>
-        <Feature addClass="colorPurple link" icon="/images/plusPurple.svg" title="Your Awesome Project" addLink="https://github.com/marko-js-polo/discussions">
+        <Feature
+          addClass="colorPurple link"
+          icon="/images/plusPurple.svg"
+          title="Your Awesome Project"
+          addLink="https://github.com/marko-js-polo/discussions">
           &nbsp;
         </Feature>
       </div>

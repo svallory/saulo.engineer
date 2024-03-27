@@ -1,6 +1,18 @@
-.svg-fill{
+.logo-svg{
   color: rgb(233 233 233);
-  width: 120px;
+  width: 450px;
+}
+
+@media screen and (max-width: 1000px) {
+  .logo-svg{
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logo-svg{
+    width: 150px;
+  }
 }
 
 .heading {

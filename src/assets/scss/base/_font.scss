@@ -85,6 +85,24 @@ body {
     }
   }
 
+  a.button-black {
+    color: var(--neutral-900) !important;
+    fill: var(--neutral-900) !important;
+    text-decoration: none!important;
+    
+    &:visited {
+      color: var(--neutral-900) !important;
+      fill: var(--neutral-900) !important;
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--neutral-600) !important;
+      fill: var(--neutral-600) !important;
+      text-decoration: none!important;
+    }
+  }
+
   .container a.social-icon {
     color: var(--neutral-100);
     text-decoration: none;

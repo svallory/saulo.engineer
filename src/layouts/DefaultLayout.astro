@@ -26,14 +26,12 @@ const {
     <SiteMeta
       title={title}
       description={description.substring(0, 100)}
-      url={Astro.site
-        ? `${Astro.site}/${title.toLowerCase().replaceAll(' ', '-')}`
-        : `https://accessible-astro.dev/${title.toLowerCase().replaceAll(' ', '-')}`}
+      url={Astro.site ? `${Astro.site}/${title.toLowerCase().replaceAll(' ', '-')}` : `https://saulo.engineer`}
       image={image}
       author={author}
     />
   </head>
-  <body>
+  <body class="darkmode">
     <Header />
     <main id="main-content" transition:animate="fade">
       <slot />
