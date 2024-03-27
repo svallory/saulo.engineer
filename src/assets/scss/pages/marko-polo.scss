@@ -1,0 +1,57 @@
+
+#titlePolo {
+  font-size: 69px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  color: var(--font-color);
+  line-height: 1.1;
+}
+
+#titlePolo > span:first-child{
+  margin-left:-5px;
+}
+
+#titlePolo > span:not(:first-child){
+  margin-left:-3px;
+}
+
+.subTitlePolo {
+  font-size: 40px;
+  font-family: "Noto Serif", serif;
+  color: var(--font-color);
+  line-height: 1.2;
+  margin-top: 25px;
+}
+
+.subTitlePolo > .sf {
+  font-size: 20px;
+  font-family: "Noto Serif", serif;
+  font-style: italic;
+  margin-left: 5px;
+}
+
+.textPolo {
+  font-size: 25px;
+  font-family: "Rokkitt", serif;
+  color: var(--font-color);
+  line-height: 1.2;
+}
+
+.colorBlue {
+  color: var(--marko-colorBlue)
+}
+.colorGreen {
+color: var(--marko-colorGreen)
+}
+.colorYellow {
+color: var(--marko-colorYellow)
+}
+.colorRed {
+color: var(--marko-colorRed)
+}
+.colorPurple {
+color: var(--marko-colorPurple)
+}
+.center {
+  margin: 0 auto;
+}

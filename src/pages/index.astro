@@ -3,8 +3,8 @@ import DefaultLayout from '../layouts/DefaultLayout.astro'
 import { Icon } from 'astro-icon/components'
 import Experience from '../components/Experience.astro'
 import CardRecommendations from '../components/CardRecommendations.astro'
-import '../assets/scss/resume.scss'
-import '../assets/scss/patterns.scss'
+import '../assets/scss/pages/resume.scss'
+
 import {
   Accordion,
   AccordionItem,
@@ -21,7 +21,7 @@ import {
 <DefaultLayout title="Accessible Components">
   <section class="my-12">
     <div class="container">
-      <div class="pt-16 sm:pb-12 md:pb-4 lg:pb-16">
+      <div class="sm:pb-12 md:pb-4 lg:pb-16">
         <div class="bg-contentbackground mx-auto mt-8 max-w-7xl lg:bg-transparent lg:px-8">
           <div class="lg:grid lg:grid-cols-12">
             <div class="z-10 lg:col-span-4 lg:col-start-1 lg:row-start-1 lg:bg-transparent lg:py-16">
@@ -31,7 +31,7 @@ import {
                   loading="lazy"
                   class="aspect-[1/1] w-full max-w-md -rotate-3 rounded-3xl object-cover object-center shadow-2xl"
                   src="/images/about.webp"
-                  alt="Image of myself"
+                  alt="a pencil illustration of myself generated using AI"
                 />
               </div>
             </div>
@@ -247,11 +247,18 @@ import {
                 </CardRecommendations>
                 <!-- Card 2 -->
                 <CardRecommendations
-                  img="Andrey_Asoskov.jpeg"
-                  name="Information"
-                  linkedin="Information"
-                  role="Information">
-                  <p>“Saulo”</p>
+                  img="Gabriel_Reis.jpeg"
+                  name="Gabriel Reis"
+                  linkedin="https://www.linkedin.com/in/gabereis?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BgB99hce7R9KerW1LzltqPg%3D%3D"
+                  role="Technical Lead @ Yat Labs">
+                  <p>
+                    “I had the opportunity to work with Saulo at Cleanify, a startup based in the San Francisco Bay
+                    Area. He is very detail-oriented and incredibly knowledgeable on his field of work. Saulo
+                    spearheaded the initiative of migrating our codebase to Typescript and other newer architectures at
+                    the time. He was also a major contributor in the engineering team, translating the business needs
+                    into actionable and measurable tasks. Finally, Saulo is an extremely fun person to be around. We
+                    always had a blast working with him even in the face of the greatest adversities!”
+                  </p>
                 </CardRecommendations>
               </div>
               <div class="space-y-8 xl:row-start-1">
@@ -273,7 +280,7 @@ import {
               <div class="space-y-8 xl:row-start-1">
                 <!-- Card 4 -->
                 <CardRecommendations
-                  img="people/allan-denot.jpg"
+                  img="Allan_Denot.jpeg"
                   name="Allan Denot"
                   linkedin="denot"
                   role="Co-founder at NX1.io and DNX Solutions">
