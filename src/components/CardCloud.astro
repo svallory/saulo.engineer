@@ -1,0 +1,87 @@
+---
+// type CssSize = `${string}${'px' | 'em' | 'rem' | '%'}`
+// interface Props {
+//   cardWidth: CssSize
+//   cardHeight: CssSize
+// }
+
+// const { cardWidth, cardHeight } = Astro.props
+---
+
+<section class="card-cloud">
+  <slot />
+</section>
+
+<style lang="scss" is:global>
+  @use '../assets/scss/base/breakpoint' as *;
+
+  .card-cloud {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    margin: 2rem 0;
+
+    @include breakpoint(md) {
+      justify-content: space-evenly;
+    }
+
+    > * {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-content: space-evenly;
+      justify-content: center;
+      align-items: center;
+      vertical-align: middle;
+
+      min-width: 20rem;
+      max-width: 90%;
+      height: auto;
+
+      box-sizing: border-box;
+
+      > * {
+        display: none;
+        &:first-child {
+          display: block;
+        }
+        transition-property: transform;
+        transition-timing-function: ease;
+        transition-duration: 800ms;
+
+        &:hover {
+          transform: scale(1.1);
+          @apply shadow-2xl;
+        }
+      }
+
+      @include breakpoint-range(md, lg) {
+        flex-direction: column;
+        flex-wrap: wrap;
+        max-width: 40%;
+        > * {
+          display: block;
+          &:last-child {
+            display: none;
+          }
+        }
+      }
+
+      @include breakpoint(lg) {
+        max-width: 30%;
+        > * {
+          display: block;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
+</style>

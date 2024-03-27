@@ -2,7 +2,9 @@
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import { Icon } from 'astro-icon/components'
 import Experience from '../components/Experience.astro'
-import CardRecommendations from '../components/CardRecommendations.astro'
+import RecommendationCard from '../components/RecommendationCard.astro'
+import CardCloud from '../components/CardCloud.astro'
+import SectionHeader from '../components/headers/SectionHeader.astro'
 import '../assets/scss/pages/resume.scss'
 
 import {
@@ -16,6 +18,7 @@ import {
   Notification,
   Pagination,
 } from 'accessible-astro-components'
+import LastRoles from './sections/LastRoles.astro'
 ---
 
 <DefaultLayout title="Accessible Components">
@@ -84,9 +87,15 @@ import {
               </div>
 
               <div class="mx-auto space-y-6 py-12 sm:max-w-3xl sm:py-16 lg:col-span-7 lg:col-start-4 lg:max-w-none">
-                <h2 class="text-4xl font-bold tracking-tighter sm:text-5xl" id="about-heading">
-                  Hey, there! I'm Saulo. Hope you are having a wonderful day :)
+                <h2
+                  id="about-heading"
+                  class="mb-1 text-4xl font-bold tracking-tighter sm:text-5xl sm:max-md:text-center">
+                  Hey, there! I'm Saulo.
+                  <br />
                 </h2>
+                <span class="text-2xl leading-normal tracking-wide sm:max-md:text-center">
+                  I hope you are having <nobr>a wonderful day :)</nobr>
+                </span>
                 <p class="text-primary-300 md:text-primary-100 text-lg">
                   I love programming since I was a little kid. One of my earliest memories is of the excitement I felt
                   when I received my first computer. I spent hours playing with it.
@@ -103,271 +112,182 @@ import {
       </div>
     </div>
   </section>
-  <section class="custom-screen">
-    <div class="mx-auto max-w-xl space-y-4 text-center">
-      <h2 class="text-4xl">Turn your ideas into reality</h2>
-      <p class="text-zinc-400">
-        Float UI offers all the vital building blocks you need to transform your idea into a great-looking startup.
-      </p>
-    </div>
-    <ul class="mx-auto mt-8 max-w-7xl grid-cols-2 gap-6 space-y-6 sm:grid sm:space-y-0 lg:grid-cols-3">
-      <li
-        class="experience-highlight hover-effect group relative z-0 h-full overflow-hidden rounded-xl border border-zinc-800">
-        <div class="relative z-10 space-y-3 p-5">
-          <div class="grid grid-cols-3 gap-4">
-            <img src="/images/Crossover_logo.svg" alt="Crossover" class="center h-16" width="53px" />
-            <img src="/images/Aurea_Software_logo.jpeg" alt="Aurea" class="center h-16" width="64px" />
-            <img src="/images/Ignitetech_logo.png" alt="Ignitetech" class="center h-16" width="89px" />
-          </div>
-          <div class="title pb-2 pt-4">
-            <h5 class="font-semibold text-zinc-100">Crossover</h5>
-            <h4 class="subtitleCard text-zinc-100">Aurea | Ignite Tech</h4>
-            <h4 class="text-center text-zinc-500">Product Chief Architect</h4>
-          </div>
-          <h3 class="year text-zinc-500">2018</h3>
-        </div>
-        <div class="background-dark absolute inset-[1px] -z-10 rounded-xl"></div>
-      </li>
-      <li
-        class="experience-highlight hover-effect group relative z-0 h-full overflow-hidden rounded-xl border border-zinc-800">
-        <div class="relative z-10 space-y-3 p-5">
-          <img src="/images/rocket_money_logo.webp" alt="Rocket Money" class="center h-16" width="74px" />
-          <div class="title pb-2 pt-11">
-            <h4 class="subtitleCard text-zinc-100">Rocket Money</h4>
-            <h4 class="text-center text-zinc-500">Senior Software Architect</h4>
-          </div>
-          <h3 class="year text-zinc-500">2019</h3>
-        </div>
-        <div class="background-dark absolute inset-[1px] -z-10 rounded-xl"></div>
-      </li><li
-        class="experience-highlight hover-effect group relative z-0 h-full overflow-hidden rounded-xl border border-zinc-800">
-        <div class="relative z-10 space-y-3 p-5">
-          <div class="grid grid-cols-2 gap-4">
-            <img src="/images/Toki_Labs_logo.jpeg" alt="Toki Labs" class="center h-16" width="64px" />
-            <img src="/images/CVA_logo.svg" alt="CVA" class="center h-16" width="89px" />
-          </div>
-          <div class="title pb-2 pt-11">
-            <h4 class="subtitleCard text-zinc-100">Toki Labs | CVA</h4>
-            <h4 class="text-center text-zinc-500">Founder and CTO</h4>
-          </div>
-          <h3 class="year text-zinc-500">2022</h3>
-        </div>
-        <div class="background-dark absolute inset-[1px] -z-10 rounded-xl"></div>
-      </li>
-    </ul>
-  </section>
-  <section>
-    <div id="section_recommendations">
-      <div class="relative isolate pt-24 sm:pt-32">
-        <div
-          class="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 transform-gpu overflow-hidden opacity-30 blur-3xl"
-          aria-hidden="true">
-          <div
-            class="ml-[max(50%,38rem)] aspect-[1313/771] w-[82.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc]"
-            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
-          </div>
-        </div>
-        <div
-          class="absolute inset-x-0 top-0 -z-10 flex transform-gpu overflow-hidden pt-32 opacity-25 blur-3xl sm:pt-40 xl:justify-end"
-          aria-hidden="true">
-          <div
-            class="ml-[-22rem] aspect-[1313/771] w-[82.0625rem] flex-none origin-top-right rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] xl:ml-0 xl:mr-[calc(50%-12rem)]"
-            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
-          </div>
-        </div>
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
-          <div class="mx-auto max-w-xl text-center">
-            <h2 class="text-4xl">Recommendations</h2>
-            <p class="text-zinc-400">I have worked with amazing people!</p>
-          </div>
-          <div
-            class="mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
-            <!-- Card Center -->
-            <figure
-              class="background-noise-light overflow-hidden rounded-2xl shadow-2xl ring-1 ring-gray-900/5 sm:col-span-2 xl:col-start-2 xl:row-end-1">
-              <blockquote
-                class="p-6 text-sm font-semibold tracking-tight text-gray-900 sm:p-12 sm:text-xl sm:leading-8">
-                <p class="pb-4 text-base">
-                  “Saulo and I worked on the same project, with him being the Product Chief Architect responsible for
-                  the overall product quality.
-                </p>
-                <p class="pb-4 text-base">
-                  He brought deep understanding of the whole product architecture (and Chute was a fairly complex
-                  product), and improved stability and predictability in some rough times after the product was acquired
-                  and imported into the new operating model.
-                </p>
 
-                <p class="text-base">Saulo proved to be versatile and very reliable person to work with.”</p>
-              </blockquote>
-              <figcaption
-                class="background-lines flex flex-wrap items-center gap-x-4 gap-y-4 border-t border-gray-900/10 px-6 py-4 sm:flex-nowrap">
-                <img
-                  class="h-10 w-10 flex-none rounded-full bg-gray-50"
-                  src="/images/Predrag_Maric.jpeg"
-                  alt="Predrag Marić"
-                />
-                <div class="flex-auto">
-                  <div class="font-semibold">
-                    <a class="linkedin" href="https://www.linkedin.com/in/predrag-maric"
-                      ><svg
-                        class="inline"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        id="linkedin-bug-medium"
-                        aria-hidden="true"
-                        role="none"
-                        data-supported-dps="24x24"
-                        fill="currentColor"
-                        width="24"
-                        height="24">
-                        <path
-                          d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
-                        ></path>
-                      </svg> Predrag Marić</a
-                    >
-                  </div>
-                  <div class="text-xs text-gray-600">
-                    Software Engineer | Engineering Manager | Co-Founder at Digi Klinci
-                  </div>
-                </div>
-              </figcaption>
-            </figure>
-            <div class="space-y-8 xl:contents xl:space-y-0">
-              <div class="space-y-8 pt-16 xl:row-span-2">
-                <!-- Card 1 -->
-                <CardRecommendations
-                  img="Andrey_Asoskov.jpeg"
-                  name="Andrey Asoskov"
-                  linkedin="andrey-asoskov"
-                  role="Cloud Infrastructure Architect">
-                  “Saulo did a great job as an experienced product architect in a project that we worked together in. He
-                  managed to accomplish very difficult code migration tasks in a short period of time for a big and
-                  high-loaded system. And he did that without service disruption. I would definitely recommend him as a
-                  professional you can count on.”
-                </CardRecommendations>
-                <!-- Card 2 -->
-                <CardRecommendations
-                  img="Gabriel_Reis.jpeg"
-                  name="Gabriel Reis"
-                  linkedin="https://www.linkedin.com/in/gabereis?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BgB99hce7R9KerW1LzltqPg%3D%3D"
-                  role="Technical Lead @ Yat Labs">
-                  <p>
-                    “I had the opportunity to work with Saulo at Cleanify, a startup based in the San Francisco Bay
-                    Area. He is very detail-oriented and incredibly knowledgeable on his field of work. Saulo
-                    spearheaded the initiative of migrating our codebase to Typescript and other newer architectures at
-                    the time. He was also a major contributor in the engineering team, translating the business needs
-                    into actionable and measurable tasks. Finally, Saulo is an extremely fun person to be around. We
-                    always had a blast working with him even in the face of the greatest adversities!”
-                  </p>
-                </CardRecommendations>
-              </div>
-              <div class="space-y-8 xl:row-start-1">
-                <!-- Card 3 -->
-                <CardRecommendations
-                  img="Vicente_Campello.jpeg"
-                  name="Vicente Campello"
-                  linkedin="vcampello"
-                  role="Information Systems Team Leader at Pembrokeshire College">
-                  <p>
-                    “Saulo é o que chamo de geniozinho. Ele é o tipo de pessoa que não existe barreias e que além de
-                    ótimas ideias elas são sempre acima do tempo e inovadoras. Recomendo o Saulo a qualquer empresa que
-                    precise se renovar e de alguém que irá fazer o que muitos não conseguem ou irão demorar para isso.”
-                  </p>
-                </CardRecommendations>
-              </div>
-            </div>
-            <div class="space-y-8 xl:contents xl:space-y-0">
-              <div class="space-y-8 xl:row-start-1">
-                <!-- Card 4 -->
-                <CardRecommendations
-                  img="Allan_Denot.jpeg"
-                  name="Allan Denot"
-                  linkedin="denot"
-                  role="Co-founder at NX1.io and DNX Solutions">
-                  <p>
-                    “Saulo is a brillant developer, he always came to me with new ideas and techniques about web
-                    programming and software quality. Our exciting discussions about web projects and future of the web
-                    helped me to have a better understanding of this field. I can highlight his great javascript and
-                    object-oriented programming skills.”
-                  </p>
-                </CardRecommendations>
-              </div>
-              <div class="space-y-8 pt-16 xl:row-span-2">
-                <!-- Card 5 -->
-                <CardRecommendations
-                  img="Sabrina_Zanker.jpeg"
-                  name="Sabrina Zanker"
-                  linkedin="sabrina-zanker-5b20094"
-                  role="General Manager | Managing Director | Country Leader">
-                  <p>
-                    “Saulo is the kind of employee that you can count on for anything. He knows a little bit about
-                    marketing, business, strategie, (a lot) about IT, and will learn really fast any new matter that
-                    surfs over his face. He is true enterpreneur, a team worker and a risen leader.”
-                  </p>
-                </CardRecommendations>
-                <!-- Card 6 -->
-                <CardRecommendations
-                  img="Sergio_Yates.jpeg"
-                  name="Sergio Yates"
-                  linkedin="sergioyates"
-                  role="Early stage investor | Venture capitalist | Board member | Occasional lecturer">
-                  <p>
-                    “I have worked with Saulo, during almost four years, by the time his company was at technology
-                    incubator of Instituto Gênesis - PUC Rio. Saulo is a very experience programmer that know how to
-                    create quality code that embraces clientes demands. He has all the attributes to became a great CTO.
-                    Besides that, he is a tech professional with business perspective.”
-                  </p>
-                </CardRecommendations>
-              </div>
-            </div>
-          </div>
+  <LastRoles />
+  <section id="section_recommendations">
+    <div class="relative isolate mx-auto max-w-7xl pt-24 sm:pt-32">
+      <!-- #region: background -->
+      <div
+        class="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 transform-gpu overflow-hidden opacity-30 blur-3xl"
+        aria-hidden="true">
+        <div
+          class="ml-[max(50%,38rem)] aspect-[1313/771] w-[82.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc]"
+          style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
         </div>
       </div>
-    </div>
-
-    <!-- <div class="bg-indigo-700"> -->
-    <div class="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
-      <div class="mx-auto max-w-2xl text-center">
-        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
-          Did we work together and<br />you are happy about it?
-        </h2>
-        <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-indigo-200">I'll be forever grateful 🙇🏻</p>
-        <div class="mt-10 flex items-center justify-center gap-x-6">
-          <a
-            href="https://www.linkedin.com/in/saulo-vallory/recommendation-add-edit/WRITE_RECOMMENDATION?profileFormEntryPoint=PROFILE_SECTION&trackingId=oEktExmGQge2hlRr3mC8CQ%3D%3D&desktopBackground=PROFILE_DETAIL_SCREEN&recipientProfileId=ACoAAAB9KD4B1Mg9AeDXkQr-uTugwjC5Hy3zYOY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_recommendations_details%3BcDt18q%2F9ToSmPApFsqMPCQ%3D%3D"
-            class="linkedin noise-light rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            ><svg
-              class="inline"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              id="linkedin-bug-medium"
-              aria-hidden="true"
-              role="none"
-              data-supported-dps="24x24"
-              fill="currentColor"
-              width="24"
-              height="24">
-              <path
-                d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
-              ></path>
-            </svg> Write a Recommendation <span aria-hidden="true">→</span></a
-          >
+      <div
+        class="absolute inset-x-0 top-0 -z-10 flex transform-gpu overflow-hidden pt-32 opacity-25 blur-3xl sm:pt-40 xl:justify-end"
+        aria-hidden="true">
+        <div
+          class="ml-[-22rem] aspect-[1313/771] w-[82.0625rem] flex-none origin-top-right rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] xl:ml-0 xl:mr-[calc(50%-12rem)]"
+          style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
         </div>
       </div>
+      <!-- #endregion: background -->
+      <div class="mx-auto px-6 lg:px-8">
+        <SectionHeader title="Recommendations" subtitle="I have worked with some amazing people!" />
+
+        <CardCloud class="mx-auto">
+          <div>
+            <!-- #region Card1 : Predrag -->
+            <RecommendationCard
+              img="Predrag_Maric.jpeg"
+              name="Predrag Marić"
+              linkedin="predrag-maric"
+              role="Software Engineer | Engineering Manager | Co-Founder at Digi Klinci">
+              <p>
+                “Saulo and I worked on the same project, with him being the Product Chief Architect responsible for the
+                overall product quality.
+              </p>
+              <p>
+                He brought deep understanding of the whole product architecture (and Chute was a fairly complex
+                product), and improved stability and predictability in some rough times after the product was acquired
+                and imported into the new operating model.
+              </p>
+
+              <p>Saulo proved to be versatile and very reliable person to work with.”</p>
+            </RecommendationCard>
+            <!-- #endregion Card1 : Predrag -->
+
+            <!-- Card 4 : Allan -->
+            <RecommendationCard
+              img="Allan_Denot.jpeg"
+              name="Allan Denot"
+              linkedin="denot"
+              role="Co-founder at NX1.io and DNX Solutions">
+              <p>
+                “Saulo is a brillant developer, he always came to me with new ideas and techniques about web programming
+                and software quality. Our exciting discussions about web projects and future of the web helped me to
+                have a better understanding of this field. I can highlight his great javascript and object-oriented
+                programming skills.”
+              </p>
+            </RecommendationCard>
+          </div>
+          <div>
+            <!-- Card 2 : Sergio -->
+            <RecommendationCard
+              img="Sergio_Yates.jpeg"
+              name="Sergio Yates"
+              linkedin="sergioyates"
+              role="Early stage investor | Venture capitalist | Board member | Occasional lecturer">
+              <p>
+                “I have worked with Saulo, during almost four years, by the time his company was at technology incubator
+                of Instituto Gênesis - PUC Rio. Saulo is a very experience programmer that know how to create quality
+                code that embraces clientes demands. He has all the attributes to became a great CTO. Besides that, he
+                is a tech professional with business perspective.”
+              </p>
+            </RecommendationCard>
+
+            <!-- Card 5 : Andrey -->
+            <RecommendationCard
+              img="Andrey_Asoskov.jpeg"
+              name="Andrey Asoskov"
+              linkedin="andrey-asoskov"
+              role="Cloud Infrastructure Architect">
+              “Saulo did a great job as an experienced product architect in a project that we worked together in. He
+              managed to accomplish very difficult code migration tasks in a short period of time for a big and
+              high-loaded system. And he did that without service disruption. I would definitely recommend him as a
+              professional you can count on.”
+            </RecommendationCard>
+
+            <!-- Card 7 : Vicente -->
+            <RecommendationCard
+              img="Vicente_Campello.jpeg"
+              name="Vicente Campello"
+              linkedin="vcampello"
+              role="Information Systems Team Leader at Pembrokeshire College">
+              <p>
+                “Saulo é o que chamo de geniozinho. Ele é o tipo de pessoa que não existe barreias e que além de ótimas
+                ideias elas são sempre acima do tempo e inovadoras. Recomendo o Saulo a qualquer empresa que precise se
+                renovar e de alguém que irá fazer o que muitos não conseguem ou irão demorar para isso.”
+              </p>
+            </RecommendationCard>
+          </div>
+          <div>
+            <!-- Card 3 : Gabriel -->
+            <RecommendationCard
+              img="Gabriel_Reis.jpeg"
+              name="Gabriel Reis"
+              linkedin="https://www.linkedin.com/in/gabereis?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BgB99hce7R9KerW1LzltqPg%3D%3D"
+              role="Technical Lead @ Yat Labs">
+              <p>
+                “I had the opportunity to work with Saulo at Cleanify, a startup based in the San Francisco Bay Area. He
+                is very detail-oriented and incredibly knowledgeable on his field of work. Saulo spearheaded the
+                initiative of migrating our codebase to Typescript and other newer architectures at the time. He was
+                also a major contributor in the engineering team, translating the business needs into actionable and
+                measurable tasks. Finally, Saulo is an extremely fun person to be around. We always had a blast working
+                with him even in the face of the greatest adversities!”
+              </p>
+            </RecommendationCard>
+
+            <!-- Card 6 : Sabrina -->
+            <RecommendationCard
+              img="Sabrina_Zanker.jpeg"
+              name="Sabrina Zanker"
+              linkedin="sabrina-zanker-5b20094"
+              role="General Manager | Managing Director | Country Leader">
+              <p>
+                “Saulo is the kind of employee that you can count on for anything. He knows a little bit about
+                marketing, business, strategie, (a lot) about IT, and will learn really fast any new matter that surfs
+                over his face. He is true enterpreneur, a team worker and a risen leader.”
+              </p>
+            </RecommendationCard>
+          </div>
+        </CardCloud>
+      </div>
     </div>
-    <!-- </div> -->
   </section>
+
+  <!-- <div class="bg-indigo-700"> -->
+  <div class="px-6 sm:px-6 sm:py-32 lg:px-8">
+    <div class="mx-auto text-center">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        Did we work together <br /> and you are happy about it?
+      </h2>
+      <div class="mt-10 flex items-center justify-center gap-x-6">
+        <a
+          href="https://www.linkedin.com/in/saulo-vallory/recommendation-add-edit/WRITE_RECOMMENDATION?profileFormEntryPoint=PROFILE_SECTION&trackingId=oEktExmGQge2hlRr3mC8CQ%3D%3D&desktopBackground=PROFILE_DETAIL_SCREEN&recipientProfileId=ACoAAAB9KD4B1Mg9AeDXkQr-uTugwjC5Hy3zYOY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_recommendations_details%3BcDt18q%2F9ToSmPApFsqMPCQ%3D%3D"
+          class="linkedin noise-light rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          ><svg
+            class="inline"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            id="linkedin-bug-medium"
+            aria-hidden="true"
+            role="none"
+            data-supported-dps="24x24"
+            fill="currentColor"
+            width="24"
+            height="24">
+            <path
+              d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
+            ></path>
+          </svg> Write me a Recommendation <span aria-hidden="true">→</span></a
+        >
+      </div>
+      <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-indigo-200">I'll be forever grateful 🙇🏻</p>
+    </div>
+  </div>
+
   <!-- Experience -->
   <section>
-    <div class="mx-auto mb-16 max-w-2xl text-center">
-      <h2 class="text-4xl">Experience</h2>
-      <p class="text-zinc-400">I have worked with amazing people!</p>
-    </div>
+    <SectionHeader title="Experience" />
+
     <div class="mx-auto max-w-2xl px-6">
       <div class="flow-root">
         <ul role="list" class="-mb-8">
           <Experience
-            logo="Toki_Labs_logo.jpeg"
+            logo="toki_labs_logo.jpeg"
             role="Founder and CTO"
             company="Toki Labs"
             fromDate="nov de 2022"
@@ -380,7 +300,7 @@ import {
             </p>
           </Experience>
           <Experience
-            logo="Toki_Network_logo.jpeg"
+            logo="toki_network_logo.jpeg"
             role="VP de Estratégia"
             company="Toki Network"
             fromDate="ago de 2021"

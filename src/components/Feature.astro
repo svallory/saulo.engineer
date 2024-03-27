@@ -1,12 +1,12 @@
 ---
 import { Icon } from 'astro-icon/components'
 
-const { addClass='addClass', addLink='addLink', icon = 'mdi:rocket', title = 'Title' } = Astro.props
+const { addClass = 'addClass', addLink = 'addLink', icon = 'mdi:rocket', title = 'Title' } = Astro.props
 ---
 
 <div class={`feature ${addClass} flex flex-col gap-4`} onclick={`window.location='${addLink}';`}>
   <!-- <Icon name={icon} /> -->
-  <div class="h-16"><img class="h-16" src={icon}></div>
+  <div class="h-16"><img class="h-16" src={icon} /></div>
   <div class="content">
     <h3>{title}</h3>
     <p>
@@ -29,7 +29,7 @@ const { addClass='addClass', addLink='addLink', icon = 'mdi:rocket', title = 'Ti
       z-index: 2;
     }
 
-    @include breakpoint(large) {
+    @include breakpoint(lg) {
       width: 100%;
     }
 
@@ -102,12 +102,12 @@ const { addClass='addClass', addLink='addLink', icon = 'mdi:rocket', title = 'Ti
     color: var(--marko-colorPurple);
   }
 
-  .disable{
+  .disable {
     opacity: 0.4;
     pointer-events: none;
   }
 
-  .link{
+  .link {
     text-decoration: none;
     cursor: pointer;
 

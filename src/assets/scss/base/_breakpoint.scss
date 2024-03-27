@@ -2,11 +2,21 @@
 // | Breakpoint
 // | -------------------------------------------------------------
 
+// Theme original breakpoints
+// "default": 0,
+// "sm": 24em,
+// "md": 48em,
+// "lg": 75em
+// note: there was no xl, or xxl
+
 $breakpoints: (
+  // Tailwind default breakpoints
   "default": 0,
-  "small": 24em,
-  "medium": 48em,
-  "large": 75em
+  "sm": 640px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1280px,
+  "xxl": 1536px,
 ) !default;
 
 @mixin breakpoint($breakpoint) {
@@ -20,6 +30,32 @@ $breakpoints: (
     }
   }
   @else {
-    @error "Not a correct value, check _base-breakpoints for available values.";
+    @error "Not a correct value, check base/_breakpoint for available values.";
+  }
+}
+
+@mixin breakpoint-range($min, $max) {
+  @if map-has-key($breakpoints, $min) {
+    $min: map-get($breakpoints, $min);
+
+  } @else if (type_of($min) == number) {
+    $min: $breakpoint+"px"
+  }
+  @else {
+    @error "Not a correct value, check base/_breakpoint for available values.";
+  }
+
+  @if map-has-key($breakpoints, $max) {
+    $max: map-get($breakpoints, $max);
+
+  } @else if (type_of($max) == number) {
+    $max: $breakpoint+"px"
+  }
+  @else {
+    @error "Not a correct value, check base/_breakpoint for available values.";
+  }
+
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
   }
 }
