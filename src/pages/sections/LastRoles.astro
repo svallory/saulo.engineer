@@ -1,56 +1,63 @@
 ---
 import SectionHeader from '../../components/headers/SectionHeader.astro'
 import '../../assets/scss/pages/resume.scss'
-import Partial from '../../layouts/Partial.astro'
+
+const highlights = [
+  {
+    year: 2018,
+    imgUrl: '/images/Crossover_logo.svg',
+    company: 'Crossover',
+    role: 'Product Chief Architect',
+  },
+  {
+    year: 2019,
+    imgUrl: '/images/rocket_money_logo.webp',
+    company: 'Rocket Money',
+    role: 'Senior Architect',
+  },
+  {
+    year: 2022,
+    imgUrl: '/images/CVA_logo.svg',
+    company: 'Toki Labs | CVA',
+    role: 'CTO',
+  },
+]
 ---
 
-<Partial>
-  <section class="custom-screen">
-    <SectionHeader title="Last Roles" />
-    <ul class="mx-auto mt-8 flex max-w-fit gap-6 space-x-2 space-y-6 sm:space-y-0 lg:grid-cols-3">
-      <li
-        class="experience-highlight hover-effect group relative z-0 h-full overflow-hidden rounded-xl border border-zinc-800">
-        <div class="relative z-10 space-y-3 p-5">
-          <div class="text-center">
-            <img src="/images/Crossover_logo.svg" alt="Crossover" class="mx-auto h-16" width="53px" />
-            <!-- <img src="/images/Aurea_Software_logo.jpeg" alt="Aurea" class="center h-16" width="64px" />
-            <img src="/images/Ignitetech_logo.png" alt="Ignitetech" class="center h-16" width="89px" /> -->
+<!--
+  INVERTED
+  <li class="experience-highlight hover-effect group relative z-0 h-full overflow-hidden rounded-2xl bg-black bg-opacity-95 shadow-lg shadow-black">
+            <div class="z-10 flex flex-col items-center justify-around gap-y-4 px-6 py-8 text-center">
+              <div class="text-2xl font-semibold text-gray-300">{h.year}</div>
+              <div class="flex flex-col items-center justify-center gap-1">
+                <div class="flex size-28 items-center justify-center rounded-full bg-white text-center">
+                  <img src={h.imgUrl} alt={`${h.company} logo`} class="mx-auto max-h-16 max-w-16" />
+                </div>
+                <h4 class="font-thin ">{h.company}</h4>
+              </div>
+              <h4 class="font-normal">{h.role}</h4>
+            </div>
+          </li>
+ -->
+<section>
+  <SectionHeader title="Last Roles" />
+  <ul
+    class="last-roles mx-auto mt-8 grid max-w-fit grid-rows-3 gap-6 space-x-2 space-y-0 md:grid-cols-3 md:grid-rows-none">
+    {
+      highlights.map((h) => (
+        <li class="experience-highlight hover-effect group relative z-0 h-full overflow-hidden rounded-2xl bg-white bg-opacity-95 shadow-lg shadow-black">
+          <div class="z-10 flex flex-col items-center justify-around gap-y-4 px-6 py-8 text-center">
+            <div class="text-2xl font-semibold text-gray-700">{h.year}</div>
+            <div class="flex flex-col items-center justify-center gap-1">
+              <div class="flex size-28 items-center justify-center rounded-full bg-black text-center">
+                <img src={h.imgUrl} alt={`${h.company} logo`} class="mx-auto max-h-16 max-w-16" />
+              </div>
+              <h4 class="font-thin text-gray-900">{h.company}</h4>
+            </div>
+            <h4 class="font-normal text-gray-900">{h.role}</h4>
           </div>
-          <div class="title pb-2 pt-4">
-            <h4 class="font-semibold text-zinc-100">Crossover</h4>
-            <!-- <h4 class="subtitleCard text-zinc-100">Aurea | Ignite Tech</h4> -->
-            <h4 class="text-center text-purple-700">Product Chief Architect</h4>
-          </div>
-          <h3 class="year text-zinc-500">2018</h3>
-        </div>
-        <div class="background-dark absolute inset-[1px] -z-10 rounded-xl"></div>
-      </li>
-      <li
-        class="experience-highlight hover-effect group relative z-0 h-full overflow-hidden rounded-xl border border-zinc-800">
-        <div class="relative z-10 space-y-3 p-5">
-          <img src="/images/rocket_money_logo.webp" alt="Rocket Money" class="center h-16" width="74px" />
-          <div class="title pb-2 pt-11">
-            <h4 class="subtitleCard text-zinc-100">Rocket Money</h4>
-            <h4 class="text-center text-zinc-500">Senior Software Architect</h4>
-          </div>
-          <h3 class="year text-zinc-500">2019</h3>
-        </div>
-        <div class="background-dark absolute inset-[1px] -z-10 rounded-xl"></div>
-      </li><li
-        class="experience-highlight hover-effect group relative z-0 h-full overflow-hidden rounded-xl border border-zinc-800">
-        <div class="relative z-10 space-y-3 p-5">
-          <div class="grid grid-cols-2 gap-4">
-            <img src="/images/Toki_Labs_logo.jpeg" alt="Toki Labs" class="center h-16" width="64px" />
-            <img src="/images/CVA_logo.svg" alt="CVA" class="center h-16" width="89px" />
-          </div>
-          <div class="title pb-2 pt-11">
-            <h4 class="subtitleCard text-zinc-100">Toki Labs | CVA</h4>
-            <h4 class="text-center text-zinc-500">Founder and CTO</h4>
-          </div>
-          <h3 class="year text-zinc-500">2022</h3>
-        </div>
-        <div class="background-dark absolute inset-[1px] -z-10 rounded-xl"></div>
-      </li>
-    </ul>
-  </section>
-</Partial>
+        </li>
+      ))
+    }
+  </ul>
+</section>

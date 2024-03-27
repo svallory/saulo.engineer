@@ -19,6 +19,7 @@ import {
   Pagination,
 } from 'accessible-astro-components'
 import LastRoles from './sections/LastRoles.astro'
+import Stats from '../components/Stats.astro'
 ---
 
 <DefaultLayout title="Accessible Components">
@@ -86,25 +87,33 @@ import LastRoles from './sections/LastRoles.astro'
                 </svg>
               </div>
 
-              <div class="mx-auto space-y-6 py-12 sm:max-w-3xl sm:py-16 lg:col-span-7 lg:col-start-4 lg:max-w-none">
-                <h2
-                  id="about-heading"
-                  class="mb-1 text-4xl font-bold tracking-tighter sm:text-5xl sm:max-md:text-center">
-                  Hey, there! I'm Saulo.
-                  <br />
-                </h2>
-                <span class="text-2xl leading-normal tracking-wide sm:max-md:text-center">
-                  I hope you are having <nobr>a wonderful day :)</nobr>
-                </span>
+              <div
+                class="mx-auto space-y-6 pb-0 pt-12 sm:max-w-3xl sm:py-16 sm:max-md:text-center lg:col-span-7 lg:col-start-4 lg:max-w-none">
+                <div>
+                  <h2
+                    id="about-heading"
+                    class="mb-1 text-4xl font-bold tracking-tighter sm:text-5xl sm:max-md:text-center">
+                    Hey, there! I'm Saulo.
+                  </h2>
+                  <span class="mt-1 block text-2xl leading-normal tracking-wide">
+                    I hope you are having <nobr>a wonderful day :)</nobr>
+                  </span>
+                </div>
                 <p class="text-primary-300 md:text-primary-100 text-lg">
                   I love programming since I was a little kid. One of my earliest memories is of the excitement I felt
                   when I received my first computer. I spent hours playing with it.
-                  <br />
-                  <br />
-                  I was fascinated by the endless possibilities of creating and building with code, and I spent hours every
-                  day learning and experimenting. I started by teaching myself basic coding languages, and before long, I
-                  was building my own simple programs and games.
                 </p>
+                <p>
+                  I was fascinated by the endless possibilities of creating and building with code, and I spent hours
+                  every day learning and experimenting. I started by teaching myself basic coding languages, and before
+                  long, I was building my own simple programs and games.
+                </p>
+                <Stats
+                  stats={{
+                    'Years coding professionally': '21',
+                    'Repositories on Github': '111',
+                  }}
+                />
               </div>
             </div>
           </div>
@@ -257,7 +266,7 @@ import LastRoles from './sections/LastRoles.astro'
       <div class="mt-10 flex items-center justify-center gap-x-6">
         <a
           href="https://www.linkedin.com/in/saulo-vallory/recommendation-add-edit/WRITE_RECOMMENDATION?profileFormEntryPoint=PROFILE_SECTION&trackingId=oEktExmGQge2hlRr3mC8CQ%3D%3D&desktopBackground=PROFILE_DETAIL_SCREEN&recipientProfileId=ACoAAAB9KD4B1Mg9AeDXkQr-uTugwjC5Hy3zYOY&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_recommendations_details%3BcDt18q%2F9ToSmPApFsqMPCQ%3D%3D"
-          class="linkedin noise-light rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          class="linkedin bg-patt-noise-light rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           ><svg
             class="inline"
             xmlns="http://www.w3.org/2000/svg"
@@ -283,9 +292,9 @@ import LastRoles from './sections/LastRoles.astro'
   <section>
     <SectionHeader title="Experience" />
 
-    <div class="mx-auto max-w-2xl px-6">
+    <div class="mx-auto max-w-4xl px-6">
       <div class="flow-root">
-        <ul role="list" class="-mb-8">
+        <ul role="list" class="-mb-8 space-y-8">
           <Experience
             logo="toki_labs_logo.jpeg"
             role="Founder and CTO"

@@ -2,11 +2,11 @@
 const { img, name, linkedin, role } = Astro.props
 ---
 
-<figure class="background-noise-light overflow-hidden rounded-2xl shadow-lg ring-1 ring-gray-900/5">
+<figure class="bg-patt-broken-noise-light overflow-hidden rounded-2xl shadow-lg ring-1 ring-gray-900/5">
   <blockquote class="p-6 text-gray-900">
     <slot />
   </blockquote>
-  <figcaption class="background-lines flex items-center gap-x-4 border-t border-gray-900/10 p-4">
+  <figcaption class="bg-patt-lines flex items-center gap-x-4 border-t border-gray-900/10 p-4">
     <img class="h-10 w-10 rounded-full bg-gray-50" src={`/images/${img}`} alt={name} />
     <div>
       <div class="font-semibold">

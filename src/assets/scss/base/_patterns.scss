@@ -1,21 +1,21 @@
-.background-lines {
+.bg-patt-lines {
   background-image:
     linear-gradient(to bottom, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)),
     url("/images/patterns/diagonal-noise-light.png");
   overflow: hidden;
 }
 
-.background-noise-light {
+.bg-patt-broken-noise-light {
   background-image:
     linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.4)),
     url("/images/patterns/broken-noise-light.png");
   background-color: #fff;
 }
 
-.noise-light {
+.bg-patt-noise-light {
   background-image: url("/images/patterns/noise-light.webp");
 }
 
-.background-dark {
+.bg-patt-noise-dark {
   background-image: url("/images/patterns/noise-dark.png");
 }
