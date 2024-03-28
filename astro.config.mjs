@@ -6,7 +6,7 @@ import icon from "astro-icon"
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://svallory.github.io',
+  site: 'https://saulo.engineer',
   compressHTML: true,
   integrations: [mdx(), icon(), tailwind({
     applyBaseStyles: false,
