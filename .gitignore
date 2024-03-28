@@ -77,3 +77,6 @@ yarn-error.log
 # Project
 dist/
 sandbox/
+assitant/.dev.vars
+assitant/supabase/.temp
+assitant/.wrangler/tmp

@@ -1,0 +1,18 @@
+---
+---
+
+<div class="mx-auto max-w-2xl">
+  <h1>Chat messages</h1>
+  <div id="chat-messages" class="my-20 h-96 rounded-sm border-2 border-sky-300"></div>
+
+  <form action="http://localhost:8008" method="get" target="chat-iframe">
+    <div class="flex">
+      <input name="text" type="text" class="text-black" />
+      <button type="submit">🚀</button>
+    </div>
+
+    <div class="mt-10 text-2xl font-bold">Debug</div>
+    <iframe name="chat-iframe" class="mt-4 h-[400px] w-full border-2"></iframe>
+    <script src="./chat.ts"></script>
+  </form>
+</div>

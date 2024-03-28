@@ -1,0 +1,26 @@
+{
+  "name": "assitant",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev --port 8008",
+    "start": "wrangler dev",
+    "test": "vitest",
+    "types:db": "supabase gen types typescript --project-id ylgebhltybpticywvzif --schema docs > src/types/database.ts",
+    "types:workers": "wrangler types src/workers.d.ts"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.1.0",
+    "@cloudflare/workers-types": "^4.20240320.1",
+    "typescript": "^5.0.4",
+    "vitest": "1.3.0",
+    "wrangler": "^3.0.0"
+  },
+  "dependencies": {
+    "@cloudflare/ai": "^1.1.0",
+    "@supabase/supabase-js": "^2.40.0",
+    "common-tags": "^1.8.2",
+    "hono": "^4.1.4"
+  }
+}
