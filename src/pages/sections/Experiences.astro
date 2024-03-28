@@ -1,0 +1,121 @@
+---
+import Experience from '../../components/Experience.astro'
+import SectionHeader from '../../components/headers/SectionHeader.astro'
+---
+
+<!-- Experience -->
+<section class="my-12">
+  <SectionHeader title="Experience" />
+
+  <div class="mx-auto max-w-4xl px-6">
+    <div class="flow-root">
+      <ul role="list" class="-mb-8 space-y-8">
+        <Experience
+          logo="toki-labs-logo.jpeg"
+          role="Founder and CTO"
+          company="Toki Labs"
+          fromDate="nov de 2022"
+          toDate="current role"
+          blue="Git">
+          <p>
+            We are a Software House that works differently. Instead of developing for clients, we seek and support
+            partners. We are currently in private and are only taking new partnership projects via referral at the
+            moment.
+          </p>
+        </Experience>
+        <!-- <Experience
+          logo="toki-network-logo.jpeg"
+          role="VP de Estratégia"
+          company="Toki Network"
+          fromDate="ago de 2021"
+          toDate="nov de 2022">
+          <p>
+            Toki is a network of people helping each other realize their dreams. We are a horizontal organization with
+            projects that range from art studios to mobile app development. My role in Toki is to devise the best
+            strategies so people can reach their goals. I do that by finding out where dreams overlap so people walk
+            toward their goal together and, in that process, their journey accelerates one another.
+          </p>
+        </Experience> -->
+        <Experience
+          logo="truebill-logo.jpeg"
+          role="Senior Software Architect"
+          company="Truebill - We're Hiring!"
+          fromDate="jul de 2019"
+          toDate="mar de 2021">
+          <p>
+            At Truebill we were all senior developers, so when developing new features we took charge of the whole
+            process from designing the architecture to monitoring it after it was deployed to the app. Among other
+            features, I was responsible for the Pay Advance, which integrated our app with Synapse and Stripe to give
+            customers instant pay advances and automatically charge it back when they got their paychecks.
+          </p>
+        </Experience>
+        <Experience
+          logo="crossover-white-logo.jpeg"
+          role="Product Chief Archictet"
+          company="Crossover"
+          fromDate="mar de 2018"
+          toDate="abr de 2019">
+          <p>
+            As a PCA I was responsible for coordinating the development and SaaS operations for several products. For
+            most of the time I worked there, that product was http://getchute.com/
+          </p>
+          <p>
+            The most challenging thing I did while there was coordinating a team of about 40 people to deliver deep
+            changes to the product in one month, due to Facebook removing the Instagram API.
+          </p>
+        </Experience>
+        <Experience logo="doare-logo.jpeg" role="CTO" company="Doare" fromDate="ago de 2017" toDate="fev de 2018">
+          <p>
+            I helped bring the Doare architecture to a whole new level. We migrated from a Cake PHP application to a
+            microservices based architecture on Node. Given the complexity of the business requirements, most of the
+            services were built using Domain Driven Design, Event Sourcing and CQRS.
+          </p>
+          <p>Among other technologies, we used: node, typescript, angular, hapi</p>
+        </Experience>
+        <Experience
+          logo="cleanify-logo.jpeg"
+          role="Chief Software Architect"
+          company="Cleanify"
+          fromDate="abr de 2016"
+          toDate="ago de 2017">
+          <p>
+            I was hired to help Cleanify migrate the legacy monolithic PHP system to a microservices architecture on
+            Node, using Hapi and written in Typescript. We also re-implemented UIs in React and Vue.js. A couple
+            services required Domain Driven Design, Event Sourcing and CQRS, others were simple REST APIs and one was
+            implemented using GraphQL. It was a lot of work but also really fun!
+          </p>
+        </Experience>
+        <Experience
+          logo="softo-logo.jpeg"
+          role="Chief Software Architect and Engineering Manager"
+          company="Softo"
+          fromDate="mar de 2013"
+          toDate="jan de 2014">
+          <p>
+            My first assignment at Sof.to was to define the entire development stack and strategy we would use. The
+            result was a solid foundation which is used to solve very complex problems. It was based on Domain Driven
+            Design, CQRS and Event Sourcing principles. We used C#.Net MVC and Web API on the backend; NHibernate and
+            Entity Framework for persistence with a SQL Server database; Sass, TypeScript and Angular for the user
+            interface.
+          </p>
+        </Experience>
+        <Experience
+          logo="camiseteria-red-logo.webp"
+          role="Software Architect"
+          company="Camiseteria.com"
+          fromDate="ago de 2010"
+          toDate="fev de 2013">
+          <p>
+            I was hired to beat the challenge of single-handedly do in three weeks what the government had give a year
+            for the companies to do: integrate the sales to a national database of electronic receipts. All went all and
+            not even one sale was lost because we weren’t compliant with the new Brazilian law. The next big challenge
+            was to change the entire development stack from a .Net 2.0 webpages setup to the current .Net 4.5 MVC 4
+            following the Domain Driven Design. And do that without stopping the current demand for maintenance and new
+            features. The benefit this change brought to company is hard to measure, but is certainly enormous in terms
+            of productivity and developer happiness.
+          </p>
+        </Experience>
+      </ul>
+    </div>
+  </div>
+</section>

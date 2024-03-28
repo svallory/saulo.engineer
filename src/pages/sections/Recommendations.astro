@@ -1,0 +1,145 @@
+---
+import CardCloud from '../../components/CardCloud.astro'
+import RecommendationCard from '../../components/RecommendationCard.astro'
+import SectionHeader from '../../components/headers/SectionHeader.astro'
+---
+
+<section class="my-12">
+  <div class="relative isolate mx-auto max-w-7xl">
+    <!-- #region: background -->
+    <div
+      class="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 transform-gpu overflow-hidden opacity-30 blur-3xl"
+      aria-hidden="true">
+      <div
+        class="ml-[max(50%,38rem)] aspect-[1313/771] w-[82.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc]"
+        style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+      </div>
+    </div>
+    <div
+      class="absolute inset-x-0 top-0 -z-10 flex transform-gpu overflow-hidden opacity-25 blur-3xl xl:justify-end"
+      aria-hidden="true">
+      <div
+        class="ml-[-22rem] aspect-[1313/771] w-[82.0625rem] flex-none origin-top-right rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] xl:ml-0 xl:mr-[calc(50%-12rem)]"
+        style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+      </div>
+    </div>
+    <!-- #endregion: background -->
+    <div class="mx-auto px-6 lg:px-8">
+      <SectionHeader title="Recommendations" subtitle="I have worked with some amazing people!" />
+
+      <CardCloud class="mx-auto">
+        <div>
+          <!-- #region Card 1 : Predrag -->
+          <RecommendationCard
+            img="predrag-maric.jpeg"
+            name="Predrag Marić"
+            linkedin="predrag-maric"
+            role="Software Engineer | Engineering Manager | Co-Founder at Digi Klinci">
+            <p>
+              “Saulo and I worked on the same project, with him being the Product Chief Architect responsible for the
+              overall product quality.
+            </p>
+            <p>
+              He brought deep understanding of the whole product architecture (and Chute was a fairly complex product),
+              and improved stability and predictability in some rough times after the product was acquired and imported
+              into the new operating model.
+            </p>
+
+            <p>Saulo proved to be versatile and very reliable person to work with.”</p>
+          </RecommendationCard>
+          <!-- #endregion Card 1 : Predrag -->
+
+          <!--  #region Card 4 : Allan -->
+          <RecommendationCard
+            img="allan-denot.jpeg"
+            name="Allan Denot"
+            linkedin="denot"
+            role="Co-founder at NX1.io and DNX Solutions">
+            <p>
+              “Saulo is a brillant developer, he always came to me with new ideas and techniques about web programming
+              and software quality. Our exciting discussions about web projects and future of the web helped me to have
+              a better understanding of this field. I can highlight his great javascript and object-oriented programming
+              skills.”
+            </p>
+          </RecommendationCard>
+          <!-- #endregion Card 4 : Allan -->
+        </div>
+        <div>
+          <!-- #region Card 2 : Sergio -->
+          <RecommendationCard
+            img="sergio-yates.jpeg"
+            name="Sergio Yates"
+            linkedin="sergioyates"
+            role="Early stage investor | Venture capitalist | Board member | Occasional lecturer">
+            <p>
+              “I have worked with Saulo, during almost four years, by the time his company was at technology incubator
+              of Instituto Gênesis - PUC Rio. Saulo is a very experience programmer that know how to create quality code
+              that embraces clientes demands. He has all the attributes to became a great CTO. Besides that, he is a
+              tech professional with business perspective.”
+            </p>
+          </RecommendationCard>
+          <!-- #endregion Card 2 : Sergio -->
+
+          <!-- #region Card 5 : Andrey -->
+          <RecommendationCard
+            img="andrey-asoskov.jpeg"
+            name="Andrey Asoskov"
+            linkedin="andrey-asoskov"
+            role="Cloud Infrastructure Architect">
+            “Saulo did a great job as an experienced product architect in a project that we worked together in. He
+            managed to accomplish very difficult code migration tasks in a short period of time for a big and
+            high-loaded system. And he did that without service disruption. I would definitely recommend him as a
+            professional you can count on.”
+          </RecommendationCard>
+          <!-- #endregion Card 5 : Andrey -->
+
+          <!-- #region Card 7 : Vicente -->
+          <RecommendationCard
+            img="vicente-campello.jpeg"
+            name="Vicente Campello"
+            linkedin="vcampello"
+            role="Information Systems Team Leader at Pembrokeshire College">
+            <p>
+              “Saulo é o que chamo de geniozinho. Ele é o tipo de pessoa que não existe barreias e que além de ótimas
+              ideias elas são sempre acima do tempo e inovadoras. Recomendo o Saulo a qualquer empresa que precise se
+              renovar e de alguém que irá fazer o que muitos não conseguem ou irão demorar para isso.”
+            </p>
+          </RecommendationCard>
+          <!-- #endregion Card 7 : Vicente -->
+        </div>
+        <div>
+          <!-- #region Card 3 : Gabriel -->
+          <RecommendationCard
+            img="gabriel-reis.jpeg"
+            name="Gabriel Reis"
+            linkedin="https://www.linkedin.com/in/gabereis?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BgB99hce7R9KerW1LzltqPg%3D%3D"
+            role="Technical Lead @ Yat Labs">
+            <p>
+              “I had the opportunity to work with Saulo at Cleanify, a startup based in the San Francisco Bay Area. He
+              is very detail-oriented and incredibly knowledgeable on his field of work. Saulo spearheaded the
+              initiative of migrating our codebase to Typescript and other newer architectures at the time. He was also
+              a major contributor in the engineering team, translating the business needs into actionable and measurable
+              tasks. Finally, Saulo is an extremely fun person to be around. We always had a blast working with him even
+              in the face of the greatest adversities!”
+            </p>
+          </RecommendationCard>
+          <!-- #endregion Card 3 : Gabriel -->
+
+          <!-- #region Card 6 : Sabrina -->
+          <RecommendationCard
+            img="sabrina-zanker.jpeg"
+            name="Sabrina Zanker"
+            linkedin="sabrina-zanker-5b20094"
+            role="General Manager | Managing Director | Country Leader">
+            <p>
+              “Saulo is the kind of employee that you can count on for anything. He knows a little bit about marketing,
+              business, strategie, (a lot) about IT, and will learn really fast any new matter that surfs over his face.
+              He is true enterpreneur, a team worker and a risen leader.”
+            </p>
+          </RecommendationCard>
+          <!-- #endregion Card 6 : Sabrina -->
+        </div>
+      </CardCloud>
+    </div>
+  </div>
+</section>
