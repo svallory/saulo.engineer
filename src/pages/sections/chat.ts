@@ -1,17 +1,17 @@
 const chatEndpoint = 'http://localhost:8008/query'
 
 export function handleStreamResponse(sourceUrl: string, cb: (text: string) => void) {
-  const source = new EventSource(sourceUrl); // Workers AI streaming endpoint
+  const source = new EventSource(sourceUrl) // Workers AI streaming endpoint
 
   source.onmessage = (event) => {
-    if (event.data == "[DONE]") {
-      source.close();
-      return;
+    if (event.data == '[DONE]') {
+      source.close()
+      return
     }
 
-    const data = JSON.parse(event.data);
-    console.log(data);
-    cb(data.response);
+    const data = JSON.parse(event.data)
+    console.log(data)
+    cb(data.response)
   }
 }
 
@@ -23,4 +23,3 @@ handleStreamResponse(`${chatEndpoint}`, (response: string) => {
 // window['sendChatMessage'] = function sendChatMessage(msg: string) {
 
 // }
-
