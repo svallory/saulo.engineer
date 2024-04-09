@@ -24,7 +24,7 @@
           "unevaluatedProperties": false,
           "allOf": [
             {
-              "title": "[local] Marko Tag (camelCased)"
+              "title": "Marko Tag (camelCased)"
             },
             {
               "$ref": "https://saulo.engineer/contributes/marko-js/schemas/models/tag#/$defs/camelCased"
