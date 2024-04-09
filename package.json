@@ -5,12 +5,19 @@
   "author": "Mark Teekman",
   "homepage": "https://accessible-astro.netlify.app/",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
     "build": "astro check && astro build",
-    "preview": "astro preview"
+    "dev": "astro dev",
+    "format": "npm run lint:eslint -- --fix && npm run lint:prettier -- --write",
+    "lint": "tsc && npm run lint:eslint && npm run lint:prettier -- -l",
+    "lint:eslint": "eslint -f visualstudio .",
+    "lint:prettier": "prettier '**/*{.ts,.js,.json,.md,.yml,rc}'",
+    "lint-staged": "lint-staged",
+    "start": "astro dev",
+    "preview": "astro preview",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "@antfu/ni": "^0.21.12",
     "@astrojs/mdx": "^2.0.2",
     "@astrojs/partytown": "^2.0.2",
     "@astrojs/tailwind": "^5.0.4",
@@ -27,7 +34,7 @@
     "eslint": "^8.33.0",
     "eslint-plugin-astro": "^0.23.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
-    "nr": "^0.1.0",
+    "lint-staged": "^15.2.2",
     "prettier": "^2.8.8",
     "prettier-plugin-astro": "^0.8.0",
     "prettier-plugin-tailwindcss": "^0.2.2",
