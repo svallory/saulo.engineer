@@ -1,0 +1,17 @@
+title: Component file mappings
+$id: https://saulo.engineer/contributes/marko-js/schemas/property-groups/file-mappings
+$schema: https://json-schema.org/draft/2019-09/schema
+description: "Properties that allow specifying paths to the component files:
+  renderer, template, and types."
+type: object
+properties:
+  renderer:
+    type: string
+    description: Specifies the path to the JavaScript module that renders this tag.
+  template:
+    type: string
+    description: Points to the Marko template file associated with this tag.
+  types:
+    type: string
+    description: Specifies the file path for custom TypeScript type definitions,
+      enhancing editor support and type checking.

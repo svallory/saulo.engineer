@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=https://json-schema.org/draft/2019-09/schema
+$id: https://saulo.engineer/contributes/marko-js/schemas/models/attribute.object
+$schema: https://json-schema.org/draft/2019-09/schema
+x-stoplight: { id: f5en34vmmp81x }
+
+title: Attribute Object
+description: >-
+  An Attribute definition object which allows
+  customizing the details of a tag attribute.
+
+type: object
+anyOf:
+  - $ref: "#/$defs/camelCased"
+    x-stoplight:
+      id: 9h73q4bcxtlr7
+  - $ref: "#/$defs/dash-cased"
+    x-stoplight:
+      id: hl4j3i4wj9jgm
+
+examples:
+  - type: string
+    description: Specifies the component variant
+    enum:
+      - primary
+      - secondary
+
+$defs:
+  camelCased:
+    title: "object :: Attribute (camelCased)"
+    type: object
+    description: An Attribute definition object with camelCased properties
+    allOf:
+      - $ref: /models/attrribute.base.yaml#/$defs/base
+        x-stoplight:
+          id: gmcptyb6ohq09
+      - $ref: /models/attrribute.base.yaml#/$defs/camelCased-properties
+        x-stoplight:
+          id: yi01buw848adl
+    x-stoplight:
+      id: l6tgut7561nns
+  dash-cased:
+    title: "object :: Attribute (dash-cased)"
+    allOf:
+      - $ref: /models/attrribute.base.yaml#/$defs/base
+        x-stoplight:
+          id: 2j5vz3wnxdi7j
+      - $ref: /models/attrribute.base.yaml#/$defs/dash-cased-properties
+        x-stoplight:
+          id: 8zyjfp5ezr4pr
+    x-stoplight:
+      id: azldjnmjmpk12

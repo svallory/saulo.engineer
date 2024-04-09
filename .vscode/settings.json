@@ -1,0 +1,56 @@
+{
+  "cSpell.words": [
+    "hyperjump",
+    "markoc",
+    "taglib",
+    "textto"
+  ],
+  "eslint.validate": [
+    "javascript",
+    "json",
+    "jsonc",
+    "json5",
+    "yaml",
+    "toml",
+    "typescript"
+  ],
+  "yaml.schemas": {
+    "https://json-schema.org/draft/2019-09/schema": [
+      "src/**/*.yaml"
+    ]
+  },
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "marko-tag.pub*.json",
+        "marko-tag.pub*.jsonc"
+      ],
+      "url": "https://saulo.engineer/contributes/marko-js/schemas/marko-tag.json"
+    },
+    {
+      "fileMatch": [
+        "marko.pub*.json",
+        "marko.pub*.jsonc"
+      ],
+      "url": "https://saulo.engineer/contributes/marko-js/schemas/marko.json"
+    },
+    {
+      "fileMatch": [
+        "marko-tag.json",
+        "marko-tag.jsonc",
+        "marko-tag.*.json",
+        "marko-tag.*.jsonc"
+      ],
+      "url": "./schemas/marko-tag.json"
+    },
+    {
+      "fileMatch": [
+        "marko.json",
+        "marko.jsonc",
+        "marko.*.json",
+        "marko.*.jsonc"
+      ],
+      "url": "./schemas/marko.json"
+    }
+  ]
+}

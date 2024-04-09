@@ -1,0 +1,112 @@
+title: Library and Tag shared properties
+$id: https://saulo.engineer/contributes/marko-js/schemas/property-groups/shared
+$schema: https://json-schema.org/draft/2019-09/schema
+description: Combines all properties shared by tags (`marko-tag.yaml`) and
+  library (`marko.yaml`) schemas.
+type: object
+$defs:
+  base:
+    properties:
+      attributes:
+        $ref: /utils/maps.yaml#/attribute-map
+      autocomplete:
+        type: array
+        items:
+          type: object
+          properties:
+            description:
+              type: string
+            descriptionMoreURL:
+              type: string
+            displayText:
+              type: string
+            snippet:
+              type: string
+        description: Provides autocomplete suggestions for the tag, enhancing developer
+          experience by offering context-aware code completion within editors.
+      deprecated:
+        type: boolean
+        description: Flags the tag as deprecated, indicating it should be avoided in new
+          development.
+      description:
+        type: string
+        description: Provides a brief description of the tag's purpose, used in
+          documentation and tooltips.
+      html:
+        type: boolean
+        description: Indicates whether the tag is considered to be standard HTML.
+      name:
+        type: string
+        description: The tag name, serving as a unique identifier within the Marko
+          ecosystem.
+      type:
+        type: string
+        description: Specifies the Typescript type of the tag, aiding in documentation
+          and tooling.
+  camelCased-properties:
+    properties:
+      featureFlags:
+        type: array
+        items:
+          type: string
+        description: A list of feature flags that enable experimental or optional
+          features for this tag.
+      htmlType:
+        type: string
+        enum:
+          - html
+          - math
+          - svg
+        description: Specifies the type of HTML tag, e.g., 'svg' or 'html', to enable
+          specific parsing and rendering optimizations.
+      isRepeated:
+        type: boolean
+        description: Indicates whether multiple instances of this tag are allowed within
+          its parent.
+      nestedTags:
+        description: Describes nested tags within this tag. Each nested tag can have its
+          own attributes and configuration.
+        $ref: /utils/maps.yaml#/tag-map
+      openTagOnly:
+        type: boolean
+        description: Prohibits the tag from having any children
+      parseOptions:
+        $ref: ./parse-options.yaml
+      removeDashes:
+        type: boolean
+        default: false
+        description: By default, native tag attributes are dash-cased; this disables
+          that feature.
+      targetProperty:
+        type: string
+        description: |-
+          Sets the name of the input property that will receive the tag(s).
+          Useful for pluralizing the property name of a repeated tag.
+           Example: putting `<section>` tags into `input.sections`.
+  dash-cased-properties:
+    properties:
+      feature-flags:
+        $ref: "#/$defs/camelCased-properties/properties/featureFlags"
+      html-type:
+        $ref: "#/$defs/camelCased-properties/properties/htmlType"
+      is-repeated:
+        $ref: "#/$defs/camelCased-properties/properties/isRepeated"
+      nested-tags:
+        $ref: "#/$defs/camelCased-properties/properties/nestedTags"
+      open-tag-only:
+        $ref: "#/$defs/camelCased-properties/properties/openTagOnly"
+      remove-dashes:
+        $ref: "#/$defs/camelCased-properties/properties/removeDashes"
+      parse-options:
+        $ref: ./parse-options.yaml
+      target-property:
+        $ref: "#/$defs/camelCased-properties/properties/targetProperty"
+camelCased:
+  allOf:
+    - $ref: "#/$defs/base"
+    - $ref: "#/$defs/camelCased-properties"
+dash-cased:
+  allOf:
+    - $ref: "#/$defs/base"
+    - $ref: "#/$defs/dash-cased-properties"
+x-internal: true

@@ -1,0 +1,71 @@
+title: Compiler hooks
+description: Properties that allow specifying files to hook into compiler stages.
+$id: https://saulo.engineer/contributes/marko-js/schemas/property-groups/compiler-hooks
+$schema: https://json-schema.org/draft/2019-09/schema
+type: object
+$defs:
+  common-properties:
+    properties:
+      analyze:
+        type: string
+        description: Used to analyze metadata the entire ast before beginning to
+          translate it.
+      migrate:
+        type: string
+        description: Specifies a module for migrating deprecated features within the
+          tag. This can be used to automatically update projects to use newer
+          tag syntax or features.
+      migrator:
+        type: string
+        description: Use 'migrate' instead
+        deprecated: true
+      parse:
+        type: string
+        description: Points to a custom parsing module. This module can modify how the
+          tag is parsed, allowing for custom syntax or behaviors.
+      transform:
+        type: string
+        description: Defines a module that can transform the tag at compile time. This
+          allows for dynamic modifications to the tag or its children before the
+          final HTML is generated.
+      transformer:
+        type: string
+        description: Use 'transform' instead
+        deprecated: true
+      translate:
+        type: string
+        description: Specifies a module that translates the tag into another form or
+          representation, often used for cross-compilation or alternative
+          rendering targets.
+  camelCased-properties:
+    properties:
+      codeGenerator:
+        type: string
+        description: Use 'translate' instead
+        deprecated: true
+      nodeFactory:
+        type: string
+        description: Use 'parse' instead
+        deprecated: true
+  dashed-properties:
+    properties:
+      code-generator:
+        $ref: "#/$defs/camelCased-properties/properties/codeGenerator"
+      node-factory:
+        $ref: "#/$defs/camelCased-properties/properties/nodeFactory"
+camelCased:
+  title: Compiler hooks
+  description: Properties that allow specifying files to hook into compiler stages.
+  allOf:
+    - $ref: "#/$defs/common-properties"
+    - $ref: "#/$defs/camelCased-properties"
+dash-cased:
+  title: Compiler hooks
+  description: Properties that allow specifying files to hook into compiler stages.
+  allOf:
+    - $ref: "#/$defs/common-properties"
+    - $ref: "#/$defs/dashed-properties"
+anyOf:
+  - $ref: "#/camelCased"
+  - $ref: "#/dash-cased"
+x-internal: true

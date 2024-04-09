@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://json-schema.org/draft/2019-09/schema
+$id: https://saulo.engineer/contributes/marko-js/schemas/models/attribute
+$schema: https://json-schema.org/draft/2019-09/schema
+x-stoplight:
+  id: 6df5e90f7563f
+
+# This shows up in docs but not on the IDE
+description: >-
+  An attribute can be defined by simply setting it's type, but allows
+  customization of various aspects when defined using an object.
+
+  You can als define an attribute in the root-level property `attributes`
+  and later reference it by prefixing its key in the attributes map with a `#`.
+
+type:
+  - object
+  - string
+
+oneOf:
+  - $ref: /models/attrribute.string.yaml
+  - $ref: /models/attrribute.object.yaml
+

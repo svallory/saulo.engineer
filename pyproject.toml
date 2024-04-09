@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "marko-json-schemas"
+version = "0.1.0"
+description = "JSON schemas for marko.json and marko-tag.json"
+authors = ["Saulo Vallory <saulo@toki.life>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+check-jsonschema = "^0.28.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

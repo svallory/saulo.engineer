@@ -1,0 +1,81 @@
+# yaml-language-server: $schema=https://json-schema.org/draft/2019-09/schema
+$id: https://saulo.engineer/contributes/marko-js/schemas/models/tag.base
+$schema: https://json-schema.org/draft/2019-09/schema
+
+title: Tag Base
+description: Base definitions for a Tag.
+
+type: object
+unevaluatedProperties: false
+anyOf:
+  - $ref: "#/$defs/camelCased"
+  - $ref: "#/$defs/dash-cased"
+
+$defs:
+  base:
+    allOf:
+      - $ref: /property-groups/file-mappings.yaml
+      - $ref: /property-groups/shorthands.yaml
+  camelCased:
+    title: "Tag Base :: camelCased"
+    allOf:
+      - $ref: /property-groups/file-mappings.yaml
+      - $ref: /property-groups/shorthands.yaml
+      - $ref: /property-groups/compiler-hooks.yaml#/camelCased
+      - $ref: /property-groups/shared.yaml#/camelCased
+  dash-cased:
+    title: "Tag Base :: dash-cased"
+    allOf:
+      - $ref: "#/$defs/base"
+      - $ref: /property-groups/compiler-hooks.yaml#/dash-cased
+      - $ref: /property-groups/shared.yaml#/dash-cased
+  topLevel-tag-properties:
+    title: Attribute Groups
+    anyOf:
+      - type: object
+        not:
+          required:
+            - attribute-groups
+        properties:
+          attributeGroups:
+            type: object
+            description: Defines groups of attributes that can then be referenced from tag
+              definitions.
+            patternProperties:
+              .*:
+                $ref: /utils/maps.yaml#/attribute-map
+      - type: object
+        not:
+          required:
+            - attributeGroups
+        properties:
+          attribute-groups:
+            type: object
+            description: Defines groups of attributes that can then be referenced from tag
+              definitions.
+            patternProperties:
+              .*:
+                $ref: /utils/maps.yaml#/attribute-map
+  nested-tag-properties:
+    title: Attribute Groups
+    anyOf:
+      - type: object
+        not:
+          required:
+            - attribute-groups
+        properties:
+          attributeGroups:
+            type: array
+            description: Names of attribute groups that should be added to this tag.
+            items:
+              type: string
+      - type: object
+        not:
+          required:
+            - attributeGroups
+        properties:
+          attribute-groups:
+            type: array
+            description: Names of attribute groups that should be added to this tag.
+            items:
+              type: string

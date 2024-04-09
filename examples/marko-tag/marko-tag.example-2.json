@@ -1,0 +1,28 @@
+{
+  "types": "./index.d.marko",
+  "translate": "./translate",
+  "@value": {
+    "type": "expression",
+    "required": true,
+    "autocomplete": [
+      {
+        "description": "An expression which will be the initial value."
+      }
+    ]
+  },
+  "@valueChange": {
+    "type": "expression",
+    "autocomplete": [
+      {
+        "description": "When a function is passed, instead of updates changing the internal state the function will be called with the requested value."
+      }
+    ]
+  },
+  "autocomplete": [
+    {
+      "displayText": "let/<name>=<value>",
+      "description": "Defines a named controllable value.",
+      "snippet": "let/${1:name}=${2:value}"
+    }
+  ]
+}
