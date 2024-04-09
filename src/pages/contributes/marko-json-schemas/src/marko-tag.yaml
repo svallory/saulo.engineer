@@ -21,7 +21,7 @@ allOf:
   - anyOf:
     - unevaluatedProperties: false
       allOf:
-        - title: "[local] Marko Tag (camelCased)"
+        - title: "Marko Tag (camelCased)"
         - $ref: /models/tag.yaml#/$defs/camelCased
 
     - unevaluatedProperties: false
