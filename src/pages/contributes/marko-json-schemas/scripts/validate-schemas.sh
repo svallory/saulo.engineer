@@ -9,14 +9,16 @@ SCRIPT_DIR=$(
 cd "$SCRIPT_DIR/.."
 echo "Working directory: $(pwd)"
 
-BASE_URI="file://$(pwd)/src/"
+# BASE_URI="file://$(pwd)/src/"
+BASE_URI="http://localhost:4321/contributes/marko-js/schemas"
+
 echo "Base URI: $BASE_URI"
 
 echo "\n"
 echo "🟠 Validating the schemas"
 echo "------------------------------------------------------------"
 check-jsonschema --verbose \
-  --check-metaschema ./schemas/**/*.json ./src/**/*.yaml
+  --check-metaschema http://localhost:4321/contributes/marko-js/schemas/marko ./schemas/**/*.json ./src/**/*.yaml
 
 echo "\n"
 echo "🟡 Validating marko-tag.json examples"

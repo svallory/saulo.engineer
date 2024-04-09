@@ -6,7 +6,7 @@ oneOf:
   - title: Attribute type
     type: string
     description: The type of the attribute.
-    $ref: /models/attrribute.base.yaml#/$defs/attributeType
+    $ref: /models/attribute.base.yaml#/$defs/attributeType
 
   - title: Attribute reference
     type: string
