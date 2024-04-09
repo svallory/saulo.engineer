@@ -17,6 +17,6 @@ type:
   - string
 
 oneOf:
-  - $ref: /models/attrribute.string.yaml
-  - $ref: /models/attrribute.object.yaml
+  - $ref: /models/attribute.string.yaml
+  - $ref: /models/attribute.object.yaml
 

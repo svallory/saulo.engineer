@@ -6,7 +6,7 @@
     ]
   },
   "<bar>": {
-    "@dog": "boolean",
+    "@dog": "#rest",
     "attribute-groups": [
       "my-attribute-group"
     ]

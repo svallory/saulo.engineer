@@ -18,7 +18,7 @@ function removeProperties(
   properties: string[],
   shallow = false,
 ) {
-  if (!obj) return;
+  if (!obj) return obj;
 
   if (shallow) {
     for (const prop of properties) {
@@ -53,7 +53,7 @@ function transformProperty(
 ): Record<string, any> {
 
   const transformDeep = (obj: Record<string, any>, path: string[]) => {
-    if (!obj) return;
+    if (!obj) return obj;
 
     if (property in obj) {
       obj[property] = transform(obj[property], path, obj);
@@ -74,11 +74,16 @@ function transformProperty(
 
 type SchemaTransformFn = (schema: Record<string, any>) => Record<string, any>;
 
+const BASE_URI = 'https://saulo.engineer/contributes/marko-js/schemas'
+
 const transformations: SchemaTransformFn[] = [
   // remove x-stoplight keys
   s => removeProperties(s, ['x-stoplight']),
   // replace $ref to Yaml by reference to json
-  s => transformProperty(s, '$ref', ref => ref.replace('.yaml', '.json'))
+  s => transformProperty(s, '$ref', ref => ref.replace('.yaml', '.json')),
+  // make $refs absolute
+  s => transformProperty(s, '$ref', (ref: string) =>
+    ref.startsWith('/') ? `${BASE_URI}${ref.replace('.json', '')}` : ref),
 ]
 
 // Function to convert YAML file to JSON and save it to schemas directory

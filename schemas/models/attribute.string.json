@@ -6,7 +6,7 @@
       "title": "Attribute type",
       "type": "string",
       "description": "The type of the attribute.",
-      "$ref": "https://saulo.engineer/contributes/marko-js/schemas/models/attrribute.base#/$defs/attributeType"
+      "$ref": "https://saulo.engineer/contributes/marko-js/schemas/models/attribute.base#/$defs/attributeType"
     },
     {
       "title": "Attribute reference",

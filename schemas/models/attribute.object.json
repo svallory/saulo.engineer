@@ -29,10 +29,10 @@
       "description": "An Attribute definition object with camelCased properties",
       "allOf": [
         {
-          "$ref": "https://saulo.engineer/contributes/marko-js/schemas/models/attrribute.base#/$defs/base"
+          "$ref": "https://saulo.engineer/contributes/marko-js/schemas/models/attribute.base#/$defs/base"
         },
         {
-          "$ref": "https://saulo.engineer/contributes/marko-js/schemas/models/attrribute.base#/$defs/camelCased-properties"
+          "$ref": "https://saulo.engineer/contributes/marko-js/schemas/models/attribute.base#/$defs/camelCased-properties"
         }
       ]
     },
@@ -40,10 +40,10 @@
       "title": "object :: Attribute (dash-cased)",
       "allOf": [
         {
-          "$ref": "https://saulo.engineer/contributes/marko-js/schemas/models/attrribute.base#/$defs/base"
+          "$ref": "https://saulo.engineer/contributes/marko-js/schemas/models/attribute.base#/$defs/base"
         },
         {
-          "$ref": "https://saulo.engineer/contributes/marko-js/schemas/models/attrribute.base#/$defs/dash-cased-properties"
+          "$ref": "https://saulo.engineer/contributes/marko-js/schemas/models/attribute.base#/$defs/dash-cased-properties"
         }
       ]
     }
