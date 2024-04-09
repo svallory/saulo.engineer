@@ -1,0 +1,19 @@
+{
+  "<foo>": {
+    "@cat": "boolean",
+    "attribute-groups": [
+      "my-attribute-group"
+    ]
+  },
+  "<bar>": {
+    "@dog": "#rest",
+    "attribute-groups": [
+      "my-attribute-group"
+    ]
+  },
+  "attribute-groups": {
+    "my-attribute-group": {
+      "age": "number"
+    }
+  }
+}

@@ -22,15 +22,19 @@
   "json.schemas": [
     {
       "fileMatch": [
-        "marko-tag.pub*.json",
-        "marko-tag.pub*.jsonc"
+        "published/**/marko-tag.json",
+        "published/**/marko-tag.jsonc",
+        "published/**/marko-tag.*.json",
+        "published/**/marko-tag.*.jsonc"
       ],
       "url": "https://saulo.engineer/contributes/marko-js/schemas/marko-tag.json"
     },
     {
       "fileMatch": [
-        "marko.pub*.json",
-        "marko.pub*.jsonc"
+        "published/**/marko.json",
+        "published/**/marko.jsonc",
+        "published/**/marko.*.json",
+        "published/**/marko.*.jsonc"
       ],
       "url": "https://saulo.engineer/contributes/marko-js/schemas/marko.json"
     },

@@ -1,8 +1,8 @@
 title: Library and Tag shared properties
 $id: https://saulo.engineer/contributes/marko-js/schemas/property-groups/shared
 $schema: https://json-schema.org/draft/2019-09/schema
-description: Combines all properties shared by tags (`marko-tag.yaml`) and
-  library (`marko.yaml`) schemas.
+description: Combines all properties shared by tags (`marko-tag.json`) and
+  library (`marko.json`) schemas.
 type: object
 $defs:
   base:

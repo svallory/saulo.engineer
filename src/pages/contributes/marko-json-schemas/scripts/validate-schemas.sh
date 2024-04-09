@@ -26,7 +26,7 @@ echo "------------------------------------------------------------"
 check-jsonschema --verbose \
   --base-uri "$BASE_URI" \
   --schemafile ./src/marko-tag.yaml \
-  ./examples/marko-tag/*.json
+  ./tests/local/marko-tag/*.json
 
 echo "\n"
 echo "🟢 Validating marko.json examples"
@@ -34,4 +34,4 @@ echo "------------------------------------------------------------"
 check-jsonschema --verbose \
   --base-uri "$BASE_URI" \
   --schemafile ./src/marko.yaml \
-  ./examples/marko/*.json
+  ./tests/local/marko/*.json
