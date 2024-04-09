@@ -1,0 +1,29 @@
+{
+  "exclude": [
+    ".vscode",
+    "src"
+  ],
+  "formats": {
+    "openapi": {
+      "rootDir": "reference",
+      "include": [
+        "**"
+      ]
+    },
+    "json_schema": {
+      "rootDir": "schemas",
+      "include": [
+        "**"
+      ]
+    },
+    "markdown": {
+      "rootDir": "docs"
+    },
+    "image": {
+      "rootDir": "assets/img"
+    }
+  },
+  "editor": {
+    "lineWidth": 180
+  }
+}

@@ -1,0 +1,18 @@
+title: Shorthand properties
+$id: https://saulo.engineer/contributes/marko-js/schemas/property-groups/shorthands
+$schema: https://json-schema.org/draft/2019-09/schema
+description: Shorthand properties are pattern based (regex) properties used for
+  quickly defining nested and attribute tags.
+type: object
+patternProperties:
+  ^<.+>$:
+    $ref: /models/tag.nested.yaml
+  ^<.+>\[\]$:
+    $ref: /models/tag.nested.yaml
+  ^@.+ <.+>$:
+    $ref: /models/tag.nested.yaml
+  ^@.+ <.+>\[\]$:
+    $ref: /models/tag.nested.yaml
+  ^@.+$:
+    $ref: /models/attribute.yaml
+x-internal: true

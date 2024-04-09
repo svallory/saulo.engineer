@@ -1,0 +1,166 @@
+$id: https://saulo.engineer/contributes/marko-js/schemas/models/attribute.base
+$schema: https://json-schema.org/draft/2019-09/schema
+x-internal: true
+
+title: Attribute Base
+description: Base definitions for tag attributes.
+
+$defs:
+  autocompleteItem:
+    type: object
+    title: autocomplete item
+    properties:
+      description:
+        type: string
+        x-stoplight:
+          id: rwhn3tq0ufsbp
+      descriptionMoreURL:
+        type: string
+        x-stoplight:
+          id: vp9vtzya4tu6d
+      displayText:
+        type: string
+        x-stoplight:
+          id: mlfec5p1bh7s9
+      snippet:
+        type: string
+        x-stoplight:
+          id: cdiu1ni2swefn
+    x-stoplight:
+      id: jmm8vjrw51s5m
+  attributeType:
+    type: string
+    title: "string :: attribute type"
+    enum:
+      - array
+      - boolean
+      - cssId
+      - cssStyle
+      - date
+      - expression
+      - flag
+      - function
+      - number
+      - object
+      - regexp
+      - style
+      - string
+    x-stoplight:
+      id: cctngwtlnmul3
+  base:
+    properties:
+      autocomplete:
+        oneOf:
+          - type: object
+            $ref: "#/$defs/autocompleteItem"
+            x-stoplight:
+              id: u7jkaetc1yz3q
+          - type: array
+            items:
+              $ref: "#/$defs/autocompleteItem"
+              x-stoplight:
+                id: wxlyrp7cb5lkw
+            x-stoplight:
+              id: pqtpcuv1dar2h
+        x-stoplight:
+          id: n6e949hp2ikqg
+      deprecated:
+        type: boolean
+        x-stoplight:
+          id: bitu1eiqcf82t
+      description:
+        type: string
+        x-stoplight:
+          id: xlxgtzyl2e2wu
+      enum:
+        type: array
+        uniqueItems: true
+        items:
+          type: string
+          x-stoplight:
+            id: 398hzj4zzuywh
+        x-stoplight:
+          id: 1fpe5zo3p9rqu
+      html:
+        type: boolean
+        description: Indicates whether the attribute is considered to be standard HTML.
+        x-stoplight:
+          id: 433fvncctc5y0
+      name:
+        type: string
+        description: >-
+          The name of the attribute.
+
+          Overrides the name set from the '@' shorthand or the key used in'attributes'.
+        x-stoplight:
+          id: i2qkxinesmngw
+      pattern:
+        type: boolean
+        x-stoplight:
+          id: 2xuslk3lxqwlp
+      required:
+        type: boolean
+        x-stoplight:
+          id: 8gl2b65mgrx7m
+      type:
+        $ref: "#/$defs/attributeType"
+        x-stoplight:
+          id: 8puj9b84rf1zl
+  camelCased-properties:
+    type: object
+    properties:
+      defaultValue:
+        description: Provides a default value for the attribute when not explicitly set.
+        type:
+          - string
+          - number
+          - object
+          - array
+          - boolean
+          - "null"
+        x-stoplight:
+          id: xz6yakc7per1k
+      preserveName:
+        type: boolean
+        description: "[not documented yet]"
+        x-stoplight:
+          id: n9nccb6ll8wgj
+      removeDashes:
+        type: boolean
+        description: "[not documented yet]"
+        x-stoplight:
+          id: owp3orj2i1c7h
+      targetProperty:
+        type: string
+        description: >-
+          Sets the name of the input property that will receive the attribute(s)
+          value.
+
+          Useful for pluralizing the property name of a repeated attribute tag.
+           Example: putting `<@tab>` tags into `input.tabs`.
+        x-stoplight:
+          id: p2yeg39mui1jz
+    x-stoplight:
+      id: zpmhcsu0uh5rn
+  dash-cased-properties:
+    title: dash-cased Properties
+    type: object
+    properties:
+      default-value:
+        $ref: "#/$defs/camelCased-properties/properties/defaultValue"
+        x-stoplight:
+          id: q3uwkkclgojrn
+      preserve-name:
+        $ref: "#/$defs/camelCased-properties/properties/preserveName"
+        x-stoplight:
+          id: tqr5x63yhy9e3
+      remove-dashes:
+        $ref: "#/$defs/camelCased-properties/properties/removeDashes"
+        x-stoplight:
+          id: dph6hq8ypx46g
+      target-property:
+        $ref: "#/$defs/camelCased-properties/properties/targetProperty"
+        x-stoplight:
+          id: gda5rzvyaeqpd
+    x-stoplight:
+      id: c5738233xkm16

@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=https://json-schema.org/draft/2019-09/schema
+$id: https://saulo.engineer/contributes/marko-js/schemas/models/attribute.string
+$schema: https://json-schema.org/draft/2019-09/schema
+
+oneOf:
+  - title: Attribute type
+    type: string
+    description: The type of the attribute.
+    $ref: /models/attrribute.base.yaml#/$defs/attributeType
+
+  - title: Attribute reference
+    type: string
+    pattern: ^#[\w]+.*
+    description: >-
+      A key from the root-level `attributes` object.
+
+      Example:
+
+      In the code below, the attribute `#cmp-variant`,
+      is defined once in `attributes` and referenced by
+      `<FancyButton>` and `<Panel>`.
+
+      ``.yaml
+      {
+        "attributes": {
+          "cmp-variant": {
+            "name": "variant",
+            "type": "string"
+          }
+        },
+        "<FancyButton>": {
+          "@variant": "#cmp-variant"
+        },
+        "<Panel>": {
+          "@variant": "#cmp-variant"
+        }
+      }
+      ```
+
+examples:
+  - boolean
+  - array
+  - "#"
+
+x-internal: false

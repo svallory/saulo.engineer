@@ -1,0 +1,40 @@
+{
+  "taglib-id": "marko-stories",
+  "tags-dir": "../dist/components",
+  "exports": "../dist/components",
+  "<stories>": {
+    "@component": "#s",
+    "@as": "object",
+    "@value": "string",
+    "@defaults": {
+      "@args": {
+        "@*": {
+          "target-property": null,
+          "type": "expression"
+        }
+      },
+      "@parameters": {
+        "@*": {
+          "target-property": null,
+          "type": "expression"
+        }
+      }
+    },
+    "<story>[]": {
+      "@name": "string",
+      "@value": "expression",
+      "@args": {
+        "@*": {
+          "target-property": null,
+          "type": "expression"
+        }
+      },
+      "@parameters": {
+        "@*": {
+          "target-property": null,
+          "type": "expression"
+        }
+      }
+    }
+  }
+}

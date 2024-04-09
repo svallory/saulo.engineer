@@ -1,0 +1,37 @@
+{
+  "exports": "",
+  // "taglib-id": "@marko/taglib-id",
+  // alias for taglib-id
+  // "taglibId": "@marko/taglib-id",
+  "tags-dir": "./src/components",
+
+  // alias for tags-dir
+  // "tagsDir": "./src/components",
+
+  // all properties below are applied to all tags in this tag lib
+
+  "attributes": {
+    "ATTR_NAME": {
+      // Same as setting "string" above.
+      "type": "string",
+      // The attribute will default to this value.
+      "default-value": 0,
+      // Error during compilation if this attribute is undefined. (Mutually exclusive with "default-value")
+      "required": true,
+      // By default component attributes are camelCased; this disables that feature.
+      "preserve-name": true,
+      // By default native tag attributes are dash-cased; this disables that feature.
+      "remove-dashes": true,
+      // The following attributes do nothing, but are picked up by tooling.
+      "deprecated": true,
+      // Describes the attribute’s purpose.
+      "description": "The component’s heading text"
+    },
+    // We can also describe a pattern of attributes to match a definition.
+    // In the below example, all attributes prefixed with data- are configured to be a string.
+    "data-*": {
+      "type": "string",
+      "pattern": true
+    }
+  }
+}

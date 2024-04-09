@@ -1,0 +1,29 @@
+$id: https://saulo.engineer/contributes/marko-js/schemas/models/tag
+$schema: https://json-schema.org/draft/2019-09/schema
+
+title: Tag
+description: >-
+  The only difference between a top-level tag and a nested tag is in the
+  `attributeGroups` property.
+
+  While a top-level tag (or a Marko library) creates attribute groups, nested tags only use those attributes.
+
+type: object
+anyOf:
+  - unevaluatedProperties: false
+    $ref: "#/$defs/camelCased"
+  - unevaluatedProperties: false
+    $ref: "#/$defs/dash-cased"
+
+$defs:
+  camelCased:
+    allOf:
+      - title: "object :: Tag (camelCased)"
+      - $ref: /models/tag.base.yaml#/$defs/camelCased
+      - $ref: /models/tag.base.yaml#/$defs/topLevel-tag-properties
+
+  dash-cased:
+    allOf:
+      - title: "object :: Tag (dash-cased)"
+      - $ref: /models/tag.base.yaml#/$defs/dash-cased
+      - $ref: /models/tag.base.yaml#/$defs/topLevel-tag-properties
