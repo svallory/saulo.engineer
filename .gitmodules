@@ -1,3 +1,0 @@
-[submodule "src/assets/marko-json-schemas"]
-	path = src/assets/marko-json-schemas
-	url = https://github.com/svallory/marko-json-schemas.git

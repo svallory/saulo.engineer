@@ -1,0 +1,5 @@
+# NOTE: This file is NOT a git supported file
+marko-schemas:
+  remote: marko-json-schemas
+  repository: git@github.com:svallory/marko-json-schemas
+  path: src/pages/contributes/marko-json-schemas

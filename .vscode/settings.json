@@ -6,6 +6,28 @@
     "iconify",
     "partytown"
   ],
+  "files.associations": {
+      "Config Files": "markdown",
+      "Configuration Files": "markdown",
+      "*.yml.tera": "jinja-yaml",
+      "*.tera": "jinja",
+      ".gitsubtrees": "yaml"
+  },
+  // For those using file-nesting, nest the new files. E.g.:
+  "explorer.fileNesting.patterns": {
+    "package.json": "package-lock.json, yarn.lock, pnpm-workspace.yaml, pnpm-lock.yaml, bun.lockb",
+    "*.json": "${capture}.*.json",
+    ".config*": ".git*, prettier.*, *config.toml, *config.yaml, *config.yml, *rc, *rc.json, *rc.js, *rc.mjs, *rc.cjs, *rc.ts, *rc.toml, *rc.yaml, *rc.yml, .eslint*, .prettier*, vite.config.*, vitest.*, tsconfig.tsbuildinfo, .*, *.config.js",
+    "Config Files*": ".git*, prettier.*, *config.toml, *config.yaml, *config.yml, *rc, *rc.json, *rc.js, *rc.mjs, *rc.cjs, *rc.ts, *rc.toml, *rc.yaml, *rc.yml, .eslint*, .prettier*, vite.config.*, vitest.*, tsconfig.tsbuildinfo, .*, *.config.js",
+    "Configuration Files*": ".git*, prettier.*, *config.toml, *config.yaml, *config.yml, *rc, *rc.json, *rc.js, *rc.mjs, *rc.cjs, *rc.ts, *rc.toml, *rc.yaml, *rc.yml, .eslint*, .prettier*, vite.config.*, vitest.*, tsconfig.tsbuildinfo, .*, *.config.js"
+  },
+  // Ensure VSCode uses pnpm instead of npm
+  "npm.packageManager": "pnpm",
+  "search.exclude": {
+    // Avoid polluting search results with lockfile content
+    "pnpm-lock.yaml": true,
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
   "deno.enablePaths": ["./supabase/functions"],
   "deno.importMap": "./supabase/functions/import_map.json",
   "tailwindConfigViewer.workspacePath": "./"
