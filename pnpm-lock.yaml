@@ -37,9 +37,6 @@ dependencies:
     version: 18.2.0(react@18.2.0)
 
 devDependencies:
-  '@antfu/ni':
-    specifier: ^0.21.12
-    version: 0.21.12
   '@astrojs/mdx':
     specifier: ^2.0.2
     version: 2.1.1(astro@4.4.12)
@@ -137,11 +134,6 @@ packages:
     dependencies:
       execa: 5.1.1
       find-up: 5.0.0
-    dev: true
-
-  /@antfu/ni@0.21.12:
-    resolution: {integrity: sha512-2aDL3WUv8hMJb2L3r/PIQWsTLyq7RQr3v9xD16fiz6O8ys1xEyLhhTOv8gxtZvJiTzjTF5pHoArvRdesGL1DMQ==}
-    hasBin: true
     dev: true
 
   /@antfu/utils@0.7.7:

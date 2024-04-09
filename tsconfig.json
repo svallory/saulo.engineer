@@ -4,6 +4,9 @@
     "src",
     ".astro"
   ],
+  "exclude": [
+    "src/assets/marko-json-schemas"
+  ],
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "react"
