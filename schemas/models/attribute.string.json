@@ -12,7 +12,7 @@
       "title": "Attribute reference",
       "type": "string",
       "pattern": "^#[\\w]+.*",
-      "description": "A key from the root-level `attributes` object.\nExample:\nIn the code below, the attribute `#cmp-variant`, is defined once in `attributes` and referenced by `<FancyButton>` and `<Panel>`.\n``.yaml {\n  \"attributes\": {\n    \"cmp-variant\": {\n      \"name\": \"variant\",\n      \"type\": \"string\"\n    }\n  },\n  \"<FancyButton>\": {\n    \"@variant\": \"#cmp-variant\"\n  },\n  \"<Panel>\": {\n    \"@variant\": \"#cmp-variant\"\n  }\n} ```"
+      "description": "A key from the root-level `attributes` object.\nExample:\nIn the code below, the attribute `#cmp-variant`, is defined once in `attributes` and referenced by `<FancyButton>` and `<Panel>`.\n```json {\n  \"attributes\": {\n    \"cmp-variant\": {\n      \"name\": \"variant\",\n      \"type\": \"string\"\n    }\n  },\n  \"<FancyButton>\": {\n    \"@variant\": \"#cmp-variant\"\n  },\n  \"<Panel>\": {\n    \"@variant\": \"#cmp-variant\"\n  }\n} ```"
     }
   ],
   "examples": [

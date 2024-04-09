@@ -1,0 +1,45 @@
+{
+  "attributes": {
+    "label": "string",
+    "href": "string",
+    "variant": {
+      "type": "string",
+      "description": "primary | secondary"
+    },
+    "size": {
+      "type": "string",
+      "description": "small | normal | large"
+    },
+    "class": {
+      "type": "string",
+      "description": "Additional CSS class names"
+    },
+    "*": {
+      "preserve-name": false,
+      "preserveName": false,
+      "type": "string",
+      "target-property": null
+    }
+  },
+  "@label": "string",
+  "@variant": {
+    "type": "string",
+    "enum": [
+      "primary",
+      "secondary"
+    ]
+  },
+  "@size": {
+    "type": "string",
+    "enum": [
+      "small",
+      "normal",
+      "large"
+    ]
+  },
+  "@class": {
+    "type": "string",
+    "description": "Additional CSS class names"
+  },
+  "@*": "string"
+}

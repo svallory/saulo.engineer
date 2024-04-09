@@ -1,7 +1,6 @@
 import * as fs from 'fs';
 import * as yaml from 'yaml';
 import * as path from 'path';
-import type { JsonObjectExpression, ObjectLiteralExpression } from 'typescript';
 
 /**
  * Removes specified properties from an object.

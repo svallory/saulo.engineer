@@ -2,9 +2,9 @@ $id: https://saulo.engineer/contributes/marko-js/schemas/marko-tag
 $schema: https://json-schema.org/draft/2019-09/schema
 type: object
 
-title: marko-tag.yaml Schema
+title: marko-tag.json Schema
 description: |-
-  Schema for `marko-tag.yaml` files, used for defining a single tag.
+  Schema for `marko-tag.json` files, used for defining a single tag.
 
 allOf:
   - description: >-
@@ -21,7 +21,7 @@ allOf:
   - anyOf:
     - unevaluatedProperties: false
       allOf:
-        - title: "Marko Tag (camelCased)"
+        - title: "[local] Marko Tag (camelCased)"
         - $ref: /models/tag.yaml#/$defs/camelCased
 
     - unevaluatedProperties: false

@@ -1,6 +1,6 @@
 {
   "title": "Parse Options",
-  "description": "Parse options can be used to configure how Marko's parser should parse a tag.\n\nThese options set in the [parseOptions](./tag.definitions.yaml) property of a [tag definition](./tag.definitions.yaml)",
+  "description": "Parse options can be used to configure how Marko's parser should parse a tag.\n\nThese options set in the [parseOptions](./tag.definitions.json) property of a [tag definition](./tag.definitions.json)",
   "$id": "https://saulo.engineer/contributes/marko-js/schemas/property-groups/parse-options",
   "$schema": "https://json-schema.org/draft/2019-09/schema",
   "$defs": {
@@ -52,7 +52,7 @@
   },
   "camelCased": {
     "title": "Parse Options :: camelCased",
-    "description": "Parse options can be used to configure how Marko's parser should parse a tag.\n\nThese options set in the [parseOptions](./tag.definitions.yaml) property of a [tag definition](./tag.definitions.yaml)",
+    "description": "Parse options can be used to configure how Marko's parser should parse a tag.\n\nThese options set in the [parseOptions](./tag.definitions.json) property of a [tag definition](./tag.definitions.json)",
     "allOf": [
       {
         "$ref": "#/$defs/common-properties"
@@ -64,7 +64,7 @@
   },
   "dash-cased": {
     "title": "Parse Options :: dash-cased",
-    "description": "Parse options can be used to configure how Marko's parser should parse a tag.\n\nThese options set in the [parseOptions](./tag.definitions.yaml) property of a [tag definition](./tag.definitions.yaml)",
+    "description": "Parse options can be used to configure how Marko's parser should parse a tag.\n\nThese options set in the [parseOptions](./tag.definitions.json) property of a [tag definition](./tag.definitions.json)",
     "unevaluatedProperties": false,
     "allOf": [
       {

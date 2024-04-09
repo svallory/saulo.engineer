@@ -3,7 +3,7 @@ description: >-
   Parse options can be used to configure how Marko's parser should parse a tag.
 
 
-  These options set in the [parseOptions](./tag.definitions.yaml) property of a [tag definition](./tag.definitions.yaml)
+  These options set in the [parseOptions](./tag.definitions.json) property of a [tag definition](./tag.definitions.json)
 $id: https://saulo.engineer/contributes/marko-js/schemas/property-groups/parse-options
 $schema: https://json-schema.org/draft/2019-09/schema
 $defs:
@@ -50,7 +50,7 @@ camelCased:
     tag.
 
 
-    These options set in the [parseOptions](./tag.definitions.yaml) property of a [tag definition](./tag.definitions.yaml)
+    These options set in the [parseOptions](./tag.definitions.json) property of a [tag definition](./tag.definitions.json)
   allOf:
     - $ref: "#/$defs/common-properties"
     - $ref: "#/$defs/camelCased-properties"
@@ -61,7 +61,7 @@ dash-cased:
     tag.
 
 
-    These options set in the [parseOptions](./tag.definitions.yaml) property of a [tag definition](./tag.definitions.yaml)
+    These options set in the [parseOptions](./tag.definitions.json) property of a [tag definition](./tag.definitions.json)
   unevaluatedProperties: false
   allOf:
     - $ref: "#/$defs/common-properties"

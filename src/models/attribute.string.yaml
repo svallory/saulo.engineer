@@ -20,7 +20,7 @@ oneOf:
       is defined once in `attributes` and referenced by
       `<FancyButton>` and `<Panel>`.
 
-      ``.yaml
+      ```json
       {
         "attributes": {
           "cmp-variant": {

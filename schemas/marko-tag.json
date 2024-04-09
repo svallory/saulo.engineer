@@ -2,8 +2,8 @@
   "$id": "https://saulo.engineer/contributes/marko-js/schemas/marko-tag",
   "$schema": "https://json-schema.org/draft/2019-09/schema",
   "type": "object",
-  "title": "marko-tag.yaml Schema",
-  "description": "Schema for `marko-tag.yaml` files, used for defining a single tag.",
+  "title": "marko-tag.json Schema",
+  "description": "Schema for `marko-tag.json` files, used for defining a single tag.",
   "allOf": [
     {
       "description": "The marko-tag.json file configures a single component. It's automatically discovered if placed inside a tag directory."
@@ -24,7 +24,7 @@
           "unevaluatedProperties": false,
           "allOf": [
             {
-              "title": "Marko Tag (camelCased)"
+              "title": "[local] Marko Tag (camelCased)"
             },
             {
               "$ref": "https://saulo.engineer/contributes/marko-js/schemas/models/tag#/$defs/camelCased"
