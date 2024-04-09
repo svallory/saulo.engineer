@@ -3,6 +3,9 @@
   "include": [
     "src",
     ".astro"
-  ]
-
+  ],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  }
 }

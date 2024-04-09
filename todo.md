@@ -1,5 +1,9 @@
-# TO DO
-
-- [ ] Footer with links for social media
-  - [ ] icones brancos
-- [ ] New header ()
+- Last Roles => Reverse cronological order
+- Experience dates in português
+- Remover "We are hiring"
+- Falar na primeira pessoa
+- mudar verbos de "helped"/"participated" => "lead"/"managed"
+- Straight to the point
+- Use numbers
+- Tomar cuidado
+- Adicionar link "Download Resume" no lugar do "Resume"

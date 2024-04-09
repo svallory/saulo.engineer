@@ -1,27 +1,12 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
-import { Icon } from 'astro-icon/components'
-import Experience from '../components/Experience.astro'
-import RecommendationCard from '../components/RecommendationCard.astro'
-import CardCloud from '../components/CardCloud.astro'
-import SectionHeader from '../components/headers/SectionHeader.astro'
 import '../assets/scss/pages/resume.scss'
 
-import {
-  Accordion,
-  AccordionItem,
-  Breadcrumbs,
-  BreadcrumbsItem,
-  Card,
-  Media,
-  Modal,
-  Notification,
-  Pagination,
-} from 'accessible-astro-components'
 import LastRoles from './sections/LastRoles.astro'
 import Stats from '../components/Stats.astro'
 import Experiences from './sections/Experiences.astro'
 import Recommendations from './sections/Recommendations.astro'
+import AboutMe from './content/AboutMe.md'
 ---
 
 <DefaultLayout>
@@ -101,15 +86,9 @@ import Recommendations from './sections/Recommendations.astro'
                     I hope you are having <nobr>a wonderful day :)</nobr>
                   </span>
                 </div>
-                <p class="text-primary-300 md:text-primary-100 text-lg">
-                  I love programming since I was a little kid. One of my earliest memories is of the excitement I felt
-                  when I received my first computer. I spent hours playing with it.
-                </p>
-                <p>
-                  I was fascinated by the endless possibilities of creating and building with code, and I spent hours
-                  every day learning and experimenting. I started by teaching myself basic coding languages, and before
-                  long, I was building my own simple programs and games.
-                </p>
+                <div class="text-primary-300 md:text-primary-100 text-md space-y-4">
+                  <AboutMe />
+                </div>
                 <Stats
                   stats={{
                     'Years coding professionally': '21',
