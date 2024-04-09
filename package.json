@@ -15,8 +15,9 @@
     "start": "astro dev",
     "preview": "astro preview",
     "prepare": "husky",
-    "marko-schemas:pull": "git subtree pull --prefix src/pages/contributes/marko-json-schemas marko-json-schema main --squash",
-    "marko-schemas:split": "git subtree split --prefix='$(nr schemas:dir)' --branch upstream-branch",
+    "tpl": "tsx scripts/cmdtpl.ts",
+    "marko-schemas:pull": "git subtree pull --prefix src/pages/contributes/marko-json-schemas marko-json-schemas main --squash",
+    "marko-schemas:split": "nr tpl -- git subtree split --prefix=src/pages/contributes/marko-json-schemas --branch {{Branch name}}",
     "subtree:pull": "tsx scripts/cmdtpl.ts 'git subtree pull --prefix {{Subtree path (prefix)}} {{Remote name or repository}} main --squash'"
   },
   "devDependencies": {

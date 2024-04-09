@@ -1,0 +1,11 @@
+moon = "1.22.7"
+node = "20.12.0"
+pnpm = "8.15.6"
+
+[plugins]
+moon = "source:https://raw.githubusercontent.com/moonrepo/moon/master/proto-plugin.toml"
+
+[settings]
+auto-install = true
+detect-strategy = "prefer-prototools"
+pin-latest = "local"
