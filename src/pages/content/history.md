@@ -1,0 +1,13 @@
+It has been more than 20 years since I started developing software. During this time I created 111 personal repositories on Github, and contributed to many open-source projects like Storybook, Sass, Stylus, and Marko. I've worked for companies in the US, Latin America, and Europe, and founded 3 companies. I've mentored more than 50 people, and designed 2 programming languages.
+
+There was a time when I was driven by a passion for coding. Something about the ability to create things out of words spoke to me. I would be pretty happy just to see that there was a new thing in the world, a thing that I created!
+
+Now, as Chief Technology Officer at Toki Labs, I'm driven by the power of technology to transform lives, and make a difference in the world. Code became a tool for transformation, as AI is becoming now. My drive, my passion, and my concern today, is to use my time and skills wisely, and make sure the changes I make are in fact positive.
+
+I'm always trying to optimize how I learn, and that led me to launch a mentorship program for disadvantaged individuals, helping them become developers by teaching them how to learn. With over 50 mentees, I've witnessed the impact of teaching others to become self-learners and problem-solvers. Empowering people to unlock their potential has been a deeply rewarding experience.
+
+I thrive in complexity. Instead of getting overwhelmed by the combinatorial explosion of possibilities that come with any sufficiently complex system, I get excited with the opportunity to fit all the pieces together and find solutions where there seems to be none. I do that both for software and for social projects, and that's why I sometimes say that I'm a "Social Alchemist". I apply Game Theory to social issues, and I firmly believe that by understanding the motivations of individuals and groups, we can create positive-sum games that benefit everyone. This mindset has helped me solve problems and build strong relationships, both personally and professionally.
+
+In addition to my technical pursuits, I enjoy exploring the complexities of life through poetry and music. Ultimately, my diverse interests, experiences, and love for creating positive change shape who I am as a professional and a person. I am eager to continue leveraging technology, teaching, and creative thinking to transform at least a small part of the world.
+
+So now, you tell me: are you here to invite me for our next adventure?

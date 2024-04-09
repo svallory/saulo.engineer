@@ -1,6 +1,7 @@
 ---
 import Experience from '../../components/Experience.astro'
 import SectionHeader from '../../components/headers/SectionHeader.astro'
+import { experiences } from '../../docs/experiences/index.astro'
 ---
 
 <!-- Experience -->
@@ -17,11 +18,7 @@ import SectionHeader from '../../components/headers/SectionHeader.astro'
           fromDate="nov de 2022"
           toDate="current role"
           blue="Git">
-          <p>
-            We are a Software House that works differently. Instead of developing for clients, we seek and support
-            partners. We are currently in private and are only taking new partnership projects via referral at the
-            moment.
-          </p>
+          <experiences.TokiLabs />
         </Experience>
         <!-- <Experience
           logo="toki-network-logo.jpeg"
@@ -42,12 +39,7 @@ import SectionHeader from '../../components/headers/SectionHeader.astro'
           company="Truebill - We're Hiring!"
           fromDate="jul de 2019"
           toDate="mar de 2021">
-          <p>
-            At Truebill we were all senior developers, so when developing new features we took charge of the whole
-            process from designing the architecture to monitoring it after it was deployed to the app. Among other
-            features, I was responsible for the Pay Advance, which integrated our app with Synapse and Stripe to give
-            customers instant pay advances and automatically charge it back when they got their paychecks.
-          </p>
+          <experiences.RocketMoney />
         </Experience>
         <Experience
           logo="crossover-white-logo.jpeg"
