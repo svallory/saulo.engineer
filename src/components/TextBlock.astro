@@ -1,0 +1,22 @@
+---
+import SectionHeader from './headers/SectionHeader.astro'
+
+interface Props {
+  title?: string
+  /**
+   * @default "2xl"
+   */
+  size?: string
+}
+
+const { title, size = 'xl' } = Astro.props
+---
+
+<div
+  class:list={[
+    `text-${size}`,
+    'self-center mx-auto max-w-prose text-primary-300 md:text-primary-100 space-y-6 leading-relaxed',
+  ]}>
+  {title ? <SectionHeader title={title} /> : ''}
+  <slot />
+</div>

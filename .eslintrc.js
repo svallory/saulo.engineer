@@ -4,40 +4,26 @@ module.exports = {
     es2022: true,
     browser: true,
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:astro/recommended',
-    'plugin:astro/jsx-a11y-strict',
-    "prettier"
-  ],
+  extends: ['eslint:recommended', 'plugin:astro/recommended', 'plugin:astro/jsx-a11y-strict'],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: 'tsconfig.eslint.json',
     tsconfigRootDir: __dirname,
   },
-  plugins: [
-    '@stylistic/eslint-plugin-js'
-  ],
+  plugins: ['@stylistic/eslint-plugin-js'],
   rules: {
-    "import/order": [
-      "error",
+    'import/order': [
+      'error',
       {
-        "groups": [
-          ["builtin"],
-          ["external"],
-          "internal",
-          "parent",
-          "sibling",
-          "index"
-        ],
-        "alphabetize": {
-          "order": "asc",
-          "orderImportKind": "asc",
-          "caseInsensitive": true
-        }
-      }
-    ]
+        groups: [['builtin'], ['external'], 'internal', 'parent', 'sibling', 'index'],
+        alphabetize: {
+          order: 'asc',
+          orderImportKind: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
   },
   overrides: [
     {
@@ -60,18 +46,14 @@ module.exports = {
     {
       files: ['*.ts'],
       parser: '@typescript-eslint/parser',
-      extends: [
-        'plugin:@typescript-eslint/recommended',
-        "plugin:import/recommended",
-        "plugin:import/typescript"
-      ],
+      extends: ['plugin:@typescript-eslint/recommended', 'plugin:import/recommended', 'plugin:import/typescript'],
       rules: {
         '@typescript-eslint/no-unused-vars': [
           'error',
           { argsIgnorePattern: '^_', destructuredArrayIgnorePattern: '^_' },
         ],
         '@typescript-eslint/no-non-null-assertion': 'off',
-        "@typescript-eslint/no-explicit-any": "off"
+        '@typescript-eslint/no-explicit-any': 'off',
       },
     },
     {

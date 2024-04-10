@@ -1,11 +1,11 @@
 ---
 import Experience from '../../components/Experience.astro'
 import SectionHeader from '../../components/headers/SectionHeader.astro'
-import { experiences } from '../../docs/experiences/index.astro'
+import * as experiences from '../../content/experiences'
 ---
 
 <!-- Experience -->
-<section class="my-12">
+<section>
   <SectionHeader title="Experience" />
 
   <div class="mx-auto max-w-4xl px-6">
@@ -47,14 +47,7 @@ import { experiences } from '../../docs/experiences/index.astro'
           company="Crossover"
           fromDate="mar de 2018"
           toDate="abr de 2019">
-          <p>
-            As a PCA I was responsible for coordinating the development and SaaS operations for several products. For
-            most of the time I worked there, that product was http://getchute.com/
-          </p>
-          <p>
-            The most challenging thing I did while there was coordinating a team of about 40 people to deliver deep
-            changes to the product in one month, due to Facebook removing the Instagram API.
-          </p>
+          <experiences.Crossover />
         </Experience>
         <Experience logo="doare-logo.jpeg" role="CTO" company="Doare" fromDate="ago de 2017" toDate="fev de 2018">
           <p>
@@ -111,3 +104,5 @@ import { experiences } from '../../docs/experiences/index.astro'
     </div>
   </div>
 </section>
+../content/experiences/index.ts
+../../content/experiences/index.astro

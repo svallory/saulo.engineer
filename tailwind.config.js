@@ -6,4 +6,10 @@ module.exports = {
   },
   plugins: [],
   darkMode: ['class', '.darkmode'],
+  safelist: [
+    {
+      pattern: /col-span-[0-9]+/,
+      variants: ['xs', 'sm', 'md', 'lg', 'xl', '2xl'],
+    },
+  ],
 }

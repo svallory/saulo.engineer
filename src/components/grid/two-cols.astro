@@ -1,0 +1,24 @@
+---
+interface Props {
+  cssClasses?: string
+  cols?: [left: number, right: number]
+}
+
+const { cssClasses = '', cols = 6 } = Astro.props
+---
+
+<div class="lg:grid lg:grid-cols-12">
+  <div class:list={[cssClasses, `lg:col-span-${cols[0]}`, `z-10 lg:col-start-1 lg:row-start-1 lg:bg-transparent`]}>
+    <slot name="left" />
+  </div>
+  <div
+    class:list={[
+      cssClasses,
+      `lg:col-span-${cols[1]}`,
+      'lg:bg-contentbackground mx-auto sm:max-w-3xl sm:max-md:text-center lg:max-w-none rounded-3xl lg:row-start-1 lg:items-center',
+    ]}>
+    <!-- <div class="col-span-12 mx-auto sm:max-w-3xl sm:max-md:text-center lg:max-w-none"> -->
+    <slot name="right" />
+    <!-- </div> -->
+  </div>
+</div>

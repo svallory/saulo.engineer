@@ -17,9 +17,51 @@ dependencies:
   '@stoplight/elements-core':
     specifier: ^8.1.1
     version: 8.1.1(@babel/core@7.24.0)(react-dom@18.2.0)(react@18.2.0)
+  '@stoplight/json':
+    specifier: ^3.21.0
+    version: 3.21.0
+  '@stoplight/json-ref-readers':
+    specifier: ^1.2.2
+    version: 1.2.2
+  '@stoplight/json-ref-resolver':
+    specifier: ^3.1.6
+    version: 3.1.6
+  '@stoplight/json-schema-ref-parser':
+    specifier: ^10.0.0
+    version: 10.0.0
+  '@stoplight/json-schema-sampler':
+    specifier: ^0.3.0
+    version: 0.3.0
+  '@stoplight/json-schema-tree':
+    specifier: ^4.0.0
+    version: 4.0.0
   '@stoplight/json-schema-viewer':
     specifier: ^4.16.0
     version: 4.16.0(@babel/core@7.24.0)(@stoplight/markdown-viewer@5.7.0)(@stoplight/mosaic-code-viewer@1.52.0)(@stoplight/mosaic@1.52.0)(react-dom@18.2.0)(react@18.2.0)
+  '@stoplight/markdown-viewer':
+    specifier: ^5.7.0
+    version: 5.7.0(@stoplight/mosaic-code-viewer@1.52.0)(@stoplight/mosaic@1.52.0)(react-dom@18.2.0)(react@18.2.0)
+  '@stoplight/mosaic':
+    specifier: ^1.52.0
+    version: 1.52.0(react-dom@18.2.0)(react@18.2.0)
+  '@stoplight/mosaic-code-editor':
+    specifier: ^1.52.0
+    version: 1.52.0(react-dom@18.2.0)(react@18.2.0)
+  '@stoplight/mosaic-code-viewer':
+    specifier: ^1.52.0
+    version: 1.52.0(react-dom@18.2.0)(react@18.2.0)
+  '@stoplight/path':
+    specifier: ^2.0.1
+    version: 2.0.1
+  '@stoplight/react-error-boundary':
+    specifier: ^3.0.0
+    version: 3.0.0(react@18.2.0)
+  '@stoplight/types':
+    specifier: ^14.1.1
+    version: 14.1.1
+  '@stoplight/yaml':
+    specifier: ^4.3.0
+    version: 4.3.0
   '@types/react':
     specifier: ^18.2.74
     version: 18.2.74
@@ -35,6 +77,9 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
+  yaml:
+    specifier: ^2.4.1
+    version: 2.4.1
 
 devDependencies:
   '@antfu/ni':
@@ -1317,7 +1362,7 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1
     dependencies:
-      '@react-types/shared': 3.9.0(react@18.2.0)
+      '@react-types/shared': 3.22.1(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -1335,7 +1380,7 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1
     dependencies:
-      '@react-types/shared': 3.9.0(react@18.2.0)
+      '@react-types/shared': 3.22.1(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -1361,7 +1406,7 @@ packages:
       react: ^16.8.0 || ^17.0.0-rc.1
     dependencies:
       '@react-types/checkbox': 3.7.1(react@18.2.0)
-      '@react-types/shared': 3.9.0(react@18.2.0)
+      '@react-types/shared': 3.22.1(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -1370,7 +1415,7 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1
     dependencies:
-      '@react-types/shared': 3.9.0(react@18.2.0)
+      '@react-types/shared': 3.22.1(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -1691,6 +1736,32 @@ packages:
       - encoding
     dev: false
 
+  /@stoplight/json-ref-readers@1.2.2:
+    resolution: {integrity: sha512-nty0tHUq2f1IKuFYsLM4CXLZGHdMn+X/IwEUIpeSOXt0QjMUbL0Em57iJUDzz+2MkWG83smIigNZ3fauGjqgdQ==}
+    engines: {node: '>=8.3.0'}
+    dependencies:
+      node-fetch: 2.7.0
+      tslib: 1.14.1
+    transitivePeerDependencies:
+      - encoding
+    dev: false
+
+  /@stoplight/json-ref-resolver@3.1.6:
+    resolution: {integrity: sha512-YNcWv3R3n3U6iQYBsFOiWSuRGE5su1tJSiX6pAPRVk7dP0L7lqCteXGzuVRQ0gMZqUl8v1P0+fAKxF6PLo9B5A==}
+    engines: {node: '>=8.3.0'}
+    dependencies:
+      '@stoplight/json': 3.21.0
+      '@stoplight/path': 1.3.2
+      '@stoplight/types': 13.20.0
+      '@types/urijs': 1.19.25
+      dependency-graph: 0.11.0
+      fast-memoize: 2.5.2
+      immer: 9.0.21
+      lodash: 4.17.21
+      tslib: 2.6.2
+      urijs: 1.19.11
+    dev: false
+
   /@stoplight/json-schema-generator@1.0.2:
     resolution: {integrity: sha512-FzSLFoIZc6Lmw3oRE7kU6YUrl5gBmUs//rY59jdFipBoSyTPv5NyqeyTg5mvT6rY1F3qTLU3xgzRi/9Pb9eZpA==}
     hasBin: true
@@ -1712,6 +1783,16 @@ packages:
       lodash: 4.17.21
     dev: false
 
+  /@stoplight/json-schema-ref-parser@10.0.0:
+    resolution: {integrity: sha512-EibmayoGsMCIJOEKNvmsrAq37/M7A/rceY8ZAKX8rhwPThgkJ4QTPF0VhgGyfuq9P6i0EQQXM/x6nL7S2uPGsQ==}
+    dependencies:
+      '@jsdevtools/ono': 7.1.3
+      '@stoplight/path': 1.3.2
+      '@stoplight/yaml': 4.3.0
+      call-me-maybe: 1.0.2
+      url: 0.11.3
+    dev: false
+
   /@stoplight/json-schema-ref-parser@9.2.7:
     resolution: {integrity: sha512-1vNzJ7iSrFTAFNbZHPyhI6GiJJw74+WaV61bARUQEDR4Jm80f9s0Tq9uCvGoMYwIFmWDJAoTiyegnUs6SvVxDw==}
     dependencies:
@@ -1728,6 +1809,13 @@ packages:
 
   /@stoplight/json-schema-sampler@0.2.3:
     resolution: {integrity: sha512-57PqNll9y/Rkfp4/t1AkVfz5C0PIrDd8i2AW/N0XU5wVJ50kIrmJg3BD+PzmVcrF3lXFH7/LojoOUkzLZXMJpg==}
+    dependencies:
+      '@types/json-schema': 7.0.15
+      json-pointer: 0.6.2
+    dev: false
+
+  /@stoplight/json-schema-sampler@0.3.0:
+    resolution: {integrity: sha512-G7QImi2xr9+8iPEg0D9YUi1BWhIiiEm19aMb91oWBSdxuhezOAqqRP3XNY6wczHV9jLWW18f+KkghTy9AG0BQA==}
     dependencies:
       '@types/json-schema': 7.0.15
       json-pointer: 0.6.2
@@ -1963,6 +2051,11 @@ packages:
   /@stoplight/path@1.3.2:
     resolution: {integrity: sha512-lyIc6JUlUA8Ve5ELywPC8I2Sdnh1zc1zmbYgVarhXIp9YeAB0ReeqmGEOWNtlHkbP2DAA1AL65Wfn2ncjK/jtQ==}
     engines: {node: '>=8'}
+    dev: false
+
+  /@stoplight/path@2.0.1:
+    resolution: {integrity: sha512-GI3+T25Szj0iT1J/uMQgSiUEX36gM5veI/qJxb28k2t6lQ2Vt2Fa66ItTUTSiGdd5IdG23PSTWhMQz6LgqjdcQ==}
+    engines: {node: ^12.20 || >=14.13}
     dev: false
 
   /@stoplight/react-error-boundary@2.0.0(react-dom@18.2.0)(react@18.2.0):
@@ -2275,6 +2368,10 @@ packages:
   /@types/unist@3.0.2:
     resolution: {integrity: sha512-dqId9J8K/vGi5Zr7oo212BGii5m3q5Hxlkwy3WpYuKPklmBEvsbMYYyLxAQpSffdLl/gdW0XUpKWFvYmyoWCoQ==}
     dev: true
+
+  /@types/urijs@1.19.25:
+    resolution: {integrity: sha512-XOfUup9r3Y06nFAZh3WvO0rBU4OtlfPB/vgxpjg+NRdGU6CN6djdc6OEiH+PcqHCY6eFLo9Ista73uarf4gnBg==}
+    dev: false
 
   /@types/yauzl@2.10.3:
     resolution: {integrity: sha512-oJoftv0LSuaDZE3Le4DbKX+KS9G36NzOeSap90UIK0yMA/NhKJhqlSGtNDORNRaIbQfzjXDrQa0ytJ6mNRGz/Q==}
@@ -3588,6 +3685,11 @@ packages:
       object-keys: 1.1.1
     dev: true
 
+  /dependency-graph@0.11.0:
+    resolution: {integrity: sha512-JeMq7fEshyepOWDfcfHK06N3MhyPhz++vtqWhMT5O9A3K42rdsEDpfdVqjaqaAhsw6a+ZqeDvQVtD0hFHQWrzg==}
+    engines: {node: '>= 0.6.0'}
+    dev: false
+
   /dequal@2.0.3:
     resolution: {integrity: sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==}
     engines: {node: '>=6'}
@@ -4360,6 +4462,10 @@ packages:
     resolution: {integrity: sha512-8EZzEP0eKkEEVX+drtd9mtuQ+/QrlfW/5MlwcwK5Nds6EkZ/tRzEexkzUY2mIssnAyVLT+TKHuRXmFNNXYUd6g==}
     dev: false
 
+  /fast-memoize@2.5.2:
+    resolution: {integrity: sha512-Ue0LwpDYErFbmNnZSF0UH6eImUwDmogUO1jyE+JbN2gsQz/jICm1Ve7t9QT0rNSsfJt+Hs4/S3GnsDVjL4HVrw==}
+    dev: false
+
   /fast-shallow-equal@1.0.0:
     resolution: {integrity: sha512-HPtaa38cPgWvaCFmRNhlc6NG7pv6NUHqjPgVAkWGoB9mQMwYB27/K0CvOM5Czy+qpT3e8XJ6Q4aPAnzpNpzNaw==}
     dev: false
@@ -5078,6 +5184,10 @@ packages:
     resolution: {integrity: sha512-5Fytz/IraMjqpwfd34ke28PTVMjZjJG2MPn5t7OE4eUCUNf8BAa7b5WUS9/Qvr6mwOQS7Mk6vdsMno5he+T8Xw==}
     engines: {node: '>= 4'}
     dev: true
+
+  /immer@9.0.21:
+    resolution: {integrity: sha512-bc4NBHqOqSfRW7POMkHd51LvClaeMXpm8dx0e8oE2GORbq5aRK7Bxl4FyzVLdGtLmvLKL7BTDBG5ACQm4HWjTA==}
+    dev: false
 
   /immutable@4.3.5:
     resolution: {integrity: sha512-8eabxkth9gZatlwl5TBuJnCsoTADlL6ftEr7A4qgdaTsPyreilDSnUk57SO+jfKcNtxPa22U5KK6DSeAYhpBJw==}
@@ -7088,7 +7198,6 @@ packages:
 
   /object-inspect@1.13.1:
     resolution: {integrity: sha512-5qoj1RUiKOMsCCNLV1CBiPYE10sziTsnmNxkAI/rZhiD63CF7IqdFGC/XzjWjpSgLf0LxXX3bDFIh0E18f6UhQ==}
-    dev: true
 
   /object-keys@1.1.1:
     resolution: {integrity: sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA==}
@@ -7496,7 +7605,7 @@ packages:
     dependencies:
       lilconfig: 3.1.1
       postcss: 8.4.35
-      yaml: 2.4.0
+      yaml: 2.4.1
     dev: true
 
   /postcss-nested@6.0.1(postcss@8.4.35):
@@ -7698,9 +7807,20 @@ packages:
       once: 1.4.0
     dev: true
 
+  /punycode@1.4.1:
+    resolution: {integrity: sha512-jmYNElW7yvO7TV33CjSmvSiE2yco3bV2czu/OzDKdMNVZQWfxCblURLhf+47syQRBntjfLdd/H0egrzIG+oaFQ==}
+    dev: false
+
   /punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
+
+  /qs@6.12.0:
+    resolution: {integrity: sha512-trVZiI6RMOkO476zLGaBIzszOdFPnCCXHPG9kn0yuS1uz6xdVxPfZdB3vUig9pxPFDM9BRAgz/YUIVQ1/vuiUg==}
+    engines: {node: '>=0.6'}
+    dependencies:
+      side-channel: 1.0.6
+    dev: false
 
   /queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
@@ -8386,7 +8506,6 @@ packages:
       es-errors: 1.3.0
       get-intrinsic: 1.2.4
       object-inspect: 1.13.1
-    dev: true
 
   /signal-exit@3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
@@ -9341,6 +9460,13 @@ packages:
     resolution: {integrity: sha512-HXgFDgDommxn5/bIv0cnQZsPhHDA90NPHD6+c/v21U5+Sx5hoP8+dP9IZXBU1gIfvdRfhG8cel9QNPeionfcCQ==}
     dev: false
 
+  /url@0.11.3:
+    resolution: {integrity: sha512-6hxOLGfZASQK/cijlZnZJTq8OXAkt/3YGfQX45vvMYXpZoo8NdWZcY73K108Jf759lS1Bv/8wXnHDTSz17dSRw==}
+    dependencies:
+      punycode: 1.4.1
+      qs: 6.12.0
+    dev: false
+
   /use-resize-observer@9.1.0(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-R25VqO9Wb3asSD4eqtcxk8sJalvIOYBqS8MNZlpDSQ4l4xMQxC/J7Id9HoTqPq8FwULIn0PVW+OAqF2dyYbjow==}
     peerDependencies:
@@ -9851,11 +9977,10 @@ packages:
     engines: {node: '>= 14'}
     dev: true
 
-  /yaml@2.4.0:
-    resolution: {integrity: sha512-j9iR8g+/t0lArF4V6NE/QCfT+CO7iLqrXAHZbJdo+LfjqP1vR8Fg5bSiaq6Q2lOD1AUEVrEVIgABvBFYojJVYQ==}
+  /yaml@2.4.1:
+    resolution: {integrity: sha512-pIXzoImaqmfOrL7teGUBt/T7ZDnyeGBWyXQBvOVhLkWLN37GXv8NMLK406UY6dS51JfcQHsmcW5cJ441bHg6Lg==}
     engines: {node: '>= 14'}
     hasBin: true
-    dev: true
 
   /yargs-parser@21.1.1:
     resolution: {integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==}

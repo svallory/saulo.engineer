@@ -1,14 +1,28 @@
 {
   "extends": "astro/tsconfigs/base",
-  "include": [
-    "src",
-    ".astro"
-  ],
-  "exclude": [
-    "src/assets/marko-json-schemas"
-  ],
+  "include": ["src", ".astro"],
+  "exclude": ["src/assets/marko-json-schemas"],
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    "jsxImportSource": "react",
+    "paths": {
+      "@stoplight/elements": ["./node_modules/@stoplight/elements/index.d.ts"],
+      "@stoplight/elements-core": ["./node_modules/@stoplight/elements-core/index.d.ts"],
+      "@stoplight/json": ["./node_modules/@stoplight/json/index.d.ts"],
+      "@stoplight/json-ref-readers": ["./node_modules/@stoplight/json-ref-readers/index.d.ts"],
+      "@stoplight/json-ref-resolver": ["./node_modules/@stoplight/json-ref-resolver/index.d.ts"],
+      "@stoplight/json-schema-ref-parser": ["./node_modules/@stoplight/json-schema-ref-parser/index.d.ts"],
+      "@stoplight/json-schema-sampler": ["./node_modules/@stoplight/json-schema-sampler/index.d.ts"],
+      "@stoplight/json-schema-tree": ["./node_modules/@stoplight/json-schema-tree/index.d.ts"],
+      "@stoplight/json-schema-viewer": ["./node_modules/@stoplight/json-schema-viewer/index.d.ts"],
+      "@stoplight/markdown-viewer": ["./node_modules/@stoplight/markdown-viewer/index.d.ts"],
+      "@stoplight/mosaic": ["./node_modules/@stoplight/mosaic/index.d.ts"],
+      "@stoplight/mosaic-code-editor": ["./node_modules/@stoplight/mosaic-code-editor/index.d.ts"],
+      "@stoplight/mosaic-code-viewer": ["./node_modules/@stoplight/mosaic-code-viewer/index.d.ts"],
+      "@stoplight/path": ["./node_modules/@stoplight/path/index.d.ts"],
+      "@stoplight/react-error-boundary": ["./node_modules/@stoplight/react-error-boundary/index.d.ts"],
+      "@stoplight/types": ["./node_modules/@stoplight/types/index.d.ts"],
+      "@stoplight/yaml": ["./node_modules/@stoplight/yaml/index.d.ts"]
+    }
   }
 }
