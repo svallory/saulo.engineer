@@ -1,0 +1,46 @@
+---
+import '../../../env.d.ts'
+
+import { JsonSchemaViewer } from '@stoplight/json-schema-viewer'
+import EmptyLayout from '../../../layouts/EmptyLayout.astro'
+import yaml from '@stoplight/yaml'
+
+import { Resolver } from '@stoplight/json-ref-resolver'
+import { resolveFile, resolveHttp } from '@stoplight/json-ref-readers'
+
+const httpAndFileResolver = new Resolver({
+  resolvers: {
+    https: { resolve: resolveHttp },
+    http: { resolve: resolveHttp },
+    file: { resolve: resolveFile },
+  },
+})
+
+import RefParser from '@stoplight/json-schema-ref-parser'
+import yamlSchema from '../_marko-json-schemas/src/models/tag.yaml?raw'
+
+const baseUri = 'htpps://saulo.engineer/contributes/marko-js/schemas'
+console.log('yamlSchem', yamlSchema)
+
+let schema = yamlSchema //.replaceAll('/models', `${baseUri}/models`)
+console.log('-------------------- replaced\n', yamlSchema)
+schema = yaml.parse(schema)
+
+try {
+  const resolved = await httpAndFileResolver.resolve(schema)
+  // derefdSchema = await RefParser.dereference(schema)
+  console.log(resolved.result)
+  schema = resolved.result
+} catch (err) {
+  console.error(err)
+}
+
+export const workspaceId = 'd2s6MjEwNzIx'
+import '@stoplight/elements/styles.min.css'
+---
+
+<pre>{JSON.stringify(schema, null, 2)}</pre>
+<!-- resolveRef={resolveHttp} -->
+<!-- <EmptyLayout>
+  <JsonSchemaViewer schema={JSON.parse(schema)} emptyText="No schema defined" defaultExpandedDepth={0} />
+</EmptyLayout> -->

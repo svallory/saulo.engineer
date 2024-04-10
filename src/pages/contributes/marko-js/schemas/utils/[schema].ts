@@ -1,11 +1,10 @@
 export async function GET({ params /*, request*/ }) {
-  const schema = (await import(`../../../marko-json-schemas/schemas/utils/${params['schema'].replace('.json','')}.json`)).default;
-  return new Response(JSON.stringify(schema));
+  const schema = (
+    await import(`../../../_marko-json-schemas/schemas/utils/${params['schema'].replace('.json', '')}.json`)
+  ).default
+  return new Response(JSON.stringify(schema))
 }
 
 export function getStaticPaths() {
-  return [
-    { params: { schema: "maps"} },
-    { params: { schema: "maps.json"} }
-  ]
+  return [{ params: { schema: 'maps' } }, { params: { schema: 'maps.json' } }]
 }

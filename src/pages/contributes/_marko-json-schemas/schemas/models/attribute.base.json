@@ -1,0 +1,133 @@
+{
+  "$id": "https://saulo.engineer/contributes/marko-js/schemas/models/attribute.base",
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "x-internal": true,
+  "title": "Attribute Base",
+  "description": "Base definitions for tag attributes.",
+  "$defs": {
+    "autocompleteItem": {
+      "type": "object",
+      "title": "autocomplete item",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "descriptionMoreURL": {
+          "type": "string"
+        },
+        "displayText": {
+          "type": "string"
+        },
+        "snippet": {
+          "type": "string"
+        }
+      }
+    },
+    "attributeType": {
+      "type": "string",
+      "title": "string :: attribute type",
+      "enum": [
+        "array",
+        "boolean",
+        "cssId",
+        "cssStyle",
+        "date",
+        "expression",
+        "flag",
+        "function",
+        "number",
+        "object",
+        "regexp",
+        "style",
+        "string"
+      ]
+    },
+    "base": {
+      "properties": {
+        "autocomplete": {
+          "oneOf": [
+            {
+              "type": "object",
+              "$ref": "#/$defs/autocompleteItem"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/autocompleteItem"
+              }
+            }
+          ]
+        },
+        "deprecated": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        },
+        "enum": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "html": {
+          "type": "boolean",
+          "description": "Indicates whether the attribute is considered to be standard HTML."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the attribute.\nOverrides the name set from the '@' shorthand or the key used in'attributes'."
+        },
+        "pattern": {
+          "type": "boolean"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "type": {
+          "$ref": "#/$defs/attributeType"
+        }
+      }
+    },
+    "camelCased-properties": {
+      "type": "object",
+      "properties": {
+        "defaultValue": {
+          "description": "Provides a default value for the attribute when not explicitly set.",
+          "type": ["string", "number", "object", "array", "boolean", "null"]
+        },
+        "preserveName": {
+          "type": "boolean",
+          "description": "[not documented yet]"
+        },
+        "removeDashes": {
+          "type": "boolean",
+          "description": "[not documented yet]"
+        },
+        "targetProperty": {
+          "type": "string",
+          "description": "Sets the name of the input property that will receive the attribute(s) value.\nUseful for pluralizing the property name of a repeated attribute tag.\n Example: putting `<@tab>` tags into `input.tabs`."
+        }
+      }
+    },
+    "dash-cased-properties": {
+      "title": "dash-cased Properties",
+      "type": "object",
+      "properties": {
+        "default-value": {
+          "$ref": "#/$defs/camelCased-properties/properties/defaultValue"
+        },
+        "preserve-name": {
+          "$ref": "#/$defs/camelCased-properties/properties/preserveName"
+        },
+        "remove-dashes": {
+          "$ref": "#/$defs/camelCased-properties/properties/removeDashes"
+        },
+        "target-property": {
+          "$ref": "#/$defs/camelCased-properties/properties/targetProperty"
+        }
+      }
+    }
+  }
+}

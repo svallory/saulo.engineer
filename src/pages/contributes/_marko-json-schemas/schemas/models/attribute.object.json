@@ -1,0 +1,48 @@
+{
+  "$id": "https://saulo.engineer/contributes/marko-js/schemas/models/attribute.object",
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Attribute Object",
+  "description": "An Attribute definition object which allows customizing the details of a tag attribute.",
+  "type": "object",
+  "anyOf": [
+    {
+      "$ref": "#/$defs/camelCased"
+    },
+    {
+      "$ref": "#/$defs/dash-cased"
+    }
+  ],
+  "examples": [
+    {
+      "type": "string",
+      "description": "Specifies the component variant",
+      "enum": ["primary", "secondary"]
+    }
+  ],
+  "$defs": {
+    "camelCased": {
+      "title": "object :: Attribute (camelCased)",
+      "type": "object",
+      "description": "An Attribute definition object with camelCased properties",
+      "allOf": [
+        {
+          "$ref": "https://saulo.engineer/contributes/marko-js/schemas/models/attribute.base#/$defs/base"
+        },
+        {
+          "$ref": "https://saulo.engineer/contributes/marko-js/schemas/models/attribute.base#/$defs/camelCased-properties"
+        }
+      ]
+    },
+    "dash-cased": {
+      "title": "object :: Attribute (dash-cased)",
+      "allOf": [
+        {
+          "$ref": "https://saulo.engineer/contributes/marko-js/schemas/models/attribute.base#/$defs/base"
+        },
+        {
+          "$ref": "https://saulo.engineer/contributes/marko-js/schemas/models/attribute.base#/$defs/dash-cased-properties"
+        }
+      ]
+    }
+  }
+}

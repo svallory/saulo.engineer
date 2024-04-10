@@ -1,0 +1,102 @@
+{
+  "$id": "https://saulo.engineer/contributes/marko-js/schemas/marko",
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Marko library configuration file (marko.json)",
+  "x-info": {
+    "description": "The marko.json file can be used to identify and document an entire library of tags.\nCompiler hooks, file mappings, and attributes defined here will be applied to all tags."
+  },
+  "type": "object",
+  "allOf": [
+    {
+      "description": "Similar to marko-tag.json, this file is discovered if placed within a tag directory. It will also be discovered at the root directory of a project, or in a node_module package."
+    },
+    {
+      "anyOf": [
+        {
+          "allOf": [
+            {
+              "title": "Marko Library (camelCased)"
+            },
+            {
+              "$ref": "https://saulo.engineer/contributes/marko-js/schemas/models/tag#/$defs/camelCased"
+            },
+            {
+              "$ref": "#/$defs/base"
+            },
+            {
+              "$ref": "#/$defs/camelCased-properties"
+            }
+          ],
+          "unevaluatedProperties": false
+        },
+        {
+          "allOf": [
+            {
+              "title": "Marko Library (dash-cased)"
+            },
+            {
+              "$ref": "https://saulo.engineer/contributes/marko-js/schemas/models/tag#/$defs/dash-cased"
+            },
+            {
+              "$ref": "#/$defs/base"
+            },
+            {
+              "$ref": "#/$defs/dash-cased-properties"
+            }
+          ],
+          "unevaluatedProperties": false
+        }
+      ]
+    }
+  ],
+  "$defs": {
+    "base": {
+      "type": "object",
+      "properties": {
+        "$schema": {
+          "title": "$schema",
+          "default": "https://saulo.engineer/contributes/marko-js/schemas/marko",
+          "type": "string"
+        },
+        "exports": {
+          "type": "string",
+          "description": "Where the compiled components are exported."
+        }
+      }
+    },
+    "camelCased-properties": {
+      "type": "object",
+      "properties": {
+        "tagsDir": {
+          "type": "string",
+          "description": "What directory to crawl to autodiscover components. Default: './components/'"
+        },
+        "taglibId": {
+          "type": "string",
+          "description": "Names the component library, for better errors."
+        },
+        "taglibImports": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Creates a combined tag library by referencing others."
+        }
+      }
+    },
+    "dash-cased-properties": {
+      "type": "object",
+      "properties": {
+        "tags-dir": {
+          "$ref": "#/$defs/camelCased-properties/properties/tagsDir"
+        },
+        "taglib-id": {
+          "$ref": "#/$defs/camelCased-properties/properties/taglibId"
+        },
+        "taglib-imports": {
+          "$ref": "#/$defs/camelCased-properties/properties/taglibImports"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "$id": "https://saulo.engineer/contributes/marko-js/schemas/models/tag.base",
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Tag Base",
+  "description": "Base definitions for a Tag.",
+  "type": "object",
+  "unevaluatedProperties": false,
+  "anyOf": [
+    {
+      "$ref": "#/$defs/camelCased"
+    },
+    {
+      "$ref": "#/$defs/dash-cased"
+    }
+  ],
+  "$defs": {
+    "base": {
+      "allOf": [
+        {
+          "$ref": "https://saulo.engineer/contributes/marko-js/schemas/property-groups/file-mappings"
+        },
+        {
+          "$ref": "https://saulo.engineer/contributes/marko-js/schemas/property-groups/shorthands"
+        }
+      ]
+    },
+    "camelCased": {
+      "title": "Tag Base :: camelCased",
+      "allOf": [
+        {
+          "$ref": "https://saulo.engineer/contributes/marko-js/schemas/property-groups/file-mappings"
+        },
+        {
+          "$ref": "https://saulo.engineer/contributes/marko-js/schemas/property-groups/shorthands"
+        },
+        {
+          "$ref": "https://saulo.engineer/contributes/marko-js/schemas/property-groups/compiler-hooks#/camelCased"
+        },
+        {
+          "$ref": "https://saulo.engineer/contributes/marko-js/schemas/property-groups/shared#/camelCased"
+        }
+      ]
+    },
+    "dash-cased": {
+      "title": "Tag Base :: dash-cased",
+      "allOf": [
+        {
+          "$ref": "#/$defs/base"
+        },
+        {
+          "$ref": "https://saulo.engineer/contributes/marko-js/schemas/property-groups/compiler-hooks#/dash-cased"
+        },
+        {
+          "$ref": "https://saulo.engineer/contributes/marko-js/schemas/property-groups/shared#/dash-cased"
+        }
+      ]
+    },
+    "topLevel-tag-properties": {
+      "title": "Attribute Groups",
+      "anyOf": [
+        {
+          "type": "object",
+          "not": {
+            "required": ["attribute-groups"]
+          },
+          "properties": {
+            "attributeGroups": {
+              "type": "object",
+              "description": "Defines groups of attributes that can then be referenced from tag definitions.",
+              "patternProperties": {
+                ".*": {
+                  "$ref": "https://saulo.engineer/contributes/marko-js/schemas/utils/maps#/attribute-map"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "not": {
+            "required": ["attributeGroups"]
+          },
+          "properties": {
+            "attribute-groups": {
+              "type": "object",
+              "description": "Defines groups of attributes that can then be referenced from tag definitions.",
+              "patternProperties": {
+                ".*": {
+                  "$ref": "https://saulo.engineer/contributes/marko-js/schemas/utils/maps#/attribute-map"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "nested-tag-properties": {
+      "title": "Attribute Groups",
+      "anyOf": [
+        {
+          "type": "object",
+          "not": {
+            "required": ["attribute-groups"]
+          },
+          "properties": {
+            "attributeGroups": {
+              "type": "array",
+              "description": "Names of attribute groups that should be added to this tag.",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "not": {
+            "required": ["attributeGroups"]
+          },
+          "properties": {
+            "attribute-groups": {
+              "type": "array",
+              "description": "Names of attribute groups that should be added to this tag.",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
