@@ -14,8 +14,7 @@ const { page } = Astro.props as { page: any }
 
 <DefaultLayout
   title="Blog"
-  description="An example of a blog with dynamic content fetched from JSONPlaceholder using the title, body and userId."
->
+  description="An example of a blog with dynamic content fetched from JSONPlaceholder using the title, body and userId.">
   <section class="my-12">
     <div class="space-content container">
       <h1>Blog</h1>
@@ -36,8 +35,7 @@ const { page } = Astro.props as { page: any }
               <Card
                 url={'/blog/' + post.title.replaceAll(' ', '-').toLowerCase()}
                 title={post.title}
-                footer={'userId:' + post.userId}
-              >
+                footer={'userId:' + post.userId}>
                 {post.body}
               </Card>
             </li>

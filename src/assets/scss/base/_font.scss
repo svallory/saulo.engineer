@@ -108,21 +108,6 @@ body {
     }
   }
 
-  .container a.social-icon {
-    color: var(--neutral-100);
-    text-decoration: none;
-
-    &:visited {
-      color: var(--neutral-100);
-    }
-
-    &:hover,
-    &:focus {
-      color: var(--neutral-500);
-      text-decoration: none;
-    }
-  }
-
   :where(main) a {
     word-wrap: break-word;
     word-break: break-word;

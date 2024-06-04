@@ -12,6 +12,7 @@ import * as about from '../content/about'
 import TwoCols from '../components/grid/two-cols.astro'
 import SectionHeader from '../components/headers/SectionHeader.astro'
 import IconLink from '../components/IconLink.astro'
+import GetInTouch from './sections/GetInTouch.astro'
 ---
 
 <style lang="scss" is:global>
@@ -306,24 +307,15 @@ import IconLink from '../components/IconLink.astro'
     </div>
   </section>
 
-  <section>
-    <div class="container">
+  <section class="bg-patt-noise-light text-slate-900">
+    <div class="container py-12">
       <TextBlock>
         So now, you tell me:
-        <h3>
-          Are you here to invite me
-          for our next adventure?
-        </h3>
+        <h3>Are you here to invite me for our next adventure?</h3>
       </TextBlock>
-    </div>
-  </section>
 
-  <section>
-    <div class="get-in-touch">
-      <IconLink icon="line-md:github-loop" url="https://github.com/svallory/svallory.github.io" />
-      <IconLink icon="line-md:twitter-x" url="https://twitter.com/svallory_en" />
-      <IconLink icon="line-md:linkedin" url="https://www.linkedin.com/in/saulo-vallory" />
-      <IconLink icon="line-md:discord" url="https://discordapp.com/users/svallory#8453" />
+      <p class="text-lg text-violet-100">Get in Touch and let's talk!</p>
+      <GetInTouch />
     </div>
   </section>
 

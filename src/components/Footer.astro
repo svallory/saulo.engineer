@@ -1,28 +1,3 @@
----
-import IconLink from './IconLink.astro'
-import SectionHeader from './headers/SectionHeader.astro'
-
-const currentYear = new Date().getFullYear()
----
-
-<style>
-  .container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-  }
-</style>
-
 <footer>
-  <section class="mb-48 mt-56">
-    <SectionHeader title="" subtitle="Get in Touch" />
-    <div class="container">
-      <IconLink icon="line-md:github-loop" url="https://github.com/svallory/svallory.github.io" />
-      <IconLink icon="line-md:twitter-x" url="https://twitter.com/svallory_en" />
-      <IconLink icon="line-md:linkedin" url="https://www.linkedin.com/in/saulo-vallory" />
-      <IconLink icon="line-md:discord" url="https://discordapp.com/users/svallory#8453" />
-    </div>
-  </section>
+  <slot />
 </footer>

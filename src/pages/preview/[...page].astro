@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+const logAndFwd = (title: string, arg: any) => {
+  console.log(title, arg)
+  return arg
+}
+
+const Page = (await import('../sections/GetInTouch.astro')).default
+// export async function GET({ params /*, request*/ }) {
+//   // const page = await import(/* @vite-ignore */logAndFwd('💬 Rendering page:', `../${params['page']}.astro`));
+//   return new Response(section.default(Astro));
+// }
+
+export function getStaticPaths() {
+  return [
+    // HOW TO UPDATE THE LIST:
+    // The code below is generated using
+    // the Generate Index extension (https://marketplace.visualstudio.com/items?itemName=JayFong.generate-index)
+    //@index('../**/*.astro', (f, _) => `{ params: { page: "${f.path.replace('../', '')}"}},`)
+    { params: { page: '404' } },
+    { params: { page: 'about' } },
+    { params: { page: 'blog/[...page]' } },
+    { params: { page: 'blog/[post]' } },
+    { params: { page: 'contributes/marko-js/index' } },
+    { params: { page: 'examples/accessible-components' } },
+    { params: { page: 'index' } },
+    { params: { page: 'marko-polo-2' } },
+    { params: { page: 'marko-polo' } },
+    { params: { page: 'projects' } },
+    { params: { page: 'sections/Experiences-test' } },
+    { params: { page: 'sections/Experiences' } },
+    { params: { page: 'sections/GetInTouch' } },
+    { params: { page: 'sections/LastRoles-test' } },
+    { params: { page: 'sections/LastRoles' } },
+    { params: { page: 'sections/Recommendations-test' } },
+    { params: { page: 'sections/Recommendations' } },
+    //@endindex
+  ]
+}
+---
+
+<BaseLayout>
+  <Page />
+</BaseLayout>

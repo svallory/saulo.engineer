@@ -1,0 +1,26 @@
+openapi: 3.0.3
+info:
+  title: Marko JS Schemas API
+  description: API for accessing Marko JS schemas.
+  version: 1.0.0
+
+paths:
+  /schemas:
+    get:
+      summary: Get a list of Marko JS schemas
+      responses:
+        '200':
+          description: A JSON array of schemas
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    name:
+                      type: string
+                    schemaVersion:
+                      type: string

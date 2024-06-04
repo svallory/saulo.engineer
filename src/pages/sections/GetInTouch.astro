@@ -1,0 +1,48 @@
+---
+import IconLink from '../../components/IconLink.astro'
+
+interface Props {
+  linkColor?: {
+    default: string
+    /**
+     * @default {string} The color in linkColor.default
+     */
+    visited?: string
+    /**
+     * @default {string} The color in linkColor.default
+     */
+    hover?: string
+  }
+}
+
+const { linkColor } = Astro.props
+
+const cssVars = []
+
+if (linkColor) {
+  cssVars.push(
+    ...[
+      linkColor.default && `--IconLink-color: ${linkColor.default}`,
+      linkColor.hover && `--IconLink-color-hover: ${linkColor.hover || linkColor.default}`,
+      linkColor.visited && `--IconLink-color-visited: ${linkColor.visited || linkColor.hover}`,
+    ].filter(Boolean)
+  )
+}
+---
+
+<div id="contact-links" style={cssVars.join(';')}>
+  <IconLink icon="line-md:github-loop" url="https://github.com/svallory/svallory.github.io" />
+  <IconLink icon="line-md:twitter-x" url="https://twitter.com/svallory_en" />
+  <IconLink icon="line-md:linkedin" url="https://www.linkedin.com/in/saulo-vallory" />
+  <IconLink icon="line-md:discord" url="https://discordapp.com/users/svallory#8453" />
+</div>
+
+<style lang="scss" is:global>
+  #contact-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+</style>

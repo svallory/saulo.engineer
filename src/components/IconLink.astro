@@ -1,16 +1,33 @@
 ---
 import { Icon } from 'astro-icon/components'
-import type { Icon as IconName } from "virtual:astro-icon";
+import type { Icon as IconName } from 'virtual:astro-icon'
 
 interface Props {
-  icon: IconName;
-  url: string;
-  size?: number;
+  icon: IconName
+  url: string
+  size?: number
 }
 
-const { icon, url, size=60 } = Astro.props
+const { icon, url, size = 60 } = Astro.props
 ---
 
-<a class="social-icon" href={url}>
+<style lang="scss">
+  a#socialIcons.social-icon {
+    color: var(--IconLink-color, --neutral-100);
+    text-decoration: none;
+
+    &:visited {
+      color: var(--IconLink-color-visited, --IconLink-color, --neutral-100);
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--IconLink-color-hover, --IconLink-color, --neutral-500);
+      text-decoration: none;
+    }
+  }
+</style>
+
+<a id="socialIcons" class="social-icon" href={url}>
   <Icon name={icon} class="inline-block" style={`width: ${size}; height: ${size};`} />
 </a>

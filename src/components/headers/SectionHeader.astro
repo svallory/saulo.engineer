@@ -7,7 +7,7 @@ interface Props {
 const { title, subtitle } = Astro.props
 ---
 
-<div class="mt-30 mb-20 text-center">
-  <h2 class="text-4xl sm:text-5xl">{title}</h2>
+<div class="pt- mt-30 mb-20 text-center">
+  <h2 class:list={['text-4xl', `sm:text-5xl`]}>{title}</h2>
   {subtitle && <p class="text-lg text-violet-100">{subtitle}</p>}
 </div>

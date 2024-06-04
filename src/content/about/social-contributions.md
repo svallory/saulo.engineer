@@ -13,7 +13,9 @@ tags:
   - volunteering
 ---
 
-**to learn and help other people learn.**
+But my favorite thing is...
+
+### To learn and help other people learn
 
 I'm always trying to optimize how I learn and that led me to launch a mentorship program for disadvantaged individuals, helping them become developers by teaching them how to learn.
 
