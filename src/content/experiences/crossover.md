@@ -1,7 +1,22 @@
-As a PCA I was responsible for coordinating the development and SaaS operations for several products. For most of the time I worked there, that product was called Chute.
+---
+title: 'Product Chief Architect'
+company: 'Crossover'
+startDate: '2018-01-01'
+endDate: '2019-12-31'
+tags:
+  - Cross-functional Team Leadership
+  - Technical Requirements
+  - Scalability
+  - System Performance
+  - Automation
+---
 
-The most challenging thing I did while there was coordinating a team of about 40 people to deliver deep changes to the product in one month, due to Facebook removing the Instagram API.As a PCA I was responsible for coordinating the development and SaaS operations for several products.
+Coordinated development and SaaS operations across multiple products, primarily focusing on the Chute platform.
 
-The most challenging thing I accomplished while there was coordinating a team of about 40 people to deliver deep changes to the product in one month, due to Facebook removing the Instagram API.
+<br>
 
-**Skills:** Cross-functional Team Leadership · Technical Requirements · Scalability · System Performance · Automation
+##### Key Achievements
+
+<br>
+
+- **Crisis Management:** Successfully coordinated a 40-person team to deliver critical product changes within one month following Facebook's Instagram API removal.

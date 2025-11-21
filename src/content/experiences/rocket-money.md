@@ -1,4 +1,8 @@
 ---
+title: 'Senior Software Architect'
+company: 'Rocket Money (formerly Truebill)'
+startDate: '2019-01-01'
+endDate: '2021-12-31'
 tags:
   - Git
   - PostgreSQL
@@ -15,12 +19,15 @@ tags:
   - Prototyping
 ---
 
-I joined Rocket Money when it was still called Truebill. Back then, the company didn't have a well-defined onboarding process, so I decided to change that while I went through my own onboarding, so others wouldn't have to. I spearheaded a movement towards documentation, and managed to get not only IT, but all departments on board and excited about it. That's how Tuebill got its full-company wiki on Notion that we all came to depend on.
+Joined early-stage fintech startup, taking ownership of features from architecture design to deployment and monitoring. Stayed until the company was sold to Rocket.
 
-Developing at Truebill was a bit different. There, we took charge of a feature from architecture design, to deployment, and monitoring.
+<br>
 
-Among other features, I was responsible for the Pay Advance, which integrated our app with Synapse and Stripe to give customers instant pay advances and automatically charge it back when they got their paychecks.
+##### Key Achievements
 
-My work on subscription management there was not like that, though. Subscriptions was a huge subsystem with old code nobody wanted to touch, but that was in desperate need of an update. That is actually where I shine the most: architecture. I can learn and understand a process really fast, and absorb a huge amount of information. On top of that, I actually have fun reorganizing, and optimizing complex systems. So I took it. The result was a more effective subscription management system that surpassed Stripe's and other tool's processes in reducing churn and in charge success rates.I joined Rocket Money when it was still called Truebill. Back then, the company didn't have a well-defined onboarding process, so I decided to change that while I went through my own onboarding, so others wouldn't have to. I spearheaded a movement towards documentation, and managed to get not only IT, but all departments on board and excited about it. That's how Tuebill got its full-company wiki on Notion that we all came to depend on. Developing at Truebill was a bit different. There, we took charge of a feature from architecture design, to deployment, and monitoring. Among other features, I was responsible for the Pay Advance, which integrated our app with Synapse and Stripe to give customers instant pay advances and automatically charge it back when they got their paychecks. My work on subscription management there was not like that, though. Subscriptions was a huge subsystem with old code nobody wanted to touch, but that was in desperate need of an update. That is actually where I shine the most: architecture. I can learn and understand a process really fast, and absorb a huge amount of information. On top of that, I actually have fun reorganizing, and optimizing complex systems. So I took it. The result was a more effective subscription management system that surpassed Stripe's and other tool's processes in reducing churn and in charge success rates.
+<br>
 
-**Skills:** Git · PostgreSQL · Stripe (Software) · System Performance · Stripe Connect · Database Management System (DBMS) · Cascading Style Sheets (CSS) · Technical Requirements · Automation · Defining Requirements · Scalability · Subscription Management · Prototyping
+- **Company-Wide Documentation Initiative:** Spearheaded a documentation movement during onboarding, successfully engaging all departments (not just IT) to create Truebill's comprehensive company wiki on Notion, establishing a knowledge base that became essential to company operations
+- **Pay Advance Feature:** Architected and implemented pay advance system integrating with Synapse and Stripe, enabling customers to receive instant advances with automated paycheck charge-backs
+- **Subscription Management Modernization:** Took ownership of complex legacy subscription system requiring architectural overhaul. Redesigned the entire subsystem, resulting in a more effective subscription management system that surpassed Stripe's and other industry tools in both churn reduction and charge success rates
+- **Full-Stack Ownership:** Managed complete feature lifecycle from initial architecture design through deployment and production monitoring, demonstrating end-to-end technical leadership

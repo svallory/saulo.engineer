@@ -4,22 +4,24 @@ import '../../assets/scss/pages/resume.scss'
 
 const highlights = [
   {
-    year: 2018,
-    imgUrl: '/images/logos/crossover-green-logo.png',
-    company: 'Crossover',
-    role: 'Product Chief Architect',
+    year: 2022,
+    imgUrl: '/images/logos/toki-logo.png',
+    company: 'Toki Labs',
+    role: 'Co-Founder and CTO',
+    logoBgColor: '#000'
   },
   {
     year: 2019,
     imgUrl: '/images/logos/rocket-money-logo.png',
     company: 'Rocket Money',
-    role: 'Senior Architect',
+    role: 'Senior Software Architect',
   },
   {
-    year: 2022,
-    imgUrl: '/images/logos/cva-logo.png',
-    company: 'Toki Labs | CVA',
-    role: 'CTO',
+    year: 2018,
+    imgUrl: '/images/logos/crossover-white-logo.jpeg',
+    company: 'Crossover',
+    role: 'Product Chief Architect',
+    logoBgColor: 'oklch(72% 37% 185deg)'
   },
 ]
 ---
@@ -49,7 +51,7 @@ const highlights = [
           <div class="z-10 flex flex-col items-center justify-around gap-y-4 px-6 py-8 text-center">
             <div class="text-2xl font-semibold text-gray-700">{h.year}</div>
             <div class="flex flex-col items-center justify-center gap-1">
-              <div class="flex size-28 items-center justify-center rounded-full bg-black text-center">
+              <div class="flex size-28 items-center justify-center rounded-full text-center" style={`background-color: ${h.logoBgColor || '#000'}`}>
                 <img src={h.imgUrl} alt={`${h.company} logo`} class="mx-auto max-h-16 max-w-16" />
               </div>
               <h4 class="font-thin text-gray-900">{h.company}</h4>

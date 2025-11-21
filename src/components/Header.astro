@@ -9,8 +9,22 @@ import { Icon } from 'astro-icon/components'
   <SkipLinks />
   <!-- <div class="flex "> -->
   <Navigation>
-    <li class="menu-item">
-      <span class="block w-80 px-4 py-2 text-xl font-bold leading-10 text-neutral-800"></span>
+    <li class="menu-item header-social-links">
+      <a href="https://github.com/svallory/svallory.github.io" title="GitHub" class="social-icon">
+        <Icon name="line-md:github-loop" style="width: 24px; height: 24px;" />
+      </a>
+      <a href="https://twitter.com/svallory_en" title="Twitter/X" class="social-icon">
+        <Icon name="line-md:twitter-x" style="width: 24px; height: 24px;" />
+      </a>
+      <a href="https://www.linkedin.com/in/saulo-vallory" title="LinkedIn" class="social-icon">
+        <Icon name="line-md:linkedin" style="width: 24px; height: 24px;" />
+      </a>
+      <a href="https://discordapp.com/users/svallory#8453" title="Discord" class="social-icon">
+        <Icon name="line-md:discord" style="width: 24px; height: 24px;" />
+      </a>
+    </li>
+    <li class="menu-item" style="font-weight: bold">
+      <a href="/Saulo Vallory - Resume 2025.pdf" target="_blank" rel="noopener noreferrer">Download Resume</a>
     </li>
     <!-- <li class="menu-item">
       <a href="/about/">About</a>
@@ -47,6 +61,30 @@ import { Icon } from 'astro-icon/components'
   @use '../assets/scss/base/outline' as *;
 
   header {
+    .header-social-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding: 0.5rem 6rem 0.5rem 0;
+      flex-direction: row;
+
+      .social-icon {
+        display: inline-flex;
+        align-items: center;
+        color: var(--neutral-600);
+        text-decoration: none;
+
+        &:visited {
+          color: var(--neutral-600);
+        }
+
+        &:hover,
+        &:focus {
+          color: var(--neutral-800);
+        }
+      }
+    }
+
     .type-icon a {
       display: block;
 

@@ -153,9 +153,44 @@ declare module 'astro:content' {
       } & { render(): Render['.md'] }
     }
     experiences: {
+      'camiseteria.md': {
+        id: 'camiseteria.md'
+        slug: 'camiseteria'
+        body: string
+        collection: 'experiences'
+        data: any
+      } & { render(): Render['.md'] }
+      'cleanify.md': {
+        id: 'cleanify.md'
+        slug: 'cleanify'
+        body: string
+        collection: 'experiences'
+        data: any
+      } & { render(): Render['.md'] }
       'crossover.md': {
         id: 'crossover.md'
         slug: 'crossover'
+        body: string
+        collection: 'experiences'
+        data: any
+      } & { render(): Render['.md'] }
+      'cva.md': {
+        id: 'cva.md'
+        slug: 'cva'
+        body: string
+        collection: 'experiences'
+        data: any
+      } & { render(): Render['.md'] }
+      'doare.md': {
+        id: 'doare.md'
+        slug: 'doare'
+        body: string
+        collection: 'experiences'
+        data: any
+      } & { render(): Render['.md'] }
+      'dreamflare.md': {
+        id: 'dreamflare.md'
+        slug: 'dreamflare'
         body: string
         collection: 'experiences'
         data: any
@@ -167,9 +202,9 @@ declare module 'astro:content' {
         collection: 'experiences'
         data: any
       } & { render(): Render['.md'] }
-      'toki-labs.md': {
-        id: 'toki-labs.md'
-        slug: 'toki-labs'
+      'softo.md': {
+        id: 'softo.md'
+        slug: 'softo'
         body: string
         collection: 'experiences'
         data: any
